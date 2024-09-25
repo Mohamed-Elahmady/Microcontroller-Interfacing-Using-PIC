@@ -497,7 +497,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 :U ..
 -> . `E3085 2 `uc
 -> . `E3075 1 `uc
--> -> 0 `i `uc
+-> . `E3071 0 `uc
 -> -> -> 0 `i `E3067 `uc
 ..
 ..

@@ -13,7 +13,7 @@ DC_MOTOR_T motor1 = {.dc_motor_pin[0].PORT = PORTC_INDEX ,
                      .dc_motor_pin[0].LOGIC = DC_MOTOR_OFF_STATUS ,
                      .dc_motor_pin[1].PORT = PORTC_INDEX ,
                      .dc_motor_pin[1].PIN = GPIO_PIN1 , 
-                     .dc_motor_pin[0].DIRECTION = GPIO_DIRECTION_OUTPUT ,
+                     .dc_motor_pin[1].DIRECTION = GPIO_DIRECTION_OUTPUT ,
                      .dc_motor_pin[1].LOGIC = DC_MOTOR_OFF_STATUS};
 
 DC_MOTOR_T motor2 = {.dc_motor_pin[0].PORT = PORTC_INDEX ,
