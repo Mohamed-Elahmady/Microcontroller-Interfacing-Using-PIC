@@ -1,12 +1,45 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"69 ./ECUAL/DC_Motor/../../MCAL/GPIO/HAL_GPIO.h
+[s S305 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S305 . PORT PIN DIRECTION LOGIC ]
+"29 ./ECUAL/DC_Motor/ECU_DC_MOTOR.h
+[; ;./ECUAL/DC_Motor/ECU_DC_MOTOR.h: 29: typedef struct{
+[s S309 `S305 -> 2 `i ]
+[n S309 . dc_motor_pin ]
 "10 Drivers_Main.c
-[; ;Drivers_Main.c: 10: Std_ReturnType Ret = E_NOT_OK;
+[; ;Drivers_Main.c: 10: DC_MOTOR_T motor1 = {.dc_motor_pin[0].PORT = PORTC_INDEX ,
+[c E3085 0 1 2 3 4 .. ]
+[n E3085 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
+[c E3075 0 1 2 3 4 5 6 7 .. ]
+[n E3075 . GPIO_PIN0 GPIO_PIN1 GPIO_PIN2 GPIO_PIN3 GPIO_PIN4 GPIO_PIN5 GPIO_PIN6 GPIO_PIN7  ]
+[c E3071 0 1 .. ]
+[n E3071 . GPIO_DIRECTION_OUTPUT GPIO_DIRECTION_INPUT  ]
+[c E3067 0 1 .. ]
+[n E3067 . GPIO_LOW GPIO_HIGH  ]
+"28
+[; ;Drivers_Main.c: 28: Std_ReturnType Ret = E_NOT_OK;
 [c E3063 0 1 .. ]
 [n E3063 . E_NOT_OK E_OK  ]
 [p mainexit ]
 "28 ./Drivers_Main.h
 [; ;./Drivers_Main.h: 28: void Application_intialize(void);
 [v _Application_intialize `(v ~T0 @X0 0 ef ]
+"36 ./ECUAL/DC_Motor/ECU_DC_MOTOR.h
+[; ;./ECUAL/DC_Motor/ECU_DC_MOTOR.h: 36: Std_ReturnType DC_MOTOR_ROTATE_CW(const DC_MOTOR_T *motor);
+[v _DC_MOTOR_ROTATE_CW `(E3063 ~T0 @X0 0 ef1`*CS309 ]
+[v F3033 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
+[v __delay `JF3033 ~T0 @X0 0 e ]
+[p i __delay ]
+"37 ./ECUAL/DC_Motor/ECU_DC_MOTOR.h
+[; ;./ECUAL/DC_Motor/ECU_DC_MOTOR.h: 37: Std_ReturnType DC_MOTOR_ROTATE_CCW(const DC_MOTOR_T *motor);
+[v _DC_MOTOR_ROTATE_CCW `(E3063 ~T0 @X0 0 ef1`*CS309 ]
+"38
+[; ;./ECUAL/DC_Motor/ECU_DC_MOTOR.h: 38: Std_ReturnType DC_MOTOR_STOP(const DC_MOTOR_T *motor);
+[v _DC_MOTOR_STOP `(E3063 ~T0 @X0 0 ef1`*CS309 ]
+"35
+[; ;./ECUAL/DC_Motor/ECU_DC_MOTOR.h: 35: Std_ReturnType DC_MOTOR_INITIALIZE(const DC_MOTOR_T *motor);
+[v _DC_MOTOR_INITIALIZE `(E3063 ~T0 @X0 0 ef1`*CS309 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -449,46 +482,143 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "10 Drivers_Main.c
-[; ;Drivers_Main.c: 10: Std_ReturnType Ret = E_NOT_OK;
+[; ;Drivers_Main.c: 10: DC_MOTOR_T motor1 = {.dc_motor_pin[0].PORT = PORTC_INDEX ,
+[v _motor1 `S309 ~T0 @X0 1 e ]
+[i _motor1
+:U ..
+:U ..
+:U ..
+:U ..
+-> . `E3085 2 `uc
+-> . `E3075 0 `uc
+-> . `E3071 0 `uc
+-> -> -> 0 `i `E3067 `uc
+..
+:U ..
+-> . `E3085 2 `uc
+-> . `E3075 1 `uc
+-> -> 0 `i `uc
+-> -> -> 0 `i `E3067 `uc
+..
+..
+..
+..
+]
+"19
+[; ;Drivers_Main.c: 19: DC_MOTOR_T motor2 = {.dc_motor_pin[0].PORT = PORTC_INDEX ,
+[v _motor2 `S309 ~T0 @X0 1 e ]
+[i _motor2
+:U ..
+:U ..
+:U ..
+:U ..
+-> . `E3085 2 `uc
+-> . `E3075 2 `uc
+-> . `E3071 0 `uc
+-> -> -> 0 `i `E3067 `uc
+..
+:U ..
+-> . `E3085 2 `uc
+-> . `E3075 3 `uc
+-> . `E3071 0 `uc
+-> -> -> 0 `i `E3067 `uc
+..
+..
+..
+..
+]
+"28
+[; ;Drivers_Main.c: 28: Std_ReturnType Ret = E_NOT_OK;
 [v _Ret `E3063 ~T0 @X0 1 e ]
 [i _Ret
 . `E3063 0
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"12
-[; ;Drivers_Main.c: 12: int main() {
+"30
+[; ;Drivers_Main.c: 30: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"13
-[; ;Drivers_Main.c: 13:     Application_intialize();
+"31
+[; ;Drivers_Main.c: 31:     Application_intialize();
 [e ( _Application_intialize ..  ]
-"14
-[; ;Drivers_Main.c: 14:     while(1){
-[e :U 311 ]
-{
-"16
-[; ;Drivers_Main.c: 16:     }
-}
-[e :U 310 ]
-[e $U 311  ]
+"32
+[; ;Drivers_Main.c: 32:     while(1){
 [e :U 312 ]
-"17
-[; ;Drivers_Main.c: 17:     return (0);
-[e ) -> 0 `i ]
-[e $UE 309  ]
-"18
-[; ;Drivers_Main.c: 18: }
-[e :UE 309 ]
+{
+"33
+[; ;Drivers_Main.c: 33:         Ret = DC_MOTOR_ROTATE_CW(&motor1);
+[e = _Ret ( _DC_MOTOR_ROTATE_CW (1 -> &U _motor1 `*CS309 ]
+"34
+[; ;Drivers_Main.c: 34:         Ret = DC_MOTOR_ROTATE_CW(&motor2);
+[e = _Ret ( _DC_MOTOR_ROTATE_CW (1 -> &U _motor2 `*CS309 ]
+"35
+[; ;Drivers_Main.c: 35:         _delay((unsigned long)((5000)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"36
+[; ;Drivers_Main.c: 36:         Ret = DC_MOTOR_ROTATE_CCW(&motor1);
+[e = _Ret ( _DC_MOTOR_ROTATE_CCW (1 -> &U _motor1 `*CS309 ]
+"37
+[; ;Drivers_Main.c: 37:         Ret = DC_MOTOR_ROTATE_CCW(&motor2);
+[e = _Ret ( _DC_MOTOR_ROTATE_CCW (1 -> &U _motor2 `*CS309 ]
+"38
+[; ;Drivers_Main.c: 38:         _delay((unsigned long)((5000)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"39
+[; ;Drivers_Main.c: 39:         Ret = DC_MOTOR_ROTATE_CW(&motor1);
+[e = _Ret ( _DC_MOTOR_ROTATE_CW (1 -> &U _motor1 `*CS309 ]
+"40
+[; ;Drivers_Main.c: 40:         Ret = DC_MOTOR_ROTATE_CCW(&motor2);
+[e = _Ret ( _DC_MOTOR_ROTATE_CCW (1 -> &U _motor2 `*CS309 ]
+"41
+[; ;Drivers_Main.c: 41:         _delay((unsigned long)((5000)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"42
+[; ;Drivers_Main.c: 42:         Ret = DC_MOTOR_ROTATE_CCW(&motor1);
+[e = _Ret ( _DC_MOTOR_ROTATE_CCW (1 -> &U _motor1 `*CS309 ]
+"43
+[; ;Drivers_Main.c: 43:         Ret = DC_MOTOR_ROTATE_CW(&motor2);
+[e = _Ret ( _DC_MOTOR_ROTATE_CW (1 -> &U _motor2 `*CS309 ]
+"44
+[; ;Drivers_Main.c: 44:         _delay((unsigned long)((5000)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"45
+[; ;Drivers_Main.c: 45:         Ret = DC_MOTOR_STOP(&motor1);
+[e = _Ret ( _DC_MOTOR_STOP (1 -> &U _motor1 `*CS309 ]
+"46
+[; ;Drivers_Main.c: 46:         Ret = DC_MOTOR_STOP(&motor2);
+[e = _Ret ( _DC_MOTOR_STOP (1 -> &U _motor2 `*CS309 ]
+"47
+[; ;Drivers_Main.c: 47:         _delay((unsigned long)((5000)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"48
+[; ;Drivers_Main.c: 48:     }
 }
-"20
-[; ;Drivers_Main.c: 20: void Application_intialize(void){
+[e :U 311 ]
+[e $U 312  ]
+[e :U 313 ]
+"49
+[; ;Drivers_Main.c: 49:     return (0);
+[e ) -> 0 `i ]
+[e $UE 310  ]
+"50
+[; ;Drivers_Main.c: 50: }
+[e :UE 310 ]
+}
+"52
+[; ;Drivers_Main.c: 52: void Application_intialize(void){
 [v _Application_intialize `(v ~T0 @X0 1 ef ]
 {
 [e :U _Application_intialize ]
 [f ]
-"22
-[; ;Drivers_Main.c: 22: }
-[e :UE 313 ]
+"53
+[; ;Drivers_Main.c: 53:     Ret = DC_MOTOR_INITIALIZE(&motor1);
+[e = _Ret ( _DC_MOTOR_INITIALIZE (1 -> &U _motor1 `*CS309 ]
+"54
+[; ;Drivers_Main.c: 54:     Ret = DC_MOTOR_INITIALIZE(&motor2);
+[e = _Ret ( _DC_MOTOR_INITIALIZE (1 -> &U _motor2 `*CS309 ]
+"55
+[; ;Drivers_Main.c: 55: }
+[e :UE 314 ]
 }

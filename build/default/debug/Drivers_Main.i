@@ -5256,41 +5256,60 @@ Std_ReturnType RELAY_INITIALIZE(const RELAY_T *relay);
 Std_ReturnType RELAY_TURN_ON(const RELAY_T *relay);
 Std_ReturnType RELAY_TURN_OFF(const RELAY_T *relay);
 # 17 "./Drivers_Main.h" 2
-# 27 "./Drivers_Main.h"
+
+# 1 "./ECUAL/DC_Motor/ECU_DC_MOTOR.h" 1
+# 16 "./ECUAL/DC_Motor/ECU_DC_MOTOR.h"
+# 1 "./ECUAL/DC_Motor/ECU_DC_MOTOR_CFG.h" 1
+# 16 "./ECUAL/DC_Motor/ECU_DC_MOTOR.h" 2
+# 29 "./ECUAL/DC_Motor/ECU_DC_MOTOR.h"
+typedef struct{
+    uint8 PORT :3;
+    uint8 PIN :3;
+    uint8 LOGIC :1;
+    uint8 RESERVED :1;
+}DC_MOTOR_PIN_T;
+
+typedef struct{
+    DC_MOTOR_PIN_T dc_motor_pin[2];
+}DC_MOTOR_T;
+
+
+
+Std_ReturnType DC_MOTOR_INITIALIZE(const DC_MOTOR_T *motor);
+Std_ReturnType DC_MOTOR_ROTATE_CW(const DC_MOTOR_T *motor);
+Std_ReturnType DC_MOTOR_ROTATE_CCW(const DC_MOTOR_T *motor);
+Std_ReturnType DC_MOTOR_STOP(const DC_MOTOR_T *motor);
+# 18 "./Drivers_Main.h" 2
+# 28 "./Drivers_Main.h"
 void Application_intialize(void);
 # 8 "Drivers_Main.c" 2
 
 
-RELAY_T relay1 = {
-    .PORT = PORTD_INDEX,
-    .PIN = GPIO_PIN0,
-    .RELAY_LOGIC = RELAY_OFF,
-};
-RELAY_T relay2 = {
-    .PORT = PORTD_INDEX,
-    .PIN = GPIO_PIN1,
-    .RELAY_LOGIC = RELAY_OFF,
-};
+DC_MOTOR_T motor1 = {.dc_motor_pin[0].PORT = PORTC_INDEX ,
+                     .dc_motor_pin[0].PIN = GPIO_PIN0 ,
+                     .dc_motor_pin[0].LOGIC = (LOGIC_T)0x00,
+                     .dc_motor_pin[1].PORT = PORTC_INDEX ,
+                     .dc_motor_pin[1].PIN = GPIO_PIN1 ,
+                     .dc_motor_pin[1].LOGIC = (LOGIC_T)0x00};
+
+DC_MOTOR_T motor2 = {.dc_motor_pin[0].PORT = PORTC_INDEX ,
+                     .dc_motor_pin[0].PIN = GPIO_PIN2 ,
+                     .dc_motor_pin[0].LOGIC = (LOGIC_T)0x00,
+                     .dc_motor_pin[1].PORT = PORTC_INDEX ,
+                     .dc_motor_pin[1].PIN = GPIO_PIN3 ,
+                     .dc_motor_pin[1].LOGIC = (LOGIC_T)0x00};
 
 Std_ReturnType Ret = E_NOT_OK;
 
 int main() {
-
     Application_intialize();
     while(1){
-        Ret = RELAY_TURN_ON(&relay1);
-        Ret = RELAY_TURN_OFF(&relay2);
-        _delay((unsigned long)((5000)*(8000000UL/4000.0)));
-        Ret = RELAY_TURN_OFF(&relay1);
-        Ret = RELAY_TURN_ON(&relay2);
-        _delay((unsigned long)((5000)*(8000000UL/4000.0)));
-    }
 
+    }
     return (0);
 }
 
 void Application_intialize(void){
-    Ret = LED_INITIALIZE(&relay1);
-    Ret = LED_INITIALIZE(&relay2);
-
+    Ret = DC_MOTOR_INITIALIZE(&motor1);
+    Ret = DC_MOTOR_INITIALIZE(&motor2);
 }

@@ -79,9 +79,45 @@ PORTD_INDEX 3
 PORTE_INDEX 4
 ]
 "10 D:\Interfacing Drivers\Drivers_Main.c
+[e E3085 . `uc
+PORTA_INDEX 0
+PORTB_INDEX 1
+PORTC_INDEX 2
+PORTD_INDEX 3
+PORTE_INDEX 4
+]
+[e E3075 . `uc
+GPIO_PIN0 0
+GPIO_PIN1 1
+GPIO_PIN2 2
+GPIO_PIN3 3
+GPIO_PIN4 4
+GPIO_PIN5 5
+GPIO_PIN6 6
+GPIO_PIN7 7
+]
+[e E3071 . `uc
+GPIO_DIRECTION_OUTPUT 0
+GPIO_DIRECTION_INPUT 1
+]
+[e E3067 . `uc
+GPIO_LOW 0
+GPIO_HIGH 1
+]
+"28
 [e E3063 . `uc
 E_NOT_OK 0
 E_OK 1
+]
+"15 D:\Interfacing Drivers\ECUAL/DC_Motor/ECU_DC_MOTOR.c
+[e E3063 . `uc
+E_NOT_OK 0
+E_OK 1
+]
+"37
+[e E3067 . `uc
+GPIO_LOW 0
+GPIO_HIGH 1
 ]
 "4 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -107,10 +143,18 @@ E_OK 1
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"12 D:\Interfacing Drivers\Drivers_Main.c
+"30 D:\Interfacing Drivers\Drivers_Main.c
 [v _main main `(i  1 e 2 0 ]
-"20
+"52
 [v _Application_intialize Application_intialize `(v  1 e 1 0 ]
+"15 D:\Interfacing Drivers\ECUAL/DC_Motor/ECU_DC_MOTOR.c
+[v _DC_MOTOR_INITIALIZE DC_MOTOR_INITIALIZE `(E3063  1 e 1 0 ]
+"31
+[v _DC_MOTOR_ROTATE_CW DC_MOTOR_ROTATE_CW `(E3063  1 e 1 0 ]
+"49
+[v _DC_MOTOR_ROTATE_CCW DC_MOTOR_ROTATE_CCW `(E3063  1 e 1 0 ]
+"67
+[v _DC_MOTOR_STOP DC_MOTOR_STOP `(E3063  1 e 1 0 ]
 "29 D:\Interfacing Drivers\MCAL/GPIO/HAL_GPIO.c
 [v _GPIO_PIN_DIRECTION_INITIALIZE GPIO_PIN_DIRECTION_INITIALIZE `(E3063  1 e 1 0 ]
 "84
@@ -151,19 +195,140 @@ E_OK 1
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "2920
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+[s S24 . 1 `uc 1 PORT 1 0 :3:0 
+`uc 1 PIN 1 0 :3:3 
+`uc 1 DIRECTION 1 0 :1:6 
+`uc 1 LOGIC 1 0 :1:7 
+]
+"10 D:\Interfacing Drivers\Drivers_Main.c
+[s S366 . 2 `[2]S24 1 dc_motor_pin 2 0 ]
+[v _motor1 motor1 `S366  1 e 2 0 ]
+"19
+[v _motor2 motor2 `S366  1 e 2 0 ]
+"28
+[v _Ret Ret `E3063  1 e 1 0 ]
 "10 D:\Interfacing Drivers\MCAL/GPIO/HAL_GPIO.c
 [v _TRIS_REG TRIS_REG `[5]*.39VEuc  1 e 10 0 ]
 "12
 [v _PORT_REG PORT_REG `[5]*.39VEuc  1 e 10 0 ]
 "14
 [v _LAT_REG LAT_REG `[5]*.39VEuc  1 e 10 0 ]
-"12 D:\Interfacing Drivers\Drivers_Main.c
+"30 D:\Interfacing Drivers\Drivers_Main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"18
+"50
 } 0
-"20
+"67 D:\Interfacing Drivers\ECUAL/DC_Motor/ECU_DC_MOTOR.c
+[v _DC_MOTOR_STOP DC_MOTOR_STOP `(E3063  1 e 1 0 ]
+{
+"74
+[v DC_MOTOR_STOP@IN2 IN2 `E3067  1 a 1 9 ]
+"68
+[v DC_MOTOR_STOP@Retval Retval `E3063  1 a 1 10 ]
+[s S24 . 1 `uc 1 PORT 1 0 :3:0 
+`uc 1 PIN 1 0 :3:3 
+`uc 1 DIRECTION 1 0 :1:6 
+`uc 1 LOGIC 1 0 :1:7 
+]
+"67
+[s S366 . 2 `[2]S24 1 dc_motor_pin 2 0 ]
+[v DC_MOTOR_STOP@motor motor `*.30CS366  1 p 1 8 ]
+"79
+} 0
+"31
+[v _DC_MOTOR_ROTATE_CW DC_MOTOR_ROTATE_CW `(E3063  1 e 1 0 ]
+{
+"38
+[v DC_MOTOR_ROTATE_CW@IN2 IN2 `E3067  1 a 1 9 ]
+"32
+[v DC_MOTOR_ROTATE_CW@Retval Retval `E3063  1 a 1 10 ]
+[s S24 . 1 `uc 1 PORT 1 0 :3:0 
+`uc 1 PIN 1 0 :3:3 
+`uc 1 DIRECTION 1 0 :1:6 
+`uc 1 LOGIC 1 0 :1:7 
+]
+"31
+[s S366 . 2 `[2]S24 1 dc_motor_pin 2 0 ]
+[v DC_MOTOR_ROTATE_CW@motor motor `*.30CS366  1 p 1 8 ]
+"43
+} 0
+"49
+[v _DC_MOTOR_ROTATE_CCW DC_MOTOR_ROTATE_CCW `(E3063  1 e 1 0 ]
+{
+"56
+[v DC_MOTOR_ROTATE_CCW@IN2 IN2 `E3067  1 a 1 9 ]
+"50
+[v DC_MOTOR_ROTATE_CCW@Retval Retval `E3063  1 a 1 10 ]
+[s S24 . 1 `uc 1 PORT 1 0 :3:0 
+`uc 1 PIN 1 0 :3:3 
+`uc 1 DIRECTION 1 0 :1:6 
+`uc 1 LOGIC 1 0 :1:7 
+]
+"49
+[s S366 . 2 `[2]S24 1 dc_motor_pin 2 0 ]
+[v DC_MOTOR_ROTATE_CCW@motor motor `*.30CS366  1 p 1 8 ]
+"61
+} 0
+"52 D:\Interfacing Drivers\Drivers_Main.c
 [v _Application_intialize Application_intialize `(v  1 e 1 0 ]
 {
-"22
+"55
+} 0
+"15 D:\Interfacing Drivers\ECUAL/DC_Motor/ECU_DC_MOTOR.c
+[v _DC_MOTOR_INITIALIZE DC_MOTOR_INITIALIZE `(E3063  1 e 1 0 ]
+{
+"16
+[v DC_MOTOR_INITIALIZE@Retval Retval `E3063  1 a 1 12 ]
+[s S24 . 1 `uc 1 PORT 1 0 :3:0 
+`uc 1 PIN 1 0 :3:3 
+`uc 1 DIRECTION 1 0 :1:6 
+`uc 1 LOGIC 1 0 :1:7 
+]
+"15
+[s S366 . 2 `[2]S24 1 dc_motor_pin 2 0 ]
+[v DC_MOTOR_INITIALIZE@motor motor `*.30CS366  1 p 1 11 ]
+"25
+} 0
+"156 D:\Interfacing Drivers\MCAL/GPIO/HAL_GPIO.c
+[v _GPIO_PIN_INITIALIZE GPIO_PIN_INITIALIZE `(E3063  1 e 1 0 ]
+{
+"157
+[v GPIO_PIN_INITIALIZE@Retval Retval `E3063  1 a 1 10 ]
+[s S24 . 1 `uc 1 PORT 1 0 :3:0 
+`uc 1 PIN 1 0 :3:3 
+`uc 1 DIRECTION 1 0 :1:6 
+`uc 1 LOGIC 1 0 :1:7 
+]
+"156
+[v GPIO_PIN_INITIALIZE@_PIN_CONFIG _PIN_CONFIG `*.30CS24  1 p 1 8 ]
+"167
+} 0
+"84
+[v _GPIO_PIN_WRITE_LOGIC GPIO_PIN_WRITE_LOGIC `(E3063  1 e 1 0 ]
+{
+"85
+[v GPIO_PIN_WRITE_LOGIC@Retval Retval `E3063  1 a 1 7 ]
+[s S24 . 1 `uc 1 PORT 1 0 :3:0 
+`uc 1 PIN 1 0 :3:3 
+`uc 1 DIRECTION 1 0 :1:6 
+`uc 1 LOGIC 1 0 :1:7 
+]
+"84
+[v GPIO_PIN_WRITE_LOGIC@_PIN_CONFIG _PIN_CONFIG `*.30CS24  1 p 1 0 ]
+[v GPIO_PIN_WRITE_LOGIC@LOGIC LOGIC `E3067  1 p 1 1 ]
+"105
+} 0
+"29
+[v _GPIO_PIN_DIRECTION_INITIALIZE GPIO_PIN_DIRECTION_INITIALIZE `(E3063  1 e 1 0 ]
+{
+"30
+[v GPIO_PIN_DIRECTION_INITIALIZE@Retval Retval `E3063  1 a 1 6 ]
+[s S24 . 1 `uc 1 PORT 1 0 :3:0 
+`uc 1 PIN 1 0 :3:3 
+`uc 1 DIRECTION 1 0 :1:6 
+`uc 1 LOGIC 1 0 :1:7 
+]
+"29
+[v GPIO_PIN_DIRECTION_INITIALIZE@_PIN_CONFIG _PIN_CONFIG `*.30CS24  1 p 1 0 ]
+"50
 } 0

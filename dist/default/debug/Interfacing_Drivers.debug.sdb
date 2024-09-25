@@ -36,6 +36,25 @@ GPIO_DIRECTION_INPUT 1
 GPIO_LOW 0
 GPIO_HIGH 1
 ]
+"19 D:\Interfacing Drivers\ECUAL/Relay/ECU_RELAY.c
+[e E3063 . `uc
+E_NOT_OK 0
+E_OK 1
+]
+"25
+[e E3071 . `uc
+GPIO_DIRECTION_OUTPUT 0
+GPIO_DIRECTION_INPUT 1
+]
+"47
+[e E3067 . `uc
+GPIO_LOW 0
+GPIO_HIGH 1
+]
+[e E3127 . `uc
+RELAY_OFF 0
+RELAY_ON 1
+]
 "29 D:\Interfacing Drivers\MCAL/GPIO/HAL_GPIO.c
 [e E3063 . `uc
 E_NOT_OK 0
@@ -77,21 +96,21 @@ GPIO_PIN5 5
 GPIO_PIN6 6
 GPIO_PIN7 7
 ]
-[e E3163 . `uc
-RELAY_OFF 0
-RELAY_ON 1
+[e E3067 . `uc
+GPIO_LOW 0
+GPIO_HIGH 1
+]
+"24
+[e E3063 . `uc
+E_NOT_OK 0
+E_OK 1
+]
+"15 D:\Interfacing Drivers\ECUAL/DC_Motor/ECU_DC_MOTOR.c
+[e E3063 . `uc
+E_NOT_OK 0
+E_OK 1
 ]
 "21
-[e E3063 . `uc
-E_NOT_OK 0
-E_OK 1
-]
-"19 D:\Interfacing Drivers\ECUAL/Relay/ECU_RELAY.c
-[e E3063 . `uc
-E_NOT_OK 0
-E_OK 1
-]
-"25
 [e E3071 . `uc
 GPIO_DIRECTION_OUTPUT 0
 GPIO_DIRECTION_INPUT 1
@@ -100,10 +119,6 @@ GPIO_DIRECTION_INPUT 1
 [e E3067 . `uc
 GPIO_LOW 0
 GPIO_HIGH 1
-]
-[e E3127 . `uc
-RELAY_OFF 0
-RELAY_ON 1
 ]
 "4 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -129,16 +144,12 @@ RELAY_ON 1
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"23 D:\Interfacing Drivers\Drivers_Main.c
+"26 D:\Interfacing Drivers\Drivers_Main.c
 [v _main main `(i  1 e 2 0 ]
-"38
+"34
 [v _Application_intialize Application_intialize `(v  1 e 1 0 ]
-"18 D:\Interfacing Drivers\ECUAL/LED/ECU_LED.c
-[v _LED_INITIALIZE LED_INITIALIZE `(E3063  1 e 1 0 ]
-"41 D:\Interfacing Drivers\ECUAL/Relay/ECU_RELAY.c
-[v _RELAY_TURN_ON RELAY_TURN_ON `(E3063  1 e 1 0 ]
-"64
-[v _RELAY_TURN_OFF RELAY_TURN_OFF `(E3063  1 e 1 0 ]
+"15 D:\Interfacing Drivers\ECUAL/DC_Motor/ECU_DC_MOTOR.c
+[v _DC_MOTOR_INITIALIZE DC_MOTOR_INITIALIZE `(E3063  1 e 1 0 ]
 "29 D:\Interfacing Drivers\MCAL/GPIO/HAL_GPIO.c
 [v _GPIO_PIN_DIRECTION_INITIALIZE GPIO_PIN_DIRECTION_INITIALIZE `(E3063  1 e 1 0 ]
 "84
@@ -179,16 +190,17 @@ RELAY_ON 1
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "2920
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
-[s S284 . 1 `uc 1 PORT 1 0 :3:0 
+[s S361 . 1 `uc 1 PORT 1 0 :3:0 
 `uc 1 PIN 1 0 :3:3 
-`uc 1 RELAY_LOGIC 1 0 :1:6 
+`uc 1 LOGIC 1 0 :1:6 
 `uc 1 RESERVED 1 0 :1:7 
 ]
 "10 D:\Interfacing Drivers\Drivers_Main.c
-[v _relay1 relay1 `S284  1 e 1 0 ]
-"15
-[v _relay2 relay2 `S284  1 e 1 0 ]
-"21
+[s S366 . 2 `[2]S361 1 dc_motor_pin 2 0 ]
+[v _motor1 motor1 `S366  1 e 2 0 ]
+"17
+[v _motor2 motor2 `S366  1 e 2 0 ]
+"24
 [v _Ret Ret `E3063  1 e 1 0 ]
 "10 D:\Interfacing Drivers\MCAL/GPIO/HAL_GPIO.c
 [v _TRIS_REG TRIS_REG `[5]*.39VEuc  1 e 10 0 ]
@@ -196,84 +208,43 @@ RELAY_ON 1
 [v _PORT_REG PORT_REG `[5]*.39VEuc  1 e 10 0 ]
 "14
 [v _LAT_REG LAT_REG `[5]*.39VEuc  1 e 10 0 ]
-"23 D:\Interfacing Drivers\Drivers_Main.c
+"26 D:\Interfacing Drivers\Drivers_Main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"36
+"32
 } 0
-"41 D:\Interfacing Drivers\ECUAL/Relay/ECU_RELAY.c
-[v _RELAY_TURN_ON RELAY_TURN_ON `(E3063  1 e 1 0 ]
-{
-[s S24 . 1 `uc 1 PORT 1 0 :3:0 
-`uc 1 PIN 1 0 :3:3 
-`uc 1 DIRECTION 1 0 :1:6 
-`uc 1 LOGIC 1 0 :1:7 
-]
-"48
-[v RELAY_TURN_ON@pin pin `S24  1 a 1 11 ]
-"42
-[v RELAY_TURN_ON@Retval Retval `E3063  1 a 1 10 ]
-[s S284 . 1 `uc 1 PORT 1 0 :3:0 
-`uc 1 PIN 1 0 :3:3 
-`uc 1 RELAY_LOGIC 1 0 :1:6 
-`uc 1 RESERVED 1 0 :1:7 
-]
-"41
-[v RELAY_TURN_ON@relay relay `*.30CS284  1 p 1 8 ]
-"47
-[v RELAY_TURN_ON@F3152 F3152 `S24  1 s 1 F3152 ]
-"55
-} 0
-"64
-[v _RELAY_TURN_OFF RELAY_TURN_OFF `(E3063  1 e 1 0 ]
-{
-[s S24 . 1 `uc 1 PORT 1 0 :3:0 
-`uc 1 PIN 1 0 :3:3 
-`uc 1 DIRECTION 1 0 :1:6 
-`uc 1 LOGIC 1 0 :1:7 
-]
-"71
-[v RELAY_TURN_OFF@pin pin `S24  1 a 1 11 ]
-"65
-[v RELAY_TURN_OFF@Retval Retval `E3063  1 a 1 10 ]
-[s S284 . 1 `uc 1 PORT 1 0 :3:0 
-`uc 1 PIN 1 0 :3:3 
-`uc 1 RELAY_LOGIC 1 0 :1:6 
-`uc 1 RESERVED 1 0 :1:7 
-]
-"64
-[v RELAY_TURN_OFF@relay relay `*.30CS284  1 p 1 8 ]
-"70
-[v RELAY_TURN_OFF@F3158 F3158 `S24  1 s 1 F3158 ]
-"78
-} 0
-"38 D:\Interfacing Drivers\Drivers_Main.c
+"34
 [v _Application_intialize Application_intialize `(v  1 e 1 0 ]
 {
-"42
+"37
 } 0
-"18 D:\Interfacing Drivers\ECUAL/LED/ECU_LED.c
-[v _LED_INITIALIZE LED_INITIALIZE `(E3063  1 e 1 0 ]
+"15 D:\Interfacing Drivers\ECUAL/DC_Motor/ECU_DC_MOTOR.c
+[v _DC_MOTOR_INITIALIZE DC_MOTOR_INITIALIZE `(E3063  1 e 1 0 ]
 {
 [s S24 . 1 `uc 1 PORT 1 0 :3:0 
 `uc 1 PIN 1 0 :3:3 
 `uc 1 DIRECTION 1 0 :1:6 
 `uc 1 LOGIC 1 0 :1:7 
 ]
-"24
-[v LED_INITIALIZE@PIN_OBJ PIN_OBJ `S24  1 a 1 14 ]
-"19
-[v LED_INITIALIZE@Retval Retval `E3063  1 a 1 13 ]
-[s S79 . 1 `uc 1 PORT 1 0 :3:0 
+"23
+[v DC_MOTOR_INITIALIZE@motor_pin2 motor_pin2 `S24  1 a 1 15 ]
+"21
+[v DC_MOTOR_INITIALIZE@motor_pin1 motor_pin1 `S24  1 a 1 14 ]
+"16
+[v DC_MOTOR_INITIALIZE@Retval Retval `E3063  1 a 1 13 ]
+[s S361 . 1 `uc 1 PORT 1 0 :3:0 
 `uc 1 PIN 1 0 :3:3 
 `uc 1 LOGIC 1 0 :1:6 
-`uc 1 reserved 1 0 :1:7 
+`uc 1 RESERVED 1 0 :1:7 
 ]
-"18
-[v LED_INITIALIZE@led led `*.30CS79  1 p 1 11 ]
-"23
-[v LED_INITIALIZE@F3148 F3148 `S24  1 s 1 F3148 ]
-"34
+"15
+[s S366 . 2 `[2]S361 1 dc_motor_pin 2 0 ]
+[v DC_MOTOR_INITIALIZE@motor motor `*.30CS366  1 p 1 11 ]
+"20
+[v DC_MOTOR_INITIALIZE@F3147 F3147 `S24  1 s 1 F3147 ]
+"21
+[v DC_MOTOR_INITIALIZE@F3149 F3149 `S24  1 s 1 F3149 ]
+"30
 } 0
 "156 D:\Interfacing Drivers\MCAL/GPIO/HAL_GPIO.c
 [v _GPIO_PIN_INITIALIZE GPIO_PIN_INITIALIZE `(E3063  1 e 1 0 ]

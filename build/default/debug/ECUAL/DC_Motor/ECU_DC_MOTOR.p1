@@ -1,31 +1,34 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"29 ./ECUAL/DC_Motor/ECU_DC_MOTOR.h
-[; ;./ECUAL/DC_Motor/ECU_DC_MOTOR.h: 29: typedef struct{
-[s S309 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S309 . PORT PIN LOGIC RESERVED ]
+"29 ECUAL/DC_Motor/ECU_DC_MOTOR.h
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.h: 29: typedef struct{
+[s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S306 . PORT PIN LOGIC RESERVED ]
 "36
-[; ;./ECUAL/DC_Motor/ECU_DC_MOTOR.h: 36: typedef struct{
-[s S310 `S309 -> 2 `i ]
-[n S310 . dc_motor_pin ]
-"10 Drivers_Main.c
-[; ;Drivers_Main.c: 10: DC_MOTOR_T motor1 = {.dc_motor_pin[0].PORT = PORTC_INDEX ,
-[c E3085 0 1 2 3 4 .. ]
-[n E3085 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
-[c E3075 0 1 2 3 4 5 6 7 .. ]
-[n E3075 . GPIO_PIN0 GPIO_PIN1 GPIO_PIN2 GPIO_PIN3 GPIO_PIN4 GPIO_PIN5 GPIO_PIN6 GPIO_PIN7  ]
-[c E3067 0 1 .. ]
-[n E3067 . GPIO_LOW GPIO_HIGH  ]
-"24
-[; ;Drivers_Main.c: 24: Std_ReturnType Ret = E_NOT_OK;
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.h: 36: typedef struct{
+[s S307 `S306 -> 2 `i ]
+[n S307 . dc_motor_pin ]
+"15 ECUAL/DC_Motor/ECU_DC_MOTOR.c
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 15: Std_ReturnType DC_MOTOR_INITIALIZE(const DC_MOTOR_T *motor){
 [c E3063 0 1 .. ]
 [n E3063 . E_NOT_OK E_OK  ]
-[p mainexit ]
-"28 ./Drivers_Main.h
-[; ;./Drivers_Main.h: 28: void Application_intialize(void);
-[v _Application_intialize `(v ~T0 @X0 0 ef ]
-"42 ./ECUAL/DC_Motor/ECU_DC_MOTOR.h
-[; ;./ECUAL/DC_Motor/ECU_DC_MOTOR.h: 42: Std_ReturnType DC_MOTOR_INITIALIZE(const DC_MOTOR_T *motor);
-[v _DC_MOTOR_INITIALIZE `(E3063 ~T0 @X0 0 ef1`*CS310 ]
+"69 ECUAL/DC_Motor/../../MCAL/GPIO/HAL_GPIO.h
+[; ;ECUAL/DC_Motor/../../MCAL/GPIO/HAL_GPIO.h: 69: typedef struct{
+[s S305 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S305 . PORT PIN DIRECTION LOGIC ]
+"21 ECUAL/DC_Motor/ECU_DC_MOTOR.c
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 21:         PIN_CONFIG_T motor_pin1 = {.PORT = motor->dc_motor_pin[0].PORT , .PIN = motor->dc_motor_pin[0].PIN ,
+[c E3071 0 1 .. ]
+[n E3071 . GPIO_DIRECTION_OUTPUT GPIO_DIRECTION_INPUT  ]
+"84 ECUAL/DC_Motor/../../MCAL/GPIO/HAL_GPIO.h
+[; ;ECUAL/DC_Motor/../../MCAL/GPIO/HAL_GPIO.h: 84: Std_ReturnType GPIO_PIN_INITIALIZE (const PIN_CONFIG_T *_PIN_CONFIG);
+[v _GPIO_PIN_INITIALIZE `(E3063 ~T0 @X0 0 ef1`*CS305 ]
+"47 ECUAL/DC_Motor/ECU_DC_MOTOR.c
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 47:         LOGIC_T IN1 = (LOGIC_T)0x01;
+[c E3067 0 1 .. ]
+[n E3067 . GPIO_LOW GPIO_HIGH  ]
+"81 ECUAL/DC_Motor/../../MCAL/GPIO/HAL_GPIO.h
+[; ;ECUAL/DC_Motor/../../MCAL/GPIO/HAL_GPIO.h: 81: Std_ReturnType GPIO_PIN_WRITE_LOGIC (const PIN_CONFIG_T *_PIN_CONFIG,LOGIC_T LOGIC);
+[v _GPIO_PIN_WRITE_LOGIC `(E3063 ~T0 @X0 0 ef2`*CS305`E3067 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -467,95 +470,331 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7352
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"10 Drivers_Main.c
-[; ;Drivers_Main.c: 10: DC_MOTOR_T motor1 = {.dc_motor_pin[0].PORT = PORTC_INDEX ,
-[v _motor1 `S310 ~T0 @X0 1 e ]
-[i _motor1
-:U ..
-:U ..
-:U ..
-:U ..
--> . `E3085 2 `uc
--> . `E3075 0 `uc
--> -> -> 0 `i `E3067 `uc
-..
-:U ..
--> . `E3085 2 `uc
--> . `E3075 1 `uc
--> -> -> 0 `i `E3067 `uc
-..
-..
-..
-..
-]
-"17
-[; ;Drivers_Main.c: 17: DC_MOTOR_T motor2 = {.dc_motor_pin[0].PORT = PORTC_INDEX ,
-[v _motor2 `S310 ~T0 @X0 1 e ]
-[i _motor2
-:U ..
-:U ..
-:U ..
-:U ..
--> . `E3085 2 `uc
--> . `E3075 2 `uc
--> -> -> 0 `i `E3067 `uc
-..
-:U ..
--> . `E3085 2 `uc
--> . `E3075 3 `uc
--> -> -> 0 `i `E3067 `uc
-..
-..
-..
-..
-]
-"24
-[; ;Drivers_Main.c: 24: Std_ReturnType Ret = E_NOT_OK;
-[v _Ret `E3063 ~T0 @X0 1 e ]
-[i _Ret
-. `E3063 0
-]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"26
-[; ;Drivers_Main.c: 26: int main() {
-[v _main `(i ~T0 @X0 1 ef ]
+"15 ECUAL/DC_Motor/ECU_DC_MOTOR.c
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 15: Std_ReturnType DC_MOTOR_INITIALIZE(const DC_MOTOR_T *motor){
+[v _DC_MOTOR_INITIALIZE `(E3063 ~T0 @X0 1 ef1`*CS307 ]
 {
-[e :U _main ]
+[e :U _DC_MOTOR_INITIALIZE ]
+[v _motor `*CS307 ~T0 @X0 1 r1 ]
 [f ]
-"27
-[; ;Drivers_Main.c: 27:     Application_intialize();
-[e ( _Application_intialize ..  ]
-"28
-[; ;Drivers_Main.c: 28:     while(1){
-[e :U 313 ]
+"16
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 16:     Std_ReturnType Retval = E_OK;
+[v _Retval `E3063 ~T0 @X0 1 a ]
+[e = _Retval . `E3063 1 ]
+"17
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 17:     if(((void*)0) == motor){
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _motor 309  ]
 {
-"30
-[; ;Drivers_Main.c: 30:     }
+"18
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 18:         Retval = E_NOT_OK;
+[e = _Retval . `E3063 0 ]
+"19
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 19:     }
 }
-[e :U 312 ]
+[e $U 310  ]
+"20
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 20:     else{
+[e :U 309 ]
+{
+[v F3147 `S305 ~T0 @X0 1 s ]
+[i F3147
+:U ..
+:U ..
+"21
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 21:         PIN_CONFIG_T motor_pin1 = {.PORT = motor->dc_motor_pin[0].PORT , .PIN = motor->dc_motor_pin[0].PIN ,
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+]
+[v _motor_pin1 `S305 ~T0 @X0 1 a ]
+[e = _motor_pin1 F3147 ]
+[e ; = . _motor_pin1 0 . *U + &U . *U _motor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 0 ; = . _motor_pin1 1 . *U + &U . *U _motor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 1 ; = . _motor_pin1 2 -> . `E3071 0 `uc = . _motor_pin1 3 . *U + &U . *U _motor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 2 ]
+[v F3149 `S305 ~T0 @X0 1 s ]
+[i F3149
+:U ..
+:U ..
+"23
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 23:         PIN_CONFIG_T motor_pin2 = {.PORT = motor->dc_motor_pin[1].PORT , .PIN = motor->dc_motor_pin[1].PIN ,
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+]
+[v _motor_pin2 `S305 ~T0 @X0 1 a ]
+[e = _motor_pin2 F3149 ]
+[e ; = . _motor_pin2 0 . *U + &U . *U _motor 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 0 ; = . _motor_pin2 1 . *U + &U . *U _motor 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 1 ; = . _motor_pin2 2 -> . `E3071 0 `uc = . _motor_pin2 3 . *U + &U . *U _motor 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 2 ]
+"26
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 26:         Retval = GPIO_PIN_INITIALIZE(&motor_pin1);
+[e = _Retval ( _GPIO_PIN_INITIALIZE (1 -> &U _motor_pin1 `*CS305 ]
+"27
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 27:         Retval = GPIO_PIN_INITIALIZE(&motor_pin2);
+[e = _Retval ( _GPIO_PIN_INITIALIZE (1 -> &U _motor_pin2 `*CS305 ]
+"28
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 28:     }
+}
+[e :U 310 ]
+"29
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 29:     return Retval;
+[e ) _Retval ]
+[e $UE 308  ]
+"30
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 30: }
+[e :UE 308 ]
+}
+"36
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 36: Std_ReturnType DC_MOTOR_ROTATE_CW(const DC_MOTOR_T *motor){
+[v _DC_MOTOR_ROTATE_CW `(E3063 ~T0 @X0 1 ef1`*CS307 ]
+{
+[e :U _DC_MOTOR_ROTATE_CW ]
+[v _motor `*CS307 ~T0 @X0 1 r1 ]
+[f ]
+"37
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 37:     Std_ReturnType Retval = E_OK;
+[v _Retval `E3063 ~T0 @X0 1 a ]
+[e = _Retval . `E3063 1 ]
+"38
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 38:     if(((void*)0) == motor){
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _motor 312  ]
+{
+"39
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 39:         Retval = E_NOT_OK;
+[e = _Retval . `E3063 0 ]
+"40
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 40:     }
+}
 [e $U 313  ]
-[e :U 314 ]
-"31
-[; ;Drivers_Main.c: 31:     return (0);
-[e ) -> 0 `i ]
+"41
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 41:     else{
+[e :U 312 ]
+{
+[v F3154 `S305 ~T0 @X0 1 s ]
+[i F3154
+:U ..
+:U ..
+"42
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 42:         PIN_CONFIG_T motor_pin1 = {.PORT = motor->dc_motor_pin[0].PORT , .PIN = motor->dc_motor_pin[0].PIN ,
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+]
+[v _motor_pin1 `S305 ~T0 @X0 1 a ]
+[e = _motor_pin1 F3154 ]
+[e ; = . _motor_pin1 0 . *U + &U . *U _motor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 0 ; = . _motor_pin1 1 . *U + &U . *U _motor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 1 ; = . _motor_pin1 2 -> . `E3071 0 `uc = . _motor_pin1 3 . *U + &U . *U _motor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 2 ]
+[v F3156 `S305 ~T0 @X0 1 s ]
+[i F3156
+:U ..
+:U ..
+"44
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 44:         PIN_CONFIG_T motor_pin2 = {.PORT = motor->dc_motor_pin[1].PORT , .PIN = motor->dc_motor_pin[1].PIN ,
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+]
+[v _motor_pin2 `S305 ~T0 @X0 1 a ]
+[e = _motor_pin2 F3156 ]
+[e ; = . _motor_pin2 0 . *U + &U . *U _motor 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 0 ; = . _motor_pin2 1 . *U + &U . *U _motor 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 1 ; = . _motor_pin2 2 -> . `E3071 0 `uc = . _motor_pin2 3 . *U + &U . *U _motor 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 2 ]
+"47
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 47:         LOGIC_T IN1 = (LOGIC_T)0x01;
+[v _IN1 `E3067 ~T0 @X0 1 a ]
+[e = _IN1 -> -> 1 `i `E3067 ]
+"48
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 48:         LOGIC_T IN2 = (LOGIC_T)0x00;
+[v _IN2 `E3067 ~T0 @X0 1 a ]
+[e = _IN2 -> -> 0 `i `E3067 ]
+"49
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 49:         Retval = GPIO_PIN_WRITE_LOGIC(&motor_pin1 , IN1);
+[e = _Retval ( _GPIO_PIN_WRITE_LOGIC (2 , -> &U _motor_pin1 `*CS305 _IN1 ]
+"50
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 50:         Retval = GPIO_PIN_WRITE_LOGIC(&motor_pin2 , IN2);
+[e = _Retval ( _GPIO_PIN_WRITE_LOGIC (2 , -> &U _motor_pin2 `*CS305 _IN2 ]
+"51
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 51:     }
+}
+[e :U 313 ]
+"52
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 52:     return Retval;
+[e ) _Retval ]
 [e $UE 311  ]
-"32
-[; ;Drivers_Main.c: 32: }
+"53
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 53: }
 [e :UE 311 ]
 }
-"34
-[; ;Drivers_Main.c: 34: void Application_intialize(void){
-[v _Application_intialize `(v ~T0 @X0 1 ef ]
+"59
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 59: Std_ReturnType DC_MOTOR_ROTATE_CCW(const DC_MOTOR_T *motor){
+[v _DC_MOTOR_ROTATE_CCW `(E3063 ~T0 @X0 1 ef1`*CS307 ]
 {
-[e :U _Application_intialize ]
+[e :U _DC_MOTOR_ROTATE_CCW ]
+[v _motor `*CS307 ~T0 @X0 1 r1 ]
 [f ]
-"35
-[; ;Drivers_Main.c: 35:     Ret = DC_MOTOR_INITIALIZE(&motor1);
-[e = _Ret ( _DC_MOTOR_INITIALIZE (1 -> &U _motor1 `*CS310 ]
-"36
-[; ;Drivers_Main.c: 36:     Ret = DC_MOTOR_INITIALIZE(&motor2);
-[e = _Ret ( _DC_MOTOR_INITIALIZE (1 -> &U _motor2 `*CS310 ]
-"37
-[; ;Drivers_Main.c: 37: }
-[e :UE 315 ]
+"60
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 60:     Std_ReturnType Retval = E_OK;
+[v _Retval `E3063 ~T0 @X0 1 a ]
+[e = _Retval . `E3063 1 ]
+"61
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 61:     if(((void*)0) == motor){
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _motor 315  ]
+{
+"62
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 62:         Retval = E_NOT_OK;
+[e = _Retval . `E3063 0 ]
+"63
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 63:     }
+}
+[e $U 316  ]
+"64
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 64:     else{
+[e :U 315 ]
+{
+[v F3163 `S305 ~T0 @X0 1 s ]
+[i F3163
+:U ..
+:U ..
+"65
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 65:         PIN_CONFIG_T motor_pin1 = {.PORT = motor->dc_motor_pin[0].PORT , .PIN = motor->dc_motor_pin[0].PIN ,
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+]
+[v _motor_pin1 `S305 ~T0 @X0 1 a ]
+[e = _motor_pin1 F3163 ]
+[e ; = . _motor_pin1 0 . *U + &U . *U _motor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 0 ; = . _motor_pin1 1 . *U + &U . *U _motor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 1 ; = . _motor_pin1 2 -> . `E3071 0 `uc = . _motor_pin1 3 . *U + &U . *U _motor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 2 ]
+[v F3165 `S305 ~T0 @X0 1 s ]
+[i F3165
+:U ..
+:U ..
+"67
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 67:         PIN_CONFIG_T motor_pin2 = {.PORT = motor->dc_motor_pin[1].PORT , .PIN = motor->dc_motor_pin[1].PIN ,
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+]
+[v _motor_pin2 `S305 ~T0 @X0 1 a ]
+[e = _motor_pin2 F3165 ]
+[e ; = . _motor_pin2 0 . *U + &U . *U _motor 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 0 ; = . _motor_pin2 1 . *U + &U . *U _motor 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 1 ; = . _motor_pin2 2 -> . `E3071 0 `uc = . _motor_pin2 3 . *U + &U . *U _motor 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 2 ]
+"70
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 70:         LOGIC_T IN1 = (LOGIC_T)0x00;
+[v _IN1 `E3067 ~T0 @X0 1 a ]
+[e = _IN1 -> -> 0 `i `E3067 ]
+"71
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 71:         LOGIC_T IN2 = (LOGIC_T)0x01;
+[v _IN2 `E3067 ~T0 @X0 1 a ]
+[e = _IN2 -> -> 1 `i `E3067 ]
+"72
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 72:         Retval = GPIO_PIN_WRITE_LOGIC(&motor_pin1 , IN1);
+[e = _Retval ( _GPIO_PIN_WRITE_LOGIC (2 , -> &U _motor_pin1 `*CS305 _IN1 ]
+"73
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 73:         Retval = GPIO_PIN_WRITE_LOGIC(&motor_pin2 , IN2);
+[e = _Retval ( _GPIO_PIN_WRITE_LOGIC (2 , -> &U _motor_pin2 `*CS305 _IN2 ]
+"74
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 74:     }
+}
+[e :U 316 ]
+"75
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 75:     return Retval;
+[e ) _Retval ]
+[e $UE 314  ]
+"76
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 76: }
+[e :UE 314 ]
+}
+"82
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 82: Std_ReturnType DC_MOTOR_STOP(const DC_MOTOR_T *motor){
+[v _DC_MOTOR_STOP `(E3063 ~T0 @X0 1 ef1`*CS307 ]
+{
+[e :U _DC_MOTOR_STOP ]
+[v _motor `*CS307 ~T0 @X0 1 r1 ]
+[f ]
+"83
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 83:     Std_ReturnType Retval = E_OK;
+[v _Retval `E3063 ~T0 @X0 1 a ]
+[e = _Retval . `E3063 1 ]
+"84
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 84:     if(((void*)0) == motor){
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _motor 318  ]
+{
+"85
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 85:         Retval = E_NOT_OK;
+[e = _Retval . `E3063 0 ]
+"86
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 86:     }
+}
+[e $U 319  ]
+"87
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 87:     else{
+[e :U 318 ]
+{
+[v F3172 `S305 ~T0 @X0 1 s ]
+[i F3172
+:U ..
+:U ..
+"88
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 88:         PIN_CONFIG_T motor_pin1 = {.PORT = motor->dc_motor_pin[0].PORT , .PIN = motor->dc_motor_pin[0].PIN ,
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+]
+[v _motor_pin1 `S305 ~T0 @X0 1 a ]
+[e = _motor_pin1 F3172 ]
+[e ; = . _motor_pin1 0 . *U + &U . *U _motor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 0 ; = . _motor_pin1 1 . *U + &U . *U _motor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 1 ; = . _motor_pin1 2 -> . `E3071 0 `uc = . _motor_pin1 3 . *U + &U . *U _motor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 2 ]
+[v F3174 `S305 ~T0 @X0 1 s ]
+[i F3174
+:U ..
+:U ..
+"90
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 90:         PIN_CONFIG_T motor_pin2 = {.PORT = motor->dc_motor_pin[1].PORT , .PIN = motor->dc_motor_pin[1].PIN ,
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+]
+[v _motor_pin2 `S305 ~T0 @X0 1 a ]
+[e = _motor_pin2 F3174 ]
+[e ; = . _motor_pin2 0 . *U + &U . *U _motor 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 0 ; = . _motor_pin2 1 . *U + &U . *U _motor 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 1 ; = . _motor_pin2 2 -> . `E3071 0 `uc = . _motor_pin2 3 . *U + &U . *U _motor 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux 2 ]
+"93
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 93:         LOGIC_T IN1 = (LOGIC_T)0x00;
+[v _IN1 `E3067 ~T0 @X0 1 a ]
+[e = _IN1 -> -> 0 `i `E3067 ]
+"94
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 94:         LOGIC_T IN2 = (LOGIC_T)0x00;
+[v _IN2 `E3067 ~T0 @X0 1 a ]
+[e = _IN2 -> -> 0 `i `E3067 ]
+"95
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 95:         Retval = GPIO_PIN_WRITE_LOGIC(&motor_pin1 , IN1);
+[e = _Retval ( _GPIO_PIN_WRITE_LOGIC (2 , -> &U _motor_pin1 `*CS305 _IN1 ]
+"96
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 96:         Retval = GPIO_PIN_WRITE_LOGIC(&motor_pin2 , IN2);
+[e = _Retval ( _GPIO_PIN_WRITE_LOGIC (2 , -> &U _motor_pin2 `*CS305 _IN2 ]
+"97
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 97:     }
+}
+[e :U 319 ]
+"98
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 98:     return Retval;
+[e ) _Retval ]
+[e $UE 317  ]
+"99
+[; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 99: }
+[e :UE 317 ]
 }

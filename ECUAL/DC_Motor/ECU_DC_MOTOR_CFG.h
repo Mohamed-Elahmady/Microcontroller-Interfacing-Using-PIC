@@ -16,7 +16,10 @@
 
 /* Section 2 : Macros Declarations */
 
+#define DC_MOTOR_CFG_DISABLE             0x00
+#define DC_MOTOR_CFG_ENABLE              0x01
 
+#define DC_MOTOR_CFG                     (MOTOR_CFG_ENABLE)
 
 /* Section 3 : Macros Functions Declarations */
 
