@@ -5186,14 +5186,7 @@ Std_ReturnType GPIO_PORT_TOGGLE_LOGIC (PORT_INDEX_T PORT);
 # 16 "ECUAL/DC_Motor/ECU_DC_MOTOR.h" 2
 # 29 "ECUAL/DC_Motor/ECU_DC_MOTOR.h"
 typedef struct{
-    uint8 PORT :3;
-    uint8 PIN :3;
-    uint8 LOGIC :1;
-    uint8 RESERVED :1;
-}DC_MOTOR_PIN_T;
-
-typedef struct{
-    DC_MOTOR_PIN_T dc_motor_pin[2];
+    PIN_CONFIG_T dc_motor_pin[2];
 }DC_MOTOR_T;
 
 
@@ -5216,13 +5209,8 @@ Std_ReturnType DC_MOTOR_INITIALIZE(const DC_MOTOR_T *motor){
         Retval = E_NOT_OK;
     }
     else{
-        PIN_CONFIG_T motor_pin1 = {.PORT = motor->dc_motor_pin[0].PORT , .PIN = motor->dc_motor_pin[0].PIN ,
-                                   .LOGIC = motor->dc_motor_pin[0].LOGIC , .DIRECTION = GPIO_DIRECTION_OUTPUT};
-        PIN_CONFIG_T motor_pin2 = {.PORT = motor->dc_motor_pin[1].PORT , .PIN = motor->dc_motor_pin[1].PIN ,
-                                   .LOGIC = motor->dc_motor_pin[1].LOGIC , .DIRECTION = GPIO_DIRECTION_OUTPUT};
-
-        Retval = GPIO_PIN_INITIALIZE(&motor_pin1);
-        Retval = GPIO_PIN_INITIALIZE(&motor_pin2);
+        Retval = GPIO_PIN_INITIALIZE(&(motor->dc_motor_pin[0]));
+        Retval = GPIO_PIN_INITIALIZE(&(motor->dc_motor_pin[1]));
     }
     return Retval;
 }
@@ -5237,15 +5225,10 @@ Std_ReturnType DC_MOTOR_ROTATE_CW(const DC_MOTOR_T *motor){
         Retval = E_NOT_OK;
     }
     else{
-        PIN_CONFIG_T motor_pin1 = {.PORT = motor->dc_motor_pin[0].PORT , .PIN = motor->dc_motor_pin[0].PIN ,
-                                   .LOGIC = motor->dc_motor_pin[0].LOGIC , .DIRECTION = GPIO_DIRECTION_OUTPUT};
-        PIN_CONFIG_T motor_pin2 = {.PORT = motor->dc_motor_pin[1].PORT , .PIN = motor->dc_motor_pin[1].PIN ,
-                                   .LOGIC = motor->dc_motor_pin[1].LOGIC , .DIRECTION = GPIO_DIRECTION_OUTPUT};
-
         LOGIC_T IN1 = (LOGIC_T)0x01;
         LOGIC_T IN2 = (LOGIC_T)0x00;
-        Retval = GPIO_PIN_WRITE_LOGIC(&motor_pin1 , IN1);
-        Retval = GPIO_PIN_WRITE_LOGIC(&motor_pin2 , IN2);
+        Retval = GPIO_PIN_WRITE_LOGIC(&(motor->dc_motor_pin[0]) , IN1);
+        Retval = GPIO_PIN_WRITE_LOGIC(&(motor->dc_motor_pin[1]) , IN2);
     }
     return Retval;
 }
@@ -5260,15 +5243,10 @@ Std_ReturnType DC_MOTOR_ROTATE_CCW(const DC_MOTOR_T *motor){
         Retval = E_NOT_OK;
     }
     else{
-        PIN_CONFIG_T motor_pin1 = {.PORT = motor->dc_motor_pin[0].PORT , .PIN = motor->dc_motor_pin[0].PIN ,
-                                   .LOGIC = motor->dc_motor_pin[0].LOGIC , .DIRECTION = GPIO_DIRECTION_OUTPUT};
-        PIN_CONFIG_T motor_pin2 = {.PORT = motor->dc_motor_pin[1].PORT , .PIN = motor->dc_motor_pin[1].PIN ,
-                                   .LOGIC = motor->dc_motor_pin[1].LOGIC , .DIRECTION = GPIO_DIRECTION_OUTPUT};
-
         LOGIC_T IN1 = (LOGIC_T)0x00;
         LOGIC_T IN2 = (LOGIC_T)0x01;
-        Retval = GPIO_PIN_WRITE_LOGIC(&motor_pin1 , IN1);
-        Retval = GPIO_PIN_WRITE_LOGIC(&motor_pin2 , IN2);
+        Retval = GPIO_PIN_WRITE_LOGIC(&(motor->dc_motor_pin[0]) , IN1);
+        Retval = GPIO_PIN_WRITE_LOGIC(&(motor->dc_motor_pin[1]) , IN2);
     }
     return Retval;
 }
@@ -5283,15 +5261,10 @@ Std_ReturnType DC_MOTOR_STOP(const DC_MOTOR_T *motor){
         Retval = E_NOT_OK;
     }
     else{
-        PIN_CONFIG_T motor_pin1 = {.PORT = motor->dc_motor_pin[0].PORT , .PIN = motor->dc_motor_pin[0].PIN ,
-                                   .LOGIC = motor->dc_motor_pin[0].LOGIC , .DIRECTION = GPIO_DIRECTION_OUTPUT};
-        PIN_CONFIG_T motor_pin2 = {.PORT = motor->dc_motor_pin[1].PORT , .PIN = motor->dc_motor_pin[1].PIN ,
-                                   .LOGIC = motor->dc_motor_pin[1].LOGIC , .DIRECTION = GPIO_DIRECTION_OUTPUT};
-
         LOGIC_T IN1 = (LOGIC_T)0x00;
         LOGIC_T IN2 = (LOGIC_T)0x00;
-        Retval = GPIO_PIN_WRITE_LOGIC(&motor_pin1 , IN1);
-        Retval = GPIO_PIN_WRITE_LOGIC(&motor_pin2 , IN2);
+        Retval = GPIO_PIN_WRITE_LOGIC(&(motor->dc_motor_pin[0]) , IN1);
+        Retval = GPIO_PIN_WRITE_LOGIC(&(motor->dc_motor_pin[1]) , IN2);
     }
     return Retval;
 }

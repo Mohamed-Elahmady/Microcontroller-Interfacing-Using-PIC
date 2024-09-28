@@ -5273,54 +5273,96 @@ Std_ReturnType DC_MOTOR_ROTATE_CW(const DC_MOTOR_T *motor);
 Std_ReturnType DC_MOTOR_ROTATE_CCW(const DC_MOTOR_T *motor);
 Std_ReturnType DC_MOTOR_STOP(const DC_MOTOR_T *motor);
 # 18 "./Drivers_Main.h" 2
-# 28 "./Drivers_Main.h"
+
+# 1 "./ECUAL/7_Segments/ECU_7_Segments.h" 1
+# 16 "./ECUAL/7_Segments/ECU_7_Segments.h"
+# 1 "./ECUAL/7_Segments/ECU_7_Segments_CFG.h" 1
+# 16 "./ECUAL/7_Segments/ECU_7_Segments.h" 2
+# 34 "./ECUAL/7_Segments/ECU_7_Segments.h"
+typedef enum {
+    SEGMENT_COMMON_ANODE = 0,
+    SEGMENT_COMMON_CATHODE
+}SEGMENT_TYPE_T;
+
+typedef struct{
+    PIN_CONFIG_T SEGMENT_PIN[4];
+    SEGMENT_TYPE_T SEGMENT_TYPE;
+}SEGMENT_T;
+
+
+
+Std_ReturnType SEGMENT_INITIALIZE (const SEGMENT_T *seg);
+Std_ReturnType SEGMENT_WRITE_NUMBER (const SEGMENT_T *seg , const uint8 number);
+# 19 "./Drivers_Main.h" 2
+# 29 "./Drivers_Main.h"
 void Application_intialize(void);
 # 8 "Drivers_Main.c" 2
 
 
-DC_MOTOR_T motor1 = {.dc_motor_pin[0].PORT = PORTC_INDEX ,
-                     .dc_motor_pin[0].PIN = GPIO_PIN0 ,
-                     .dc_motor_pin[0].DIRECTION = GPIO_DIRECTION_OUTPUT ,
-                     .dc_motor_pin[0].LOGIC = (LOGIC_T)0x00 ,
-                     .dc_motor_pin[1].PORT = PORTC_INDEX ,
-                     .dc_motor_pin[1].PIN = GPIO_PIN1 ,
-                     .dc_motor_pin[1].DIRECTION = GPIO_DIRECTION_OUTPUT ,
-                     .dc_motor_pin[1].LOGIC = (LOGIC_T)0x00};
-
-DC_MOTOR_T motor2 = {.dc_motor_pin[0].PORT = PORTC_INDEX ,
-                     .dc_motor_pin[0].PIN = GPIO_PIN2 ,
-                     .dc_motor_pin[0].DIRECTION = GPIO_DIRECTION_OUTPUT ,
-                     .dc_motor_pin[0].LOGIC = (LOGIC_T)0x00,
-                     .dc_motor_pin[1].PORT = PORTC_INDEX ,
-                     .dc_motor_pin[1].PIN = GPIO_PIN3 ,
-                     .dc_motor_pin[1].DIRECTION = GPIO_DIRECTION_OUTPUT ,
-                     .dc_motor_pin[1].LOGIC = (LOGIC_T)0x00};
-
 Std_ReturnType Ret = E_NOT_OK;
+
+SEGMENT_T seg1 = {
+    .SEGMENT_PIN[0].PORT = PORTC_INDEX,
+    .SEGMENT_PIN[0].PIN = GPIO_PIN0,
+    .SEGMENT_PIN[0].DIRECTION = GPIO_DIRECTION_OUTPUT,
+    .SEGMENT_PIN[0].LOGIC = GPIO_LOW,
+
+    .SEGMENT_PIN[1].PORT = PORTC_INDEX,
+    .SEGMENT_PIN[1].PIN = GPIO_PIN1,
+    .SEGMENT_PIN[1].DIRECTION = GPIO_DIRECTION_OUTPUT,
+    .SEGMENT_PIN[1].LOGIC = GPIO_LOW,
+
+    .SEGMENT_PIN[2].PORT = PORTC_INDEX,
+    .SEGMENT_PIN[2].PIN = GPIO_PIN2,
+    .SEGMENT_PIN[2].DIRECTION = GPIO_DIRECTION_OUTPUT,
+    .SEGMENT_PIN[2].LOGIC = GPIO_LOW,
+
+    .SEGMENT_PIN[3].PORT = PORTC_INDEX,
+    .SEGMENT_PIN[3].PIN = GPIO_PIN3,
+    .SEGMENT_PIN[3].DIRECTION = GPIO_DIRECTION_OUTPUT,
+    .SEGMENT_PIN[3].LOGIC = GPIO_LOW,
+
+    .SEGMENT_TYPE = SEGMENT_COMMON_CATHODE
+};
+
+PIN_CONFIG_T seg1_en = {
+    .PORT = PORTC_INDEX,
+    .PIN = GPIO_PIN4,
+    .DIRECTION = GPIO_DIRECTION_OUTPUT,
+    .LOGIC = GPIO_LOW,
+};
+
+PIN_CONFIG_T seg2_en = {
+    .PORT = PORTC_INDEX,
+    .PIN = GPIO_PIN5,
+    .DIRECTION = GPIO_DIRECTION_OUTPUT,
+    .LOGIC = GPIO_LOW,
+};
+
+int n = 0;
 
 int main() {
     Application_intialize();
     while(1){
-        Ret = DC_MOTOR_ROTATE_CW(&motor1);
-        Ret = DC_MOTOR_ROTATE_CW(&motor2);
-        _delay((unsigned long)((5000)*(8000000UL/4000.0)));
-        Ret = DC_MOTOR_ROTATE_CCW(&motor1);
-        Ret = DC_MOTOR_ROTATE_CCW(&motor2);
-        _delay((unsigned long)((5000)*(8000000UL/4000.0)));
-        Ret = DC_MOTOR_ROTATE_CW(&motor1);
-        Ret = DC_MOTOR_ROTATE_CCW(&motor2);
-        _delay((unsigned long)((5000)*(8000000UL/4000.0)));
-        Ret = DC_MOTOR_ROTATE_CCW(&motor1);
-        Ret = DC_MOTOR_ROTATE_CW(&motor2);
-        _delay((unsigned long)((5000)*(8000000UL/4000.0)));
-        Ret = DC_MOTOR_STOP(&motor1);
-        Ret = DC_MOTOR_STOP(&motor2);
-        _delay((unsigned long)((5000)*(8000000UL/4000.0)));
+# 65 "Drivers_Main.c"
+        for(int i = 0;i < 50 ; i++){
+            Ret = GPIO_PIN_WRITE_LOGIC(&seg1_en,GPIO_LOW);
+            Ret = GPIO_PIN_WRITE_LOGIC(&seg2_en,GPIO_HIGH);
+            Ret = SEGMENT_WRITE_NUMBER(&seg1 , n/10);
+            _delay((unsigned long)((10)*(8000000UL/4000.0)));
+            Ret = SEGMENT_WRITE_NUMBER(&seg1 , n%10);
+            Ret = GPIO_PIN_WRITE_LOGIC(&seg1_en,GPIO_HIGH);
+            _delay((unsigned long)((10)*(8000000UL/4000.0)));
+            Ret = GPIO_PIN_WRITE_LOGIC(&seg1_en,GPIO_LOW);
+        }
+        n++;
     }
     return (0);
 }
 
 void Application_intialize(void){
-    Ret = DC_MOTOR_INITIALIZE(&motor1);
-    Ret = DC_MOTOR_INITIALIZE(&motor2);
+    Ret = SEGMENT_INITIALIZE(&seg1);
+    Ret = GPIO_PIN_INITIALIZE(&seg1_en);
+    Ret = GPIO_PIN_INITIALIZE(&seg2_en);
+
 }

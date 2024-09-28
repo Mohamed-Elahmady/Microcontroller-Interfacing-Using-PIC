@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Interfacing%20Drivers/ECUAL/DC_Motor/ECU_DC_MOTOR.h</file>
+            <file>file:/D:/Interfacing%20Drivers/ECUAL/7_Segments/ECU_7_Segments.c</file>
+            <file>file:/D:/Interfacing%20Drivers/MCAL/GPIO/HAL_GPIO.h</file>
             <file>file:/D:/Interfacing%20Drivers/Drivers_Main.c</file>
-            <file>file:/D:/Interfacing%20Drivers/ECUAL/DC_Motor/ECU_DC_MOTOR.c</file>
+            <file>file:/D:/Interfacing%20Drivers/ECUAL/7_Segments/ECU_7_Segments.h</file>
         </group>
     </open-files>
 </project-private>

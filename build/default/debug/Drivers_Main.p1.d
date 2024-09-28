@@ -14,4 +14,6 @@ ECUAL/Button/ECU_Button_CFG.h  \
 ECUAL/Relay/ECU_RELAY.h  \
 ECUAL/Relay/ECU_RELAY_CFG.h  \
 ECUAL/DC_Motor/ECU_DC_MOTOR.h  \
-ECUAL/DC_Motor/ECU_DC_MOTOR_CFG.h 
+ECUAL/DC_Motor/ECU_DC_MOTOR_CFG.h  \
+ECUAL/7_Segments/ECU_7_Segments.h  \
+ECUAL/7_Segments/ECU_7_Segments_CFG.h 

@@ -16,6 +16,7 @@
 #include "ECUAL/Button/ECU_Button.h"
 #include "ECUAL/Relay/ECU_RELAY.h"
 #include "ECUAL/DC_Motor/ECU_DC_MOTOR.h"
+#include "ECUAL/7_Segments/ECU_7_Segments.h"
 
 /* Section 2 : Macros Declarations */
 

@@ -21,6 +21,16 @@ E_OK 1
 GPIO_LOW 0
 GPIO_HIGH 1
 ]
+"15 D:\Interfacing Drivers\ECUAL/DC_Motor/ECU_DC_MOTOR.c
+[e E3063 . `uc
+E_NOT_OK 0
+E_OK 1
+]
+"37
+[e E3067 . `uc
+GPIO_LOW 0
+GPIO_HIGH 1
+]
 "18 D:\Interfacing Drivers\ECUAL/LED/ECU_LED.c
 [e E3063 . `uc
 E_NOT_OK 0
@@ -79,6 +89,15 @@ PORTD_INDEX 3
 PORTE_INDEX 4
 ]
 "10 D:\Interfacing Drivers\Drivers_Main.c
+[e E3063 . `uc
+E_NOT_OK 0
+E_OK 1
+]
+"12
+[e E3190 . `uc
+SEGMENT_COMMON_ANODE 0
+SEGMENT_COMMON_CATHODE 1
+]
 [e E3085 . `uc
 PORTA_INDEX 0
 PORTB_INDEX 1
@@ -104,21 +123,24 @@ GPIO_DIRECTION_INPUT 1
 GPIO_LOW 0
 GPIO_HIGH 1
 ]
-"28
+"15 D:\Interfacing Drivers\ECUAL/7_Segments/ECU_7_Segments.c
+[e E3127 . `uc
+SEGMENT_COMMON_ANODE 0
+SEGMENT_COMMON_CATHODE 1
+]
 [e E3063 . `uc
 E_NOT_OK 0
 E_OK 1
 ]
-"15 D:\Interfacing Drivers\ECUAL/DC_Motor/ECU_DC_MOTOR.c
-[e E3063 . `uc
-E_NOT_OK 0
-E_OK 1
-]
-"37
+"40
 [e E3067 . `uc
 GPIO_LOW 0
 GPIO_HIGH 1
 ]
+"7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\float.c
@@ -143,18 +165,14 @@ GPIO_HIGH 1
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"30 D:\Interfacing Drivers\Drivers_Main.c
+"52 D:\Interfacing Drivers\Drivers_Main.c
 [v _main main `(i  1 e 2 0 ]
-"52
+"80
 [v _Application_intialize Application_intialize `(v  1 e 1 0 ]
-"15 D:\Interfacing Drivers\ECUAL/DC_Motor/ECU_DC_MOTOR.c
-[v _DC_MOTOR_INITIALIZE DC_MOTOR_INITIALIZE `(E3063  1 e 1 0 ]
-"31
-[v _DC_MOTOR_ROTATE_CW DC_MOTOR_ROTATE_CW `(E3063  1 e 1 0 ]
-"49
-[v _DC_MOTOR_ROTATE_CCW DC_MOTOR_ROTATE_CCW `(E3063  1 e 1 0 ]
-"67
-[v _DC_MOTOR_STOP DC_MOTOR_STOP `(E3063  1 e 1 0 ]
+"15 D:\Interfacing Drivers\ECUAL/7_Segments/ECU_7_Segments.c
+[v _SEGMENT_INITIALIZE SEGMENT_INITIALIZE `(E3063  1 e 1 0 ]
+"33
+[v _SEGMENT_WRITE_NUMBER SEGMENT_WRITE_NUMBER `(E3063  1 e 1 0 ]
 "29 D:\Interfacing Drivers\MCAL/GPIO/HAL_GPIO.c
 [v _GPIO_PIN_DIRECTION_INITIALIZE GPIO_PIN_DIRECTION_INITIALIZE `(E3063  1 e 1 0 ]
 "84
@@ -195,99 +213,98 @@ GPIO_HIGH 1
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "2920
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+"10 D:\Interfacing Drivers\Drivers_Main.c
+[v _Ret Ret `E3063  1 e 1 0 ]
 [s S24 . 1 `uc 1 PORT 1 0 :3:0 
 `uc 1 PIN 1 0 :3:3 
 `uc 1 DIRECTION 1 0 :1:6 
 `uc 1 LOGIC 1 0 :1:7 
 ]
-"10 D:\Interfacing Drivers\Drivers_Main.c
-[s S366 . 2 `[2]S24 1 dc_motor_pin 2 0 ]
-[v _motor1 motor1 `S366  1 e 2 0 ]
-"19
-[v _motor2 motor2 `S366  1 e 2 0 ]
-"28
-[v _Ret Ret `E3063  1 e 1 0 ]
+"12
+[s S409 . 5 `[4]S24 1 SEGMENT_PIN 4 0 `E3190 1 SEGMENT_TYPE 1 4 ]
+[v _seg1 seg1 `S409  1 e 5 0 ]
+"36
+[v _seg1_en seg1_en `S24  1 e 1 0 ]
+"43
+[v _seg2_en seg2_en `S24  1 e 1 0 ]
+"50
+[v _n n `i  1 e 2 0 ]
 "10 D:\Interfacing Drivers\MCAL/GPIO/HAL_GPIO.c
 [v _TRIS_REG TRIS_REG `[5]*.39VEuc  1 e 10 0 ]
 "12
 [v _PORT_REG PORT_REG `[5]*.39VEuc  1 e 10 0 ]
 "14
 [v _LAT_REG LAT_REG `[5]*.39VEuc  1 e 10 0 ]
-"30 D:\Interfacing Drivers\Drivers_Main.c
+"52 D:\Interfacing Drivers\Drivers_Main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"50
+"65
+[v main@i i `i  1 a 2 16 ]
+"78
 } 0
-"67 D:\Interfacing Drivers\ECUAL/DC_Motor/ECU_DC_MOTOR.c
-[v _DC_MOTOR_STOP DC_MOTOR_STOP `(E3063  1 e 1 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 {
-"74
-[v DC_MOTOR_STOP@IN2 IN2 `E3067  1 a 1 9 ]
-"68
-[v DC_MOTOR_STOP@Retval Retval `E3063  1 a 1 10 ]
+"10
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+"34
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"41
+} 0
+"33 D:\Interfacing Drivers\ECUAL/7_Segments/ECU_7_Segments.c
+[v _SEGMENT_WRITE_NUMBER SEGMENT_WRITE_NUMBER `(E3063  1 e 1 0 ]
+{
+"39
+[v SEGMENT_WRITE_NUMBER@i i `i  1 a 2 13 ]
+"34
+[v SEGMENT_WRITE_NUMBER@Retval Retval `E3063  1 a 1 12 ]
 [s S24 . 1 `uc 1 PORT 1 0 :3:0 
 `uc 1 PIN 1 0 :3:3 
 `uc 1 DIRECTION 1 0 :1:6 
 `uc 1 LOGIC 1 0 :1:7 
 ]
-"67
-[s S366 . 2 `[2]S24 1 dc_motor_pin 2 0 ]
-[v DC_MOTOR_STOP@motor motor `*.30CS366  1 p 1 8 ]
-"79
+"33
+[s S409 . 5 `[4]S24 1 SEGMENT_PIN 4 0 `E3190 1 SEGMENT_TYPE 1 4 ]
+[v SEGMENT_WRITE_NUMBER@seg seg `*.30CS409  1 p 1 8 ]
+[v SEGMENT_WRITE_NUMBER@number number `Cuc  1 p 1 9 ]
+"44
 } 0
-"31
-[v _DC_MOTOR_ROTATE_CW DC_MOTOR_ROTATE_CW `(E3063  1 e 1 0 ]
-{
-"38
-[v DC_MOTOR_ROTATE_CW@IN2 IN2 `E3067  1 a 1 9 ]
-"32
-[v DC_MOTOR_ROTATE_CW@Retval Retval `E3063  1 a 1 10 ]
-[s S24 . 1 `uc 1 PORT 1 0 :3:0 
-`uc 1 PIN 1 0 :3:3 
-`uc 1 DIRECTION 1 0 :1:6 
-`uc 1 LOGIC 1 0 :1:7 
-]
-"31
-[s S366 . 2 `[2]S24 1 dc_motor_pin 2 0 ]
-[v DC_MOTOR_ROTATE_CW@motor motor `*.30CS366  1 p 1 8 ]
-"43
-} 0
-"49
-[v _DC_MOTOR_ROTATE_CCW DC_MOTOR_ROTATE_CCW `(E3063  1 e 1 0 ]
-{
-"56
-[v DC_MOTOR_ROTATE_CCW@IN2 IN2 `E3067  1 a 1 9 ]
-"50
-[v DC_MOTOR_ROTATE_CCW@Retval Retval `E3063  1 a 1 10 ]
-[s S24 . 1 `uc 1 PORT 1 0 :3:0 
-`uc 1 PIN 1 0 :3:3 
-`uc 1 DIRECTION 1 0 :1:6 
-`uc 1 LOGIC 1 0 :1:7 
-]
-"49
-[s S366 . 2 `[2]S24 1 dc_motor_pin 2 0 ]
-[v DC_MOTOR_ROTATE_CCW@motor motor `*.30CS366  1 p 1 8 ]
-"61
-} 0
-"52 D:\Interfacing Drivers\Drivers_Main.c
+"80 D:\Interfacing Drivers\Drivers_Main.c
 [v _Application_intialize Application_intialize `(v  1 e 1 0 ]
 {
-"55
+"85
 } 0
-"15 D:\Interfacing Drivers\ECUAL/DC_Motor/ECU_DC_MOTOR.c
-[v _DC_MOTOR_INITIALIZE DC_MOTOR_INITIALIZE `(E3063  1 e 1 0 ]
+"15 D:\Interfacing Drivers\ECUAL/7_Segments/ECU_7_Segments.c
+[v _SEGMENT_INITIALIZE SEGMENT_INITIALIZE `(E3063  1 e 1 0 ]
 {
+"21
+[v SEGMENT_INITIALIZE@i i `i  1 a 2 13 ]
 "16
-[v DC_MOTOR_INITIALIZE@Retval Retval `E3063  1 a 1 12 ]
+[v SEGMENT_INITIALIZE@Retval Retval `E3063  1 a 1 12 ]
 [s S24 . 1 `uc 1 PORT 1 0 :3:0 
 `uc 1 PIN 1 0 :3:3 
 `uc 1 DIRECTION 1 0 :1:6 
 `uc 1 LOGIC 1 0 :1:7 
 ]
 "15
-[s S366 . 2 `[2]S24 1 dc_motor_pin 2 0 ]
-[v DC_MOTOR_INITIALIZE@motor motor `*.30CS366  1 p 1 11 ]
-"25
+[s S409 . 5 `[4]S24 1 SEGMENT_PIN 4 0 `E3190 1 SEGMENT_TYPE 1 4 ]
+[v SEGMENT_INITIALIZE@seg seg `*.30CS409  1 p 1 11 ]
+"26
 } 0
 "156 D:\Interfacing Drivers\MCAL/GPIO/HAL_GPIO.c
 [v _GPIO_PIN_INITIALIZE GPIO_PIN_INITIALIZE `(E3063  1 e 1 0 ]

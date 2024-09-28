@@ -5,6 +5,10 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="ECUAL" displayName="ECUAL" projectFiles="true">
+        <logicalFolder name="7_Segments" displayName="7_Segments" projectFiles="true">
+          <itemPath>ECUAL/7_Segments/ECU_7_Segments_CFG.h</itemPath>
+          <itemPath>ECUAL/7_Segments/ECU_7_Segments.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="Button" displayName="Button" projectFiles="true">
           <itemPath>ECUAL/Button/ECU_Button.h</itemPath>
           <itemPath>ECUAL/Button/ECU_Button_CFG.h</itemPath>
@@ -47,6 +51,9 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="ECUAL" displayName="ECUAL" projectFiles="true">
+        <logicalFolder name="7_Segments" displayName="7_Segments" projectFiles="true">
+          <itemPath>ECUAL/7_Segments/ECU_7_Segments.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="Button" displayName="Button" projectFiles="true">
           <itemPath>ECUAL/Button/ECU_Button.c</itemPath>
         </logicalFolder>
