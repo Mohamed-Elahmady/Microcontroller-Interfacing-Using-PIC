@@ -5104,7 +5104,7 @@ unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
 # 15 "ECUAL/Button/../../MCAL/GPIO/../Compiler.h" 2
 # 16 "ECUAL/Button/../../MCAL/GPIO/../MCAL_STD_Types.h" 2
-# 47 "ECUAL/Button/../../MCAL/GPIO/../MCAL_STD_Types.h"
+# 48 "ECUAL/Button/../../MCAL/GPIO/../MCAL_STD_Types.h"
 typedef unsigned char uint8;
 typedef unsigned short uint16;
 typedef unsigned long uint32;
@@ -5114,7 +5114,7 @@ typedef signed short sint16;
 typedef signed long sint32;
 
 typedef float float32;
-# 117 "ECUAL/Button/../../MCAL/GPIO/../MCAL_STD_Types.h"
+# 118 "ECUAL/Button/../../MCAL/GPIO/../MCAL_STD_Types.h"
 typedef enum {
     E_NOT_OK = 0x00,
     E_OK = 0x01
@@ -5224,7 +5224,27 @@ Std_ReturnType BUTTON_READ_STATUS (const BUTTON_T *btn,BUTTON_STATE *btn_st){
         Retval = E_NOT_OK;
     }
     else{
-
+        LOGIC_T Btn_Log = GPIO_LOW;
+        Retval = GPIO_PIN_READ_LOGIC(&(btn->BUTTON_PIN),&Btn_Log);
+        if(BUTTON_ACTIVE_HIGH == btn->Button_connection){
+            if(GPIO_HIGH == Btn_Log){
+                *btn_st = BUTTON_PRESSED;
+            }
+            else{
+                *btn_st = BUTTON_RELEASED;
+            }
+        }
+        else if(BUTTON_ACTIVE_LOW == btn->Button_connection){
+            if(GPIO_HIGH == Btn_Log){
+                *btn_st = BUTTON_RELEASED;
+            }
+            else{
+                *btn_st = BUTTON_PRESSED;
+            }
+        }
+        else{
+            Retval = E_NOT_OK;
+        }
     }
     return Retval;
 }

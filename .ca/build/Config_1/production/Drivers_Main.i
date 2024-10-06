@@ -16,6 +16,8 @@
 
 # 1 "./Drivers_Main.h" 1
 # 15 "./Drivers_Main.h"
+# 1 "./ECUAL/ECU_INIT.h" 1
+# 15 "./ECUAL/ECU_INIT.h"
 # 1 "./ECUAL/LED/ECU_LED.h" 1
 # 15 "./ECUAL/LED/ECU_LED.h"
 # 1 "./ECUAL/LED/../../MCAL/GPIO/HAL_GPIO.h" 1
@@ -5106,7 +5108,7 @@ unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
 # 15 "./ECUAL/LED/../../MCAL/GPIO/../Compiler.h" 2
 # 16 "./ECUAL/LED/../../MCAL/GPIO/../MCAL_STD_Types.h" 2
-# 47 "./ECUAL/LED/../../MCAL/GPIO/../MCAL_STD_Types.h"
+# 48 "./ECUAL/LED/../../MCAL/GPIO/../MCAL_STD_Types.h"
 typedef unsigned char uint8;
 typedef unsigned short uint16;
 typedef unsigned long uint32;
@@ -5116,7 +5118,7 @@ typedef signed short sint16;
 typedef signed long sint32;
 
 typedef float float32;
-# 117 "./ECUAL/LED/../../MCAL/GPIO/../MCAL_STD_Types.h"
+# 118 "./ECUAL/LED/../../MCAL/GPIO/../MCAL_STD_Types.h"
 typedef enum {
     E_NOT_OK = 0x00,
     E_OK = 0x01
@@ -5204,7 +5206,7 @@ Std_ReturnType LED_INITIALIZE (const LED_T *led);
 Std_ReturnType LED_Turn_ON(const LED_T *led);
 Std_ReturnType LED_Turn_OFF(const LED_T *led);
 Std_ReturnType LED_TOGGLE(const LED_T *led);
-# 15 "./Drivers_Main.h" 2
+# 15 "./ECUAL/ECU_INIT.h" 2
 
 # 1 "./ECUAL/Button/ECU_Button.h" 1
 # 16 "./ECUAL/Button/ECU_Button.h"
@@ -5231,58 +5233,103 @@ typedef struct {
 
 Std_ReturnType BUTTON_INITIALIZE (const BUTTON_T *btn);
 Std_ReturnType BUTTON_READ_STATUS (const BUTTON_T *btn,BUTTON_STATE *btn_st);
-# 16 "./Drivers_Main.h" 2
-# 26 "./Drivers_Main.h"
+# 16 "./ECUAL/ECU_INIT.h" 2
+
+# 1 "./ECUAL/Relay/ECU_RELAY.h" 1
+# 16 "./ECUAL/Relay/ECU_RELAY.h"
+# 1 "./ECUAL/Relay/ECU_RELAY_CFG.h" 1
+# 16 "./ECUAL/Relay/ECU_RELAY.h" 2
+# 28 "./ECUAL/Relay/ECU_RELAY.h"
+typedef enum {
+    RELAY_OFF = 0,
+    RELAY_ON
+}RELAY_STATUS;
+
+typedef struct {
+    uint8 PORT :3;
+    uint8 PIN :3;
+    uint8 RELAY_LOGIC :1;
+    uint8 RESERVED :1;
+}RELAY_T;
+
+
+
+Std_ReturnType RELAY_INITIALIZE(const RELAY_T *relay);
+Std_ReturnType RELAY_TURN_ON(const RELAY_T *relay);
+Std_ReturnType RELAY_TURN_OFF(const RELAY_T *relay);
+# 17 "./ECUAL/ECU_INIT.h" 2
+
+# 1 "./ECUAL/DC_Motor/ECU_DC_MOTOR.h" 1
+# 16 "./ECUAL/DC_Motor/ECU_DC_MOTOR.h"
+# 1 "./ECUAL/DC_Motor/ECU_DC_MOTOR_CFG.h" 1
+# 16 "./ECUAL/DC_Motor/ECU_DC_MOTOR.h" 2
+# 29 "./ECUAL/DC_Motor/ECU_DC_MOTOR.h"
+typedef struct{
+    PIN_CONFIG_T dc_motor_pin[2];
+}DC_MOTOR_T;
+
+
+
+Std_ReturnType DC_MOTOR_INITIALIZE(const DC_MOTOR_T *motor);
+Std_ReturnType DC_MOTOR_ROTATE_CW(const DC_MOTOR_T *motor);
+Std_ReturnType DC_MOTOR_ROTATE_CCW(const DC_MOTOR_T *motor);
+Std_ReturnType DC_MOTOR_STOP(const DC_MOTOR_T *motor);
+# 18 "./ECUAL/ECU_INIT.h" 2
+
+# 1 "./ECUAL/7_Segments/ECU_7_Segments.h" 1
+# 16 "./ECUAL/7_Segments/ECU_7_Segments.h"
+# 1 "./ECUAL/7_Segments/ECU_7_Segments_CFG.h" 1
+# 16 "./ECUAL/7_Segments/ECU_7_Segments.h" 2
+# 34 "./ECUAL/7_Segments/ECU_7_Segments.h"
+typedef enum {
+    SEGMENT_COMMON_ANODE = 0,
+    SEGMENT_COMMON_CATHODE
+}SEGMENT_TYPE_T;
+
+typedef struct{
+    PIN_CONFIG_T SEGMENT_PIN[4];
+    SEGMENT_TYPE_T SEGMENT_TYPE;
+}SEGMENT_T;
+
+
+
+Std_ReturnType SEGMENT_INITIALIZE (const SEGMENT_T *seg);
+Std_ReturnType SEGMENT_WRITE_NUMBER (const SEGMENT_T *seg , const uint8 number);
+# 19 "./ECUAL/ECU_INIT.h" 2
+
+# 1 "./ECUAL/Keypad/ECU_KEYPAD.h" 1
+# 16 "./ECUAL/Keypad/ECU_KEYPAD.h"
+# 1 "./ECUAL/Keypad/ECU_KEYPAD_CFG.h" 1
+# 16 "./ECUAL/Keypad/ECU_KEYPAD.h" 2
+# 29 "./ECUAL/Keypad/ECU_KEYPAD.h"
+typedef struct{
+    PIN_CONFIG_T KEYPAD_ROWS_PINS[0x04];
+    PIN_CONFIG_T KEYPAD_COLUMNS_PINS[0x04];
+}KEYPAD_T;
+
+
+
+Std_ReturnType KEYPAD_INITIALIZE(const KEYPAD_T *keypad);
+Std_ReturnType KEYPAD_GET_VALUE(const KEYPAD_T *keypad , uint8 *value);
+# 20 "./ECUAL/ECU_INIT.h" 2
+# 36 "./ECUAL/ECU_INIT.h"
+void ECU_LAYER_INITIALIZE(void);
+# 15 "./Drivers_Main.h" 2
+# 25 "./Drivers_Main.h"
 void Application_intialize(void);
 # 8 "Drivers_Main.c" 2
 
-
-
-LED_T led1 = {
-    .PORT = PORTC_INDEX,
-    .PIN = GPIO_PIN0,
-    .LOGIC = GPIO_LOW
-};
-LED_T led2 = {
-    .PORT = PORTC_INDEX,
-    .PIN = GPIO_PIN1,
-    .LOGIC = GPIO_LOW
-};
-
-BUTTON_T BTN1 = {
-    .BUTTON_PIN.PORT = PORTD_INDEX,
-    .BUTTON_PIN.PIN = GPIO_PIN0,
-    .BUTTON_PIN.DIRECTION = GPIO_DIRECTION_INPUT,
-    .BUTTON_PIN.LOGIC = GPIO_LOW,
-    .Button_connection = BUTTON_ACTIVE_HIGH,
-    .Button_st = BUTTON_RELEASED
-};
-
-BUTTON_T BTN2 = {
-    .BUTTON_PIN.PORT = PORTD_INDEX,
-    .BUTTON_PIN.PIN = GPIO_PIN1,
-    .BUTTON_PIN.DIRECTION = GPIO_DIRECTION_INPUT,
-    .BUTTON_PIN.LOGIC = GPIO_HIGH,
-    .Button_connection = BUTTON_ACTIVE_LOW,
-    .Button_st = BUTTON_RELEASED
-};
 
 Std_ReturnType Ret = E_NOT_OK;
 
 int main() {
     Application_intialize();
-
     while(1){
-        Ret = LED_Turn_ON(&led1);
-        _delay((unsigned long)((250)*(4000000/4000.0)));
-        Ret = LED_Turn_OFF(&led1);
+
     }
     return (0);
 }
 
 void Application_intialize(void){
-    Ret = LED_INITIALIZE(&led1);
-    Ret = LED_INITIALIZE(&led2);
-    Ret = BUTTON_INITIALIZE(&BTN1);
-    Ret = BUTTON_INITIALIZE(&BTN2);
+    ECU_LAYER_INITIALIZE();
 }

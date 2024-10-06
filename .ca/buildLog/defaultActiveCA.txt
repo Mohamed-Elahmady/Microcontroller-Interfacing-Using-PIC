@@ -3,24 +3,31 @@ make[1]: Entering directory 'D:/Interfacing Drivers'
 rm -f  -r .ca/build/defaultActiveCA/production
 rm -f  -r .ca/dist/defaultActiveCA/production
 make[1]: Leaving directory 'D:/Interfacing Drivers'
-[32mCLEAN SUCCESSFUL (total time: 104ms)[0m
+[32mCLEAN SUCCESSFUL (total time: 103ms)[0m
 make -f nbproject/Makefile-defaultActiveCA.mk SUBPROJECTS= .build-conf
 make  -f nbproject/Makefile-defaultActiveCA.mk .ca/dist/defaultActiveCA/production/Interfacing_Drivers.production.hex
 make[2]: Entering directory 'D:/Interfacing Drivers'
-"C:\Program Files\Microchip\xc8\v2.46\bin\xc8-cc.exe"  -mcpu=18F46K20 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_defaultActiveCA=defaultActiveCA  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits   -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o .ca/build/defaultActiveCA/production/MCAL/Device_Config.p1 MCAL/Device_Config.c 
-make[2]: Leaving directory 'D:/Interfacing Drivers'
-make[2]: Entering directory 'D:/Interfacing Drivers'
-"C:\Program Files\Microchip\xc8\v2.46\bin\xc8-cc.exe"  -mcpu=18F46K20 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_defaultActiveCA=defaultActiveCA  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits   -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o .ca/build/defaultActiveCA/production/ECUAL/LED/ECU_LED.p1 ECUAL/LED/ECU_LED.c 
-In file included from ECUAL/LED/ECU_LED.c:8:
-In file included from ECUAL/LED/ECU_LED.h:15:
-In file included from ECUAL/LED/../../MCAL/GPIO/HAL_GPIO.h:15:
+"C:\Program Files\Microchip\xc8\v2.46\bin\xc8-cc.exe"  -mcpu=18F46K20 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_defaultActiveCA=defaultActiveCA  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/defaultActiveCA/production/ECUAL/7_Segments/ECU_7_Segments.p1 ECUAL/7_Segments/ECU_7_Segments.c 
+In file included from ECUAL/7_Segments/ECU_7_Segments.c:8:
+In file included from ECUAL/7_Segments/ECU_7_Segments.h:15:
+In file included from ECUAL/7_Segments/../../MCAL/GPIO/HAL_GPIO.h:15:
 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h:41:2: warning: Header file pic18f46k20.h included directly. Use #include <xc.h> instead. [-W#warnings]
 #warning Header file pic18f46k20.h included directly. Use #include <xc.h> instead.
  ^
 1 warning generated.
 make[2]: Leaving directory 'D:/Interfacing Drivers'
 make[2]: Entering directory 'D:/Interfacing Drivers'
-"C:\Program Files\Microchip\xc8\v2.46\bin\xc8-cc.exe"  -mcpu=18F46K20 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_defaultActiveCA=defaultActiveCA  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits   -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o .ca/build/defaultActiveCA/production/ECUAL/Button/ECU_Button.p1 ECUAL/Button/ECU_Button.c 
+"C:\Program Files\Microchip\xc8\v2.46\bin\xc8-cc.exe"  -mcpu=18F46K20 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_defaultActiveCA=defaultActiveCA  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/defaultActiveCA/production/ECUAL/Relay/ECU_RELAY.p1 ECUAL/Relay/ECU_RELAY.c 
+In file included from ECUAL/Relay/ECU_RELAY.c:9:
+In file included from ECUAL/Relay/ECU_RELAY.h:15:
+In file included from ECUAL/Relay/../../MCAL/GPIO/HAL_GPIO.h:15:
+C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h:41:2: warning: Header file pic18f46k20.h included directly. Use #include <xc.h> instead. [-W#warnings]
+#warning Header file pic18f46k20.h included directly. Use #include <xc.h> instead.
+ ^
+1 warning generated.
+make[2]: Leaving directory 'D:/Interfacing Drivers'
+make[2]: Entering directory 'D:/Interfacing Drivers'
+"C:\Program Files\Microchip\xc8\v2.46\bin\xc8-cc.exe"  -mcpu=18F46K20 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_defaultActiveCA=defaultActiveCA  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/defaultActiveCA/production/ECUAL/Button/ECU_Button.p1 ECUAL/Button/ECU_Button.c 
 In file included from ECUAL/Button/ECU_Button.c:8:
 In file included from ECUAL/Button/ECU_Button.h:15:
 In file included from ECUAL/Button/../../MCAL/GPIO/HAL_GPIO.h:15:
@@ -30,7 +37,17 @@ C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc
 1 warning generated.
 make[2]: Leaving directory 'D:/Interfacing Drivers'
 make[2]: Entering directory 'D:/Interfacing Drivers'
-"C:\Program Files\Microchip\xc8\v2.46\bin\xc8-cc.exe"  -mcpu=18F46K20 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_defaultActiveCA=defaultActiveCA  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits   -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o .ca/build/defaultActiveCA/production/MCAL/GPIO/HAL_GPIO.p1 MCAL/GPIO/HAL_GPIO.c 
+"C:\Program Files\Microchip\xc8\v2.46\bin\xc8-cc.exe"  -mcpu=18F46K20 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_defaultActiveCA=defaultActiveCA  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/defaultActiveCA/production/ECUAL/LED/ECU_LED.p1 ECUAL/LED/ECU_LED.c 
+In file included from ECUAL/LED/ECU_LED.c:8:
+In file included from ECUAL/LED/ECU_LED.h:15:
+In file included from ECUAL/LED/../../MCAL/GPIO/HAL_GPIO.h:15:
+C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h:41:2: warning: Header file pic18f46k20.h included directly. Use #include <xc.h> instead. [-W#warnings]
+#warning Header file pic18f46k20.h included directly. Use #include <xc.h> instead.
+ ^
+1 warning generated.
+make[2]: Leaving directory 'D:/Interfacing Drivers'
+make[2]: Entering directory 'D:/Interfacing Drivers'
+"C:\Program Files\Microchip\xc8\v2.46\bin\xc8-cc.exe"  -mcpu=18F46K20 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_defaultActiveCA=defaultActiveCA  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/defaultActiveCA/production/MCAL/GPIO/HAL_GPIO.p1 MCAL/GPIO/HAL_GPIO.c 
 In file included from MCAL/GPIO/HAL_GPIO.c:7:
 In file included from MCAL/GPIO/HAL_GPIO.h:15:
 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h:41:2: warning: Header file pic18f46k20.h included directly. Use #include <xc.h> instead. [-W#warnings]
@@ -39,9 +56,33 @@ C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc
 1 warning generated.
 make[2]: Leaving directory 'D:/Interfacing Drivers'
 make[2]: Entering directory 'D:/Interfacing Drivers'
-"C:\Program Files\Microchip\xc8\v2.46\bin\xc8-cc.exe"  -mcpu=18F46K20 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_defaultActiveCA=defaultActiveCA  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits   -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o .ca/build/defaultActiveCA/production/Drivers_Main.p1 Drivers_Main.c 
+"C:\Program Files\Microchip\xc8\v2.46\bin\xc8-cc.exe"  -mcpu=18F46K20 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_defaultActiveCA=defaultActiveCA  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/defaultActiveCA/production/ECUAL/DC_Motor/ECU_DC_MOTOR.p1 ECUAL/DC_Motor/ECU_DC_MOTOR.c 
+In file included from ECUAL/DC_Motor/ECU_DC_MOTOR.c:8:
+In file included from ECUAL/DC_Motor/ECU_DC_MOTOR.h:15:
+In file included from ECUAL/DC_Motor/../../MCAL/GPIO/HAL_GPIO.h:15:
+C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h:41:2: warning: Header file pic18f46k20.h included directly. Use #include <xc.h> instead. [-W#warnings]
+#warning Header file pic18f46k20.h included directly. Use #include <xc.h> instead.
+ ^
+1 warning generated.
+make[2]: Leaving directory 'D:/Interfacing Drivers'
+make[2]: Entering directory 'D:/Interfacing Drivers'
+"C:\Program Files\Microchip\xc8\v2.46\bin\xc8-cc.exe"  -mcpu=18F46K20 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_defaultActiveCA=defaultActiveCA  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/defaultActiveCA/production/MCAL/Device_Config.p1 MCAL/Device_Config.c 
+make[2]: Leaving directory 'D:/Interfacing Drivers'
+make[2]: Entering directory 'D:/Interfacing Drivers'
+"C:\Program Files\Microchip\xc8\v2.46\bin\xc8-cc.exe"  -mcpu=18F46K20 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_defaultActiveCA=defaultActiveCA  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/defaultActiveCA/production/ECUAL/Keypad/ECU_KEYPAD.p1 ECUAL/Keypad/ECU_KEYPAD.c 
+In file included from ECUAL/Keypad/ECU_KEYPAD.c:8:
+In file included from ECUAL/Keypad/ECU_KEYPAD.h:15:
+In file included from ECUAL/Keypad/../../MCAL/GPIO/HAL_GPIO.h:15:
+C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h:41:2: warning: Header file pic18f46k20.h included directly. Use #include <xc.h> instead. [-W#warnings]
+#warning Header file pic18f46k20.h included directly. Use #include <xc.h> instead.
+ ^
+1 warning generated.
+make[2]: Leaving directory 'D:/Interfacing Drivers'
+make[2]: Entering directory 'D:/Interfacing Drivers'
+"C:\Program Files\Microchip\xc8\v2.46\bin\xc8-cc.exe"  -mcpu=18F46K20 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_defaultActiveCA=defaultActiveCA  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/defaultActiveCA/production/Drivers_Main.p1 Drivers_Main.c 
 In file included from Drivers_Main.c:8:
 In file included from ./Drivers_Main.h:15:
+In file included from ./ECUAL/ECU_INIT.h:15:
 In file included from ./ECUAL/LED/ECU_LED.h:15:
 In file included from ./ECUAL/LED/../../MCAL/GPIO/HAL_GPIO.h:15:
 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h:41:2: warning: Header file pic18f46k20.h included directly. Use #include <xc.h> instead. [-W#warnings]
@@ -50,8 +91,33 @@ C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc
 1 warning generated.
 make[2]: Leaving directory 'D:/Interfacing Drivers'
 make[2]: Entering directory 'D:/Interfacing Drivers'
-"C:\Program Files\Microchip\xc8\v2.46\bin\xc8-cc.exe"  -mcpu=18F46K20 -Wl,-Map=.ca/dist/defaultActiveCA/production/Interfacing_Drivers.production.map  -DXPRJ_defaultActiveCA=defaultActiveCA  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits -std=c99 -gcoff -mstack=compiled:auto:auto:auto      -Wl,--memorysummary,.ca/dist/defaultActiveCA/production/memoryfile.xml -o .ca/dist/defaultActiveCA/production/Interfacing_Drivers.production.elf  .ca/build/defaultActiveCA/production/ECUAL/LED/ECU_LED.p1 .ca/build/defaultActiveCA/production/MCAL/GPIO/HAL_GPIO.p1 .ca/build/defaultActiveCA/production/MCAL/Device_Config.p1 .ca/build/defaultActiveCA/production/Drivers_Main.p1 .ca/build/defaultActiveCA/production/ECUAL/Button/ECU_Button.p1     
+"C:\Program Files\Microchip\xc8\v2.46\bin\xc8-cc.exe"  -mcpu=18F46K20 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_defaultActiveCA=defaultActiveCA  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o .ca/build/defaultActiveCA/production/ECUAL/ECU_INIT.p1 ECUAL/ECU_INIT.c 
+In file included from ECUAL/ECU_INIT.c:8:
+In file included from ECUAL/ECU_INIT.h:15:
+In file included from ECUAL/LED/ECU_LED.h:15:
+In file included from ECUAL/LED/../../MCAL/GPIO/HAL_GPIO.h:15:
+C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h:41:2: warning: Header file pic18f46k20.h included directly. Use #include <xc.h> instead. [-W#warnings]
+#warning Header file pic18f46k20.h included directly. Use #include <xc.h> instead.
+ ^
+1 warning generated.
+make[2]: Leaving directory 'D:/Interfacing Drivers'
+make[2]: Entering directory 'D:/Interfacing Drivers'
+"C:\Program Files\Microchip\xc8\v2.46\bin\xc8-cc.exe"  -mcpu=18F46K20 -Wl,-Map=.ca/dist/defaultActiveCA/production/Interfacing_Drivers.production.map  -DXPRJ_defaultActiveCA=defaultActiveCA  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto      -Wl,--memorysummary,.ca/dist/defaultActiveCA/production/memoryfile.xml -o .ca/dist/defaultActiveCA/production/Interfacing_Drivers.production.elf  .ca/build/defaultActiveCA/production/ECUAL/7_Segments/ECU_7_Segments.p1 .ca/build/defaultActiveCA/production/ECUAL/Button/ECU_Button.p1 .ca/build/defaultActiveCA/production/ECUAL/DC_Motor/ECU_DC_MOTOR.p1 .ca/build/defaultActiveCA/production/ECUAL/LED/ECU_LED.p1 .ca/build/defaultActiveCA/production/ECUAL/Relay/ECU_RELAY.p1 .ca/build/defaultActiveCA/production/MCAL/GPIO/HAL_GPIO.p1 .ca/build/defaultActiveCA/production/MCAL/Device_Config.p1 .ca/build/defaultActiveCA/production/Drivers_Main.p1 .ca/build/defaultActiveCA/production/ECUAL/Keypad/ECU_KEYPAD.p1 .ca/build/defaultActiveCA/production/ECUAL/ECU_INIT.p1     
+ECUAL/7_Segments/ECU_7_Segments.c:15:: warning: (520) function "_SEGMENT_INITIALIZE" is never called
+ECUAL/7_Segments/ECU_7_Segments.c:33:: warning: (520) function "_SEGMENT_WRITE_NUMBER" is never called
+ECUAL/Button/ECU_Button.c:17:: warning: (520) function "_BUTTON_INITIALIZE" is never called
+ECUAL/Button/ECU_Button.c:36:: warning: (520) function "_BUTTON_READ_STATUS" is never called
+ECUAL/DC_Motor/ECU_DC_MOTOR.c:15:: warning: (520) function "_DC_MOTOR_INITIALIZE" is never called
+ECUAL/DC_Motor/ECU_DC_MOTOR.c:31:: warning: (520) function "_DC_MOTOR_ROTATE_CW" is never called
+ECUAL/DC_Motor/ECU_DC_MOTOR.c:49:: warning: (520) function "_DC_MOTOR_ROTATE_CCW" is never called
+ECUAL/DC_Motor/ECU_DC_MOTOR.c:67:: warning: (520) function "_DC_MOTOR_STOP" is never called
+ECUAL/LED/ECU_LED.c:18:: warning: (520) function "_LED_INITIALIZE" is never called
+ECUAL/LED/ECU_LED.c:44:: warning: (520) function "_LED_Turn_ON" is never called
+ECUAL/LED/ECU_LED.c:70:: warning: (520) function "_LED_Turn_OFF" is never called
 ECUAL/LED/ECU_LED.c:95:: warning: (520) function "_LED_TOGGLE" is never called
+ECUAL/Relay/ECU_RELAY.c:19:: warning: (520) function "_RELAY_INITIALIZE" is never called
+ECUAL/Relay/ECU_RELAY.c:41:: warning: (520) function "_RELAY_TURN_ON" is never called
+ECUAL/Relay/ECU_RELAY.c:64:: warning: (520) function "_RELAY_TURN_OFF" is never called
 MCAL/GPIO/HAL_GPIO.c:62:: warning: (520) function "_GPIO_PIN_GET_DIRECTION_STATUS" is never called
 MCAL/GPIO/HAL_GPIO.c:116:: warning: (520) function "_GPIO_PIN_READ_LOGIC" is never called
 MCAL/GPIO/HAL_GPIO.c:136:: warning: (520) function "_GPIO_PIN_TOGGLE_LOGIC" is never called
@@ -60,15 +126,18 @@ MCAL/GPIO/HAL_GPIO.c:203:: warning: (520) function "_GPIO_PORT_GET_DIRECTION_STA
 MCAL/GPIO/HAL_GPIO.c:223:: warning: (520) function "_GPIO_PORT_WRITE_LOGIC" is never called
 MCAL/GPIO/HAL_GPIO.c:244:: warning: (520) function "_GPIO_PORT_READ_LOGIC" is never called
 MCAL/GPIO/HAL_GPIO.c:263:: warning: (520) function "_GPIO_PORT_TOGGLE_LOGIC" is never called
-ECUAL/Button/ECU_Button.c:36:: warning: (520) function "_BUTTON_READ_STATUS" is never called
+ECUAL/Keypad/ECU_KEYPAD.c:43:: warning: (520) function "_KEYPAD_GET_VALUE" is never called
+ECUAL/Button/ECU_Button.c:46:: advisory: (1498) pointer (BUTTON_READ_STATUS@btn_st) in expression may have no targets
+ECUAL/Button/ECU_Button.c:49:: advisory: (1498) pointer (BUTTON_READ_STATUS@btn_st) in expression may have no targets
+ECUAL/Button/ECU_Button.c:54:: advisory: (1498) pointer (BUTTON_READ_STATUS@btn_st) in expression may have no targets
+ECUAL/Button/ECU_Button.c:57:: advisory: (1498) pointer (BUTTON_READ_STATUS@btn_st) in expression may have no targets
 MCAL/GPIO/HAL_GPIO.c:68:: advisory: (1498) pointer (GPIO_PIN_GET_DIRECTION_STATUS@DIRECTION_STATUS) in expression may have no targets
-MCAL/GPIO/HAL_GPIO.c:122:: advisory: (1498) pointer (GPIO_PIN_READ_LOGIC@LOGIC) in expression may have no targets
 MCAL/GPIO/HAL_GPIO.c:209:: advisory: (1498) pointer (GPIO_PORT_GET_DIRECTION_STATUS@DIRECTION_STATUS) in expression may have no targets
 MCAL/GPIO/HAL_GPIO.c:250:: advisory: (1498) pointer (GPIO_PORT_READ_LOGIC@LOGIC) in expression may have no targets
 
 Memory Summary:
-    Program space        used   4C6h (  1222) of 10000h bytes   (  1.9%)
-    Data space           used    3Ch (    60) of   F60h bytes   (  1.5%)
+    Program space        used   396h (   918) of 10000h bytes   (  1.4%)
+    Data space           used    3Fh (    63) of   F60h bytes   (  1.6%)
     Configuration bits   used     7h (     7) of     7h words   (100.0%)
     EEPROM space         used     0h (     0) of   400h bytes   (  0.0%)
     ID Location space    used     0h (     0) of     8h bytes   (  0.0%)

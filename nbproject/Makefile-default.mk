@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=ECUAL/Button/ECU_Button.c ECUAL/DC_Motor/ECU_DC_MOTOR.c ECUAL/LED/ECU_LED.c ECUAL/Relay/ECU_RELAY.c MCAL/GPIO/HAL_GPIO.c MCAL/Device_Config.c Drivers_Main.c ECUAL/7_Segments/ECU_7_Segments.c
+SOURCEFILES_QUOTED_IF_SPACED=ECUAL/7_Segments/ECU_7_Segments.c ECUAL/Button/ECU_Button.c ECUAL/DC_Motor/ECU_DC_MOTOR.c ECUAL/Keypad/ECU_KEYPAD.c ECUAL/LED/ECU_LED.c ECUAL/Relay/ECU_RELAY.c ECUAL/ECU_INIT.c MCAL/GPIO/HAL_GPIO.c MCAL/Device_Config.c Drivers_Main.c ECUAL/CHR_LCD/ECU_CHR_LCD.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ECUAL/Button/ECU_Button.p1 ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.p1 ${OBJECTDIR}/ECUAL/LED/ECU_LED.p1 ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1 ${OBJECTDIR}/MCAL/GPIO/HAL_GPIO.p1 ${OBJECTDIR}/MCAL/Device_Config.p1 ${OBJECTDIR}/Drivers_Main.p1 ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/ECUAL/Button/ECU_Button.p1.d ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.p1.d ${OBJECTDIR}/ECUAL/LED/ECU_LED.p1.d ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1.d ${OBJECTDIR}/MCAL/GPIO/HAL_GPIO.p1.d ${OBJECTDIR}/MCAL/Device_Config.p1.d ${OBJECTDIR}/Drivers_Main.p1.d ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1 ${OBJECTDIR}/ECUAL/Button/ECU_Button.p1 ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.p1 ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1 ${OBJECTDIR}/ECUAL/LED/ECU_LED.p1 ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1 ${OBJECTDIR}/ECUAL/ECU_INIT.p1 ${OBJECTDIR}/MCAL/GPIO/HAL_GPIO.p1 ${OBJECTDIR}/MCAL/Device_Config.p1 ${OBJECTDIR}/Drivers_Main.p1 ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1.d ${OBJECTDIR}/ECUAL/Button/ECU_Button.p1.d ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.p1.d ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1.d ${OBJECTDIR}/ECUAL/LED/ECU_LED.p1.d ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1.d ${OBJECTDIR}/ECUAL/ECU_INIT.p1.d ${OBJECTDIR}/MCAL/GPIO/HAL_GPIO.p1.d ${OBJECTDIR}/MCAL/Device_Config.p1.d ${OBJECTDIR}/Drivers_Main.p1.d ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/ECUAL/Button/ECU_Button.p1 ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.p1 ${OBJECTDIR}/ECUAL/LED/ECU_LED.p1 ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1 ${OBJECTDIR}/MCAL/GPIO/HAL_GPIO.p1 ${OBJECTDIR}/MCAL/Device_Config.p1 ${OBJECTDIR}/Drivers_Main.p1 ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1
+OBJECTFILES=${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1 ${OBJECTDIR}/ECUAL/Button/ECU_Button.p1 ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.p1 ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1 ${OBJECTDIR}/ECUAL/LED/ECU_LED.p1 ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1 ${OBJECTDIR}/ECUAL/ECU_INIT.p1 ${OBJECTDIR}/MCAL/GPIO/HAL_GPIO.p1 ${OBJECTDIR}/MCAL/Device_Config.p1 ${OBJECTDIR}/Drivers_Main.p1 ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1
 
 # Source Files
-SOURCEFILES=ECUAL/Button/ECU_Button.c ECUAL/DC_Motor/ECU_DC_MOTOR.c ECUAL/LED/ECU_LED.c ECUAL/Relay/ECU_RELAY.c MCAL/GPIO/HAL_GPIO.c MCAL/Device_Config.c Drivers_Main.c ECUAL/7_Segments/ECU_7_Segments.c
+SOURCEFILES=ECUAL/7_Segments/ECU_7_Segments.c ECUAL/Button/ECU_Button.c ECUAL/DC_Motor/ECU_DC_MOTOR.c ECUAL/Keypad/ECU_KEYPAD.c ECUAL/LED/ECU_LED.c ECUAL/Relay/ECU_RELAY.c ECUAL/ECU_INIT.c MCAL/GPIO/HAL_GPIO.c MCAL/Device_Config.c Drivers_Main.c ECUAL/CHR_LCD/ECU_CHR_LCD.c
 
 
 
@@ -88,6 +88,14 @@ MP_PROCESSOR_OPTION=18F46K20
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1: ECUAL/7_Segments/ECU_7_Segments.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/ECUAL/7_Segments" 
+	@${RM} ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1.d 
+	@${RM} ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1 ECUAL/7_Segments/ECU_7_Segments.c 
+	@-${MV} ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.d ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/ECUAL/Button/ECU_Button.p1: ECUAL/Button/ECU_Button.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/ECUAL/Button" 
 	@${RM} ${OBJECTDIR}/ECUAL/Button/ECU_Button.p1.d 
@@ -104,6 +112,14 @@ ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.p1: ECUAL/DC_Motor/ECU_DC_MOTOR.c  nbpr
 	@-${MV} ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.d ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1: ECUAL/Keypad/ECU_KEYPAD.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/ECUAL/Keypad" 
+	@${RM} ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1.d 
+	@${RM} ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1 ECUAL/Keypad/ECU_KEYPAD.c 
+	@-${MV} ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.d ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/ECUAL/LED/ECU_LED.p1: ECUAL/LED/ECU_LED.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/ECUAL/LED" 
 	@${RM} ${OBJECTDIR}/ECUAL/LED/ECU_LED.p1.d 
@@ -119,6 +135,14 @@ ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1: ECUAL/Relay/ECU_RELAY.c  nbproject/Makefi
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1 ECUAL/Relay/ECU_RELAY.c 
 	@-${MV} ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.d ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/ECUAL/ECU_INIT.p1: ECUAL/ECU_INIT.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/ECUAL" 
+	@${RM} ${OBJECTDIR}/ECUAL/ECU_INIT.p1.d 
+	@${RM} ${OBJECTDIR}/ECUAL/ECU_INIT.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECUAL/ECU_INIT.p1 ECUAL/ECU_INIT.c 
+	@-${MV} ${OBJECTDIR}/ECUAL/ECU_INIT.d ${OBJECTDIR}/ECUAL/ECU_INIT.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ECUAL/ECU_INIT.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/MCAL/GPIO/HAL_GPIO.p1: MCAL/GPIO/HAL_GPIO.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/MCAL/GPIO" 
@@ -144,15 +168,23 @@ ${OBJECTDIR}/Drivers_Main.p1: Drivers_Main.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/Drivers_Main.d ${OBJECTDIR}/Drivers_Main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Drivers_Main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1: ECUAL/CHR_LCD/ECU_CHR_LCD.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/ECUAL/CHR_LCD" 
+	@${RM} ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1.d 
+	@${RM} ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1 ECUAL/CHR_LCD/ECU_CHR_LCD.c 
+	@-${MV} ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.d ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+else
 ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1: ECUAL/7_Segments/ECU_7_Segments.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/ECUAL/7_Segments" 
 	@${RM} ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1.d 
 	@${RM} ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1 ECUAL/7_Segments/ECU_7_Segments.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1 ECUAL/7_Segments/ECU_7_Segments.c 
 	@-${MV} ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.d ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-else
 ${OBJECTDIR}/ECUAL/Button/ECU_Button.p1: ECUAL/Button/ECU_Button.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/ECUAL/Button" 
 	@${RM} ${OBJECTDIR}/ECUAL/Button/ECU_Button.p1.d 
@@ -169,6 +201,14 @@ ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.p1: ECUAL/DC_Motor/ECU_DC_MOTOR.c  nbpr
 	@-${MV} ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.d ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1: ECUAL/Keypad/ECU_KEYPAD.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/ECUAL/Keypad" 
+	@${RM} ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1.d 
+	@${RM} ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1 ECUAL/Keypad/ECU_KEYPAD.c 
+	@-${MV} ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.d ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/ECUAL/LED/ECU_LED.p1: ECUAL/LED/ECU_LED.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/ECUAL/LED" 
 	@${RM} ${OBJECTDIR}/ECUAL/LED/ECU_LED.p1.d 
@@ -184,6 +224,14 @@ ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1: ECUAL/Relay/ECU_RELAY.c  nbproject/Makefi
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1 ECUAL/Relay/ECU_RELAY.c 
 	@-${MV} ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.d ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/ECUAL/ECU_INIT.p1: ECUAL/ECU_INIT.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/ECUAL" 
+	@${RM} ${OBJECTDIR}/ECUAL/ECU_INIT.p1.d 
+	@${RM} ${OBJECTDIR}/ECUAL/ECU_INIT.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECUAL/ECU_INIT.p1 ECUAL/ECU_INIT.c 
+	@-${MV} ${OBJECTDIR}/ECUAL/ECU_INIT.d ${OBJECTDIR}/ECUAL/ECU_INIT.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ECUAL/ECU_INIT.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/MCAL/GPIO/HAL_GPIO.p1: MCAL/GPIO/HAL_GPIO.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/MCAL/GPIO" 
@@ -209,13 +257,13 @@ ${OBJECTDIR}/Drivers_Main.p1: Drivers_Main.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/Drivers_Main.d ${OBJECTDIR}/Drivers_Main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Drivers_Main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1: ECUAL/7_Segments/ECU_7_Segments.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/ECUAL/7_Segments" 
-	@${RM} ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1.d 
-	@${RM} ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1 ECUAL/7_Segments/ECU_7_Segments.c 
-	@-${MV} ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.d ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1: ECUAL/CHR_LCD/ECU_CHR_LCD.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/ECUAL/CHR_LCD" 
+	@${RM} ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1.d 
+	@${RM} ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1 ECUAL/CHR_LCD/ECU_CHR_LCD.c 
+	@-${MV} ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.d ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

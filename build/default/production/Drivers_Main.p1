@@ -1,47 +1,35 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"69 ./ECUAL/Keypad/../../MCAL/GPIO/HAL_GPIO.h
+[s S305 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S305 . PORT PIN DIRECTION LOGIC ]
+"29 ./ECUAL/Keypad/ECU_KEYPAD.h
+[; ;./ECUAL/Keypad/ECU_KEYPAD.h: 29: typedef struct{
+[s S311 `S305 -> 4 `i `S305 -> 4 `i ]
+[n S311 . KEYPAD_ROWS_PINS KEYPAD_COLUMNS_PINS ]
+"30 ./ECUAL/LED/ECU_LED.h
+[; ;./ECUAL/LED/ECU_LED.h: 30: typedef struct{
+[s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S306 . PORT PIN LOGIC reserved ]
 "10 Drivers_Main.c
 [; ;Drivers_Main.c: 10: Std_ReturnType Ret = E_NOT_OK;
 [c E3063 0 1 .. ]
 [n E3063 . E_NOT_OK E_OK  ]
-"69 ./ECUAL/7_Segments/../../MCAL/GPIO/HAL_GPIO.h
-[s S305 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S305 . PORT PIN DIRECTION LOGIC ]
-"12 Drivers_Main.c
-[; ;Drivers_Main.c: 12: SEGMENT_T seg1 = {
-[c E3190 0 1 .. ]
-[n E3190 . SEGMENT_COMMON_ANODE SEGMENT_COMMON_CATHODE  ]
-"39 ./ECUAL/7_Segments/ECU_7_Segments.h
-[; ;./ECUAL/7_Segments/ECU_7_Segments.h: 39: typedef struct{
-[s S310 `S305 -> 4 `i `E3190 1 ]
-[n S310 . SEGMENT_PIN SEGMENT_TYPE ]
-"12 Drivers_Main.c
-[; ;Drivers_Main.c: 12: SEGMENT_T seg1 = {
-[c E3085 0 1 2 3 4 .. ]
-[n E3085 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
-[c E3075 0 1 2 3 4 5 6 7 .. ]
-[n E3075 . GPIO_PIN0 GPIO_PIN1 GPIO_PIN2 GPIO_PIN3 GPIO_PIN4 GPIO_PIN5 GPIO_PIN6 GPIO_PIN7  ]
-[c E3071 0 1 .. ]
-[n E3071 . GPIO_DIRECTION_OUTPUT GPIO_DIRECTION_INPUT  ]
-[c E3067 0 1 .. ]
-[n E3067 . GPIO_LOW GPIO_HIGH  ]
 [p mainexit ]
-"29 ./Drivers_Main.h
-[; ;./Drivers_Main.h: 29: void Application_intialize(void);
+"32 ./Drivers_Main.h
+[; ;./Drivers_Main.h: 32: void Application_intialize(void);
 [v _Application_intialize `(v ~T0 @X0 0 ef ]
-"81 ./ECUAL/7_Segments/../../MCAL/GPIO/HAL_GPIO.h
-[v _GPIO_PIN_WRITE_LOGIC `(E3063 ~T0 @X0 0 ef2`*CS305`E3067 ]
-"47 ./ECUAL/7_Segments/ECU_7_Segments.h
-[; ;./ECUAL/7_Segments/ECU_7_Segments.h: 47: Std_ReturnType SEGMENT_WRITE_NUMBER (const SEGMENT_T *seg , const uint8 number);
-[v _SEGMENT_WRITE_NUMBER `(E3063 ~T0 @X0 0 ef2`*CS310`Cuc ]
-[v F3033 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
-[v __delay `JF3033 ~T0 @X0 0 e ]
-[p i __delay ]
-"46 ./ECUAL/7_Segments/ECU_7_Segments.h
-[; ;./ECUAL/7_Segments/ECU_7_Segments.h: 46: Std_ReturnType SEGMENT_INITIALIZE (const SEGMENT_T *seg);
-[v _SEGMENT_INITIALIZE `(E3063 ~T0 @X0 0 ef1`*CS310 ]
-"84 ./ECUAL/7_Segments/../../MCAL/GPIO/HAL_GPIO.h
-[v _GPIO_PIN_INITIALIZE `(E3063 ~T0 @X0 0 ef1`*CS305 ]
+"37 ./ECUAL/Keypad/ECU_KEYPAD.h
+[; ;./ECUAL/Keypad/ECU_KEYPAD.h: 37: Std_ReturnType KEYPAD_GET_VALUE(const KEYPAD_T *keypad , uint8 *value);
+[v _KEYPAD_GET_VALUE `(E3063 ~T0 @X0 0 ef2`*CS311`*uc ]
+"39 ./ECUAL/LED/ECU_LED.h
+[; ;./ECUAL/LED/ECU_LED.h: 39: Std_ReturnType LED_Turn_ON(const LED_T *led);
+[v _LED_Turn_ON `(E3063 ~T0 @X0 0 ef1`*CS306 ]
+"40
+[; ;./ECUAL/LED/ECU_LED.h: 40: Std_ReturnType LED_Turn_OFF(const LED_T *led);
+[v _LED_Turn_OFF `(E3063 ~T0 @X0 0 ef1`*CS306 ]
+"36 ./ECUAL/ECU_INIT.h
+[; ;./ECUAL/ECU_INIT.h: 36: void ECU_LAYER_INITIALIZE(void);
+[v _ECU_LAYER_INITIALIZE `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -483,167 +471,89 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7352
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"27 ./Drivers_Main.h
+[; ;./Drivers_Main.h: 27: KEYPAD_T keypad1;
+[v _keypad1 `S311 ~T0 @X0 1 e ]
+"28
+[; ;./Drivers_Main.h: 28: LED_T led1;
+[v _led1 `S306 ~T0 @X0 1 e ]
 "10 Drivers_Main.c
 [; ;Drivers_Main.c: 10: Std_ReturnType Ret = E_NOT_OK;
 [v _Ret `E3063 ~T0 @X0 1 e ]
 [i _Ret
 . `E3063 0
 ]
-"12
-[; ;Drivers_Main.c: 12: SEGMENT_T seg1 = {
-[v _seg1 `S310 ~T0 @X0 1 e ]
-[i _seg1
-:U ..
-:U ..
-:U ..
-:U ..
--> . `E3085 2 `uc
--> . `E3075 0 `uc
--> . `E3071 0 `uc
--> . `E3067 0 `uc
-..
-:U ..
--> . `E3085 2 `uc
--> . `E3075 1 `uc
--> . `E3071 0 `uc
--> . `E3067 0 `uc
-..
-:U ..
--> . `E3085 2 `uc
--> . `E3075 2 `uc
--> . `E3071 0 `uc
--> . `E3067 0 `uc
-..
-:U ..
--> . `E3085 2 `uc
--> . `E3075 3 `uc
--> . `E3071 0 `uc
--> . `E3067 0 `uc
-..
-..
-. `E3190 1
-..
-..
-]
-"36
-[; ;Drivers_Main.c: 36: PIN_CONFIG_T seg1_en = {
-[v _seg1_en `S305 ~T0 @X0 1 e ]
-[i _seg1_en
-:U ..
-:U ..
--> . `E3085 2 `uc
--> . `E3075 4 `uc
--> . `E3071 0 `uc
--> . `E3067 0 `uc
-..
-..
-]
-"43
-[; ;Drivers_Main.c: 43: PIN_CONFIG_T seg2_en = {
-[v _seg2_en `S305 ~T0 @X0 1 e ]
-[i _seg2_en
-:U ..
-:U ..
--> . `E3085 2 `uc
--> . `E3075 5 `uc
--> . `E3071 0 `uc
--> . `E3067 0 `uc
-..
-..
-]
-"50
-[; ;Drivers_Main.c: 50: int n = 0;
-[v _n `i ~T0 @X0 1 e ]
-[i _n
--> 0 `i
+"11
+[; ;Drivers_Main.c: 11: uint8 val = 0;
+[v _val `uc ~T0 @X0 1 e ]
+[i _val
+-> -> 0 `i `uc
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"52
-[; ;Drivers_Main.c: 52: int main() {
+"13
+[; ;Drivers_Main.c: 13: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"53
-[; ;Drivers_Main.c: 53:     Application_intialize();
+"14
+[; ;Drivers_Main.c: 14:     Application_intialize();
 [e ( _Application_intialize ..  ]
-"54
-[; ;Drivers_Main.c: 54:     while(1){
-[e :U 313 ]
-{
-"65
-[; ;Drivers_Main.c: 65:         for(int i = 0;i < 50 ; i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 50 `i 315  ]
-[e $U 316  ]
-[e :U 315 ]
-{
-"66
-[; ;Drivers_Main.c: 66:             Ret = GPIO_PIN_WRITE_LOGIC(&seg1_en,GPIO_LOW);
-[e = _Ret ( _GPIO_PIN_WRITE_LOGIC (2 , -> &U _seg1_en `*CS305 . `E3067 0 ]
-"67
-[; ;Drivers_Main.c: 67:             Ret = GPIO_PIN_WRITE_LOGIC(&seg2_en,GPIO_HIGH);
-[e = _Ret ( _GPIO_PIN_WRITE_LOGIC (2 , -> &U _seg2_en `*CS305 . `E3067 1 ]
-"68
-[; ;Drivers_Main.c: 68:             Ret = SEGMENT_WRITE_NUMBER(&seg1 , n/10);
-[e = _Ret ( _SEGMENT_WRITE_NUMBER (2 , -> &U _seg1 `*CS310 -> / _n -> 10 `i `uc ]
-"69
-[; ;Drivers_Main.c: 69:             _delay((unsigned long)((10)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"70
-[; ;Drivers_Main.c: 70:             Ret = SEGMENT_WRITE_NUMBER(&seg1 , n%10);
-[e = _Ret ( _SEGMENT_WRITE_NUMBER (2 , -> &U _seg1 `*CS310 -> % _n -> 10 `i `uc ]
-"71
-[; ;Drivers_Main.c: 71:             Ret = GPIO_PIN_WRITE_LOGIC(&seg1_en,GPIO_HIGH);
-[e = _Ret ( _GPIO_PIN_WRITE_LOGIC (2 , -> &U _seg1_en `*CS305 . `E3067 1 ]
-"72
-[; ;Drivers_Main.c: 72:             _delay((unsigned long)((10)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"73
-[; ;Drivers_Main.c: 73:             Ret = GPIO_PIN_WRITE_LOGIC(&seg1_en,GPIO_LOW);
-[e = _Ret ( _GPIO_PIN_WRITE_LOGIC (2 , -> &U _seg1_en `*CS305 . `E3067 0 ]
-"74
-[; ;Drivers_Main.c: 74:         }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 50 `i 315  ]
-[e :U 316 ]
-}
-"75
-[; ;Drivers_Main.c: 75:         n++;
-[e ++ _n -> 1 `i ]
-"76
-[; ;Drivers_Main.c: 76:     }
-}
-[e :U 312 ]
-[e $U 313  ]
+"15
+[; ;Drivers_Main.c: 15:     while(1){
 [e :U 314 ]
-"77
-[; ;Drivers_Main.c: 77:     return (0);
-[e ) -> 0 `i ]
-[e $UE 311  ]
-"78
-[; ;Drivers_Main.c: 78: }
-[e :UE 311 ]
+{
+"16
+[; ;Drivers_Main.c: 16:         Ret = KEYPAD_GET_VALUE(&keypad1 , &val);
+[e = _Ret ( _KEYPAD_GET_VALUE (2 , -> &U _keypad1 `*CS311 &U _val ]
+"18
+[; ;Drivers_Main.c: 18:         if(val == '5'){
+[e $ ! == -> _val `ui -> 53 `ui 316  ]
+{
+"19
+[; ;Drivers_Main.c: 19:             Ret = LED_Turn_ON(&led1);
+[e = _Ret ( _LED_Turn_ON (1 -> &U _led1 `*CS306 ]
+"20
+[; ;Drivers_Main.c: 20:         }
 }
-"80
-[; ;Drivers_Main.c: 80: void Application_intialize(void){
+[e $U 317  ]
+"21
+[; ;Drivers_Main.c: 21:         else if (val == '8'){
+[e :U 316 ]
+[e $ ! == -> _val `ui -> 56 `ui 318  ]
+{
+"22
+[; ;Drivers_Main.c: 22:             Ret = LED_Turn_OFF(&led1);
+[e = _Ret ( _LED_Turn_OFF (1 -> &U _led1 `*CS306 ]
+"23
+[; ;Drivers_Main.c: 23:         }
+}
+[e :U 318 ]
+[e :U 317 ]
+"24
+[; ;Drivers_Main.c: 24:     }
+}
+[e :U 313 ]
+[e $U 314  ]
+[e :U 315 ]
+"25
+[; ;Drivers_Main.c: 25:     return (0);
+[e ) -> 0 `i ]
+[e $UE 312  ]
+"26
+[; ;Drivers_Main.c: 26: }
+[e :UE 312 ]
+}
+"28
+[; ;Drivers_Main.c: 28: void Application_intialize(void){
 [v _Application_intialize `(v ~T0 @X0 1 ef ]
 {
 [e :U _Application_intialize ]
 [f ]
-"81
-[; ;Drivers_Main.c: 81:     Ret = SEGMENT_INITIALIZE(&seg1);
-[e = _Ret ( _SEGMENT_INITIALIZE (1 -> &U _seg1 `*CS310 ]
-"82
-[; ;Drivers_Main.c: 82:     Ret = GPIO_PIN_INITIALIZE(&seg1_en);
-[e = _Ret ( _GPIO_PIN_INITIALIZE (1 -> &U _seg1_en `*CS305 ]
-"83
-[; ;Drivers_Main.c: 83:     Ret = GPIO_PIN_INITIALIZE(&seg2_en);
-[e = _Ret ( _GPIO_PIN_INITIALIZE (1 -> &U _seg2_en `*CS305 ]
-"85
-[; ;Drivers_Main.c: 85: }
-[e :UE 318 ]
+"29
+[; ;Drivers_Main.c: 29:     ECU_LAYER_INITIALIZE();
+[e ( _ECU_LAYER_INITIALIZE ..  ]
+"30
+[; ;Drivers_Main.c: 30: }
+[e :UE 319 ]
 }

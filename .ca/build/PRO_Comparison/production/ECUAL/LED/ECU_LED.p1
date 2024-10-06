@@ -510,7 +510,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v _PIN_OBJ `S305 ~T0 @X0 1 a ]
 [e = _PIN_OBJ F3148 ]
-[e ; = . _PIN_OBJ 0 . *U _led 0 ; = . _PIN_OBJ 1 . *U _led 1 ; = . _PIN_OBJ 2 -> . `E3071 0 `uc = . _PIN_OBJ 3 . *U _led 2 ]
+[e ; = . _PIN_OBJ 0 . *U _led 0 ; = . _PIN_OBJ 1 . *U _led 1 ; = . _PIN_OBJ 2 -> -> . `E3071 0 `E3071 `uc = . _PIN_OBJ 3 . *U _led 2 ]
 "31
 [; ;ECUAL/LED/ECU_LED.c: 31:         Retval = GPIO_PIN_INITIALIZE(&PIN_OBJ);
 [e = _Retval ( _GPIO_PIN_INITIALIZE (1 -> &U _PIN_OBJ `*CS305 ]
@@ -567,7 +567,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v _PIN_OBJ `S305 ~T0 @X0 1 a ]
 [e = _PIN_OBJ F3153 ]
-[e ; = . _PIN_OBJ 0 . *U _led 0 ; = . _PIN_OBJ 1 . *U _led 1 ; = . _PIN_OBJ 2 -> -> -> 0 `i `E3071 `uc = . _PIN_OBJ 3 . *U _led 2 ]
+[e ; = . _PIN_OBJ 0 . *U _led 0 ; = . _PIN_OBJ 1 . *U _led 1 ; = . _PIN_OBJ 2 -> -> . `E3071 0 `E3071 `uc = . _PIN_OBJ 3 . *U _led 2 ]
 "57
 [; ;ECUAL/LED/ECU_LED.c: 57:         Retval = GPIO_PIN_WRITE_LOGIC(&PIN_OBJ , GPIO_HIGH);
 [e = _Retval ( _GPIO_PIN_WRITE_LOGIC (2 , -> &U _PIN_OBJ `*CS305 . `E3067 1 ]
@@ -624,7 +624,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v _PIN_OBJ `S305 ~T0 @X0 1 a ]
 [e = _PIN_OBJ F3158 ]
-[e ; = . _PIN_OBJ 0 . *U _led 0 ; = . _PIN_OBJ 1 . *U _led 1 ; = . _PIN_OBJ 2 -> -> -> 0 `i `E3071 `uc = . _PIN_OBJ 3 . *U _led 2 ]
+[e ; = . _PIN_OBJ 0 . *U _led 0 ; = . _PIN_OBJ 1 . *U _led 1 ; = . _PIN_OBJ 2 -> -> . `E3071 0 `E3071 `uc = . _PIN_OBJ 3 . *U _led 2 ]
 "83
 [; ;ECUAL/LED/ECU_LED.c: 83:         Retval = GPIO_PIN_WRITE_LOGIC(&PIN_OBJ , GPIO_LOW);
 [e = _Retval ( _GPIO_PIN_WRITE_LOGIC (2 , -> &U _PIN_OBJ `*CS305 . `E3067 0 ]
@@ -681,7 +681,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v _PIN_OBJ `S305 ~T0 @X0 1 a ]
 [e = _PIN_OBJ F3163 ]
-[e ; = . _PIN_OBJ 0 . *U _led 0 ; = . _PIN_OBJ 1 . *U _led 1 ; = . _PIN_OBJ 2 -> -> -> 0 `i `E3071 `uc = . _PIN_OBJ 3 . *U _led 2 ]
+[e ; = . _PIN_OBJ 0 . *U _led 0 ; = . _PIN_OBJ 1 . *U _led 1 ; = . _PIN_OBJ 2 -> -> . `E3071 0 `E3071 `uc = . _PIN_OBJ 3 . *U _led 2 ]
 "108
 [; ;ECUAL/LED/ECU_LED.c: 108:         Retval = GPIO_PIN_TOGGLE_LOGIC(&PIN_OBJ);
 [e = _Retval ( _GPIO_PIN_TOGGLE_LOGIC (1 -> &U _PIN_OBJ `*CS305 ]

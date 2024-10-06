@@ -20,6 +20,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "79 ECUAL/Button/../../MCAL/GPIO/HAL_GPIO.h
 [; ;ECUAL/Button/../../MCAL/GPIO/HAL_GPIO.h: 79: Std_ReturnType GPIO_PIN_DIRECTION_INITIALIZE (const PIN_CONFIG_T *_PIN_CONFIG);
 [v _GPIO_PIN_DIRECTION_INITIALIZE `(E3063 ~T0 @X0 0 ef1`*CS305 ]
+"42 ECUAL/Button/ECU_Button.c
+[; ;ECUAL/Button/ECU_Button.c: 42:         LOGIC_T Btn_Log = GPIO_LOW;
+[c E3067 0 1 .. ]
+[n E3067 . GPIO_LOW GPIO_HIGH  ]
+"82 ECUAL/Button/../../MCAL/GPIO/HAL_GPIO.h
+[; ;ECUAL/Button/../../MCAL/GPIO/HAL_GPIO.h: 82: Std_ReturnType GPIO_PIN_READ_LOGIC (const PIN_CONFIG_T *_PIN_CONFIG,LOGIC_T *LOGIC);
+[v _GPIO_PIN_READ_LOGIC `(E3063 ~T0 @X0 0 ef2`*CS305`*E3067 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -529,15 +536,95 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ECUAL/Button/ECU_Button.c: 41:     else{
 [e :U 311 ]
 {
+"42
+[; ;ECUAL/Button/ECU_Button.c: 42:         LOGIC_T Btn_Log = GPIO_LOW;
+[v _Btn_Log `E3067 ~T0 @X0 1 a ]
+[e = _Btn_Log . `E3067 0 ]
 "43
-[; ;ECUAL/Button/ECU_Button.c: 43:     }
+[; ;ECUAL/Button/ECU_Button.c: 43:         Retval = GPIO_PIN_READ_LOGIC(&(btn->BUTTON_PIN),&Btn_Log);
+[e = _Retval ( _GPIO_PIN_READ_LOGIC (2 , &U . *U _btn 0 &U _Btn_Log ]
+"44
+[; ;ECUAL/Button/ECU_Button.c: 44:         if(BUTTON_ACTIVE_HIGH == btn->Button_connection){
+[e $ ! == -> . `E3131 0 `ui -> . *U _btn 2 `ui 313  ]
+{
+"45
+[; ;ECUAL/Button/ECU_Button.c: 45:             if(GPIO_HIGH == Btn_Log){
+[e $ ! == -> . `E3067 1 `ui -> _Btn_Log `ui 314  ]
+{
+"46
+[; ;ECUAL/Button/ECU_Button.c: 46:                 *btn_st = BUTTON_PRESSED;
+[e = *U _btn_st . `E3127 0 ]
+"47
+[; ;ECUAL/Button/ECU_Button.c: 47:             }
+}
+[e $U 315  ]
+"48
+[; ;ECUAL/Button/ECU_Button.c: 48:             else{
+[e :U 314 ]
+{
+"49
+[; ;ECUAL/Button/ECU_Button.c: 49:                 *btn_st = BUTTON_RELEASED;
+[e = *U _btn_st . `E3127 1 ]
+"50
+[; ;ECUAL/Button/ECU_Button.c: 50:             }
+}
+[e :U 315 ]
+"51
+[; ;ECUAL/Button/ECU_Button.c: 51:         }
+}
+[e $U 316  ]
+"52
+[; ;ECUAL/Button/ECU_Button.c: 52:         else if(BUTTON_ACTIVE_LOW == btn->Button_connection){
+[e :U 313 ]
+[e $ ! == -> . `E3131 1 `ui -> . *U _btn 2 `ui 317  ]
+{
+"53
+[; ;ECUAL/Button/ECU_Button.c: 53:             if(GPIO_HIGH == Btn_Log){
+[e $ ! == -> . `E3067 1 `ui -> _Btn_Log `ui 318  ]
+{
+"54
+[; ;ECUAL/Button/ECU_Button.c: 54:                 *btn_st = BUTTON_RELEASED;
+[e = *U _btn_st . `E3127 1 ]
+"55
+[; ;ECUAL/Button/ECU_Button.c: 55:             }
+}
+[e $U 319  ]
+"56
+[; ;ECUAL/Button/ECU_Button.c: 56:             else{
+[e :U 318 ]
+{
+"57
+[; ;ECUAL/Button/ECU_Button.c: 57:                 *btn_st = BUTTON_PRESSED;
+[e = *U _btn_st . `E3127 0 ]
+"58
+[; ;ECUAL/Button/ECU_Button.c: 58:             }
+}
+[e :U 319 ]
+"59
+[; ;ECUAL/Button/ECU_Button.c: 59:         }
+}
+[e $U 320  ]
+"60
+[; ;ECUAL/Button/ECU_Button.c: 60:         else{
+[e :U 317 ]
+{
+"61
+[; ;ECUAL/Button/ECU_Button.c: 61:             Retval = E_NOT_OK;
+[e = _Retval . `E3063 0 ]
+"62
+[; ;ECUAL/Button/ECU_Button.c: 62:         }
+}
+[e :U 320 ]
+[e :U 316 ]
+"63
+[; ;ECUAL/Button/ECU_Button.c: 63:     }
 }
 [e :U 312 ]
-"44
-[; ;ECUAL/Button/ECU_Button.c: 44:     return Retval;
+"64
+[; ;ECUAL/Button/ECU_Button.c: 64:     return Retval;
 [e ) _Retval ]
 [e $UE 310  ]
-"45
-[; ;ECUAL/Button/ECU_Button.c: 45: }
+"65
+[; ;ECUAL/Button/ECU_Button.c: 65: }
 [e :UE 310 ]
 }

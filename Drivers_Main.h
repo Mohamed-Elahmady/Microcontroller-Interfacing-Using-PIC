@@ -12,22 +12,24 @@
 
 /* Section 1 : Includes */
 
-#include "ECUAL/LED/ECU_LED.h"
-#include "ECUAL/Button/ECU_Button.h"
-#include "ECUAL/Relay/ECU_RELAY.h"
-#include "ECUAL/DC_Motor/ECU_DC_MOTOR.h"
-#include "ECUAL/7_Segments/ECU_7_Segments.h"
+#include "ECUAL/ECU_INIT.h"
 
 /* Section 2 : Macros Declarations */
 
+
+
 /* Section 3 : Macros Functions Declarations */
 
+
+
 /* Section 4 : User Defined Data Types Declarations */
+
+KEYPAD_T keypad1; // variable was defined in ECU_INIT.c
+LED_T led1;
 
 /* Section 5 : Functions Declarations */
 
 void Application_intialize(void);
-#define _XTAL_FREQ 8000000UL
 
 #endif	/* DRIVERS_MAIN_H */
 

@@ -29,6 +29,7 @@
 #define ACTIVE_ST          0x01
 #define IDLE_ST            0x00
 
+#define ZERO_INIT          0x00
 
 #define CPU_T8 8
 #define CPU_T16 16

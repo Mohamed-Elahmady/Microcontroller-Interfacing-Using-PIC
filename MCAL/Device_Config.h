@@ -16,6 +16,8 @@
 
 /* Section 2 : Macros Declarations */
 
+#define _XTAL_FREQ 8000000UL
+
 /* Section 3 : Macros Functions Declarations */
 
 /* Section 4 : User Defined Data Types Declarations */
