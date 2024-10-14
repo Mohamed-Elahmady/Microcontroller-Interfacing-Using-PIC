@@ -16,7 +16,13 @@
 
 /* Section 2 : Macros Declarations */
 
+#define CHR_LCD_4BIT_CFG_DISABLE    0x00
+#define CHR_LCD_4BIT_CFG_ENABLE     0x01
+#define CHR_LCD_8BIT_CFG_DISABLE    0x00
+#define CHR_LCD_8BIT_CFG_ENABLE     0x01
 
+#define CHR_LCD_4BIT_CFG            (CHR_LCD_4BIT_CFG_ENABLE)
+#define CHR_LCD_8BIT_CFG            (CHR_LCD_8BIT_CFG_ENABLE)
 
 /* Section 3 : Macros Functions Declarations */
 

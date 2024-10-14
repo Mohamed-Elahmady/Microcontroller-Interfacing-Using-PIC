@@ -1,26 +1,26 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "69 ECUAL/DC_Motor/../../MCAL/GPIO/HAL_GPIO.h
 [; ;ECUAL/DC_Motor/../../MCAL/GPIO/HAL_GPIO.h: 69: typedef struct{
-[s S305 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S305 . PORT PIN DIRECTION LOGIC ]
+[s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S306 . PORT PIN DIRECTION LOGIC ]
 "29 ECUAL/DC_Motor/ECU_DC_MOTOR.h
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.h: 29: typedef struct{
-[s S306 `S305 -> 2 `i ]
-[n S306 . dc_motor_pin ]
+[s S307 `S306 -> 2 `i ]
+[n S307 . dc_motor_pin ]
 "15 ECUAL/DC_Motor/ECU_DC_MOTOR.c
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 15: Std_ReturnType DC_MOTOR_INITIALIZE(const DC_MOTOR_T *motor){
-[c E3063 0 1 .. ]
-[n E3063 . E_NOT_OK E_OK  ]
+[c E3654 0 1 .. ]
+[n E3654 . E_NOT_OK E_OK  ]
 "84 ECUAL/DC_Motor/../../MCAL/GPIO/HAL_GPIO.h
 [; ;ECUAL/DC_Motor/../../MCAL/GPIO/HAL_GPIO.h: 84: Std_ReturnType GPIO_PIN_INITIALIZE (const PIN_CONFIG_T *_PIN_CONFIG);
-[v _GPIO_PIN_INITIALIZE `(E3063 ~T0 @X0 0 ef1`*CS305 ]
+[v _GPIO_PIN_INITIALIZE `(E3654 ~T0 @X0 0 ef1`*CS306 ]
 "37 ECUAL/DC_Motor/ECU_DC_MOTOR.c
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 37:         LOGIC_T IN1 = (LOGIC_T)0x01;
-[c E3067 0 1 .. ]
-[n E3067 . GPIO_LOW GPIO_HIGH  ]
+[c E3658 0 1 .. ]
+[n E3658 . GPIO_LOW GPIO_HIGH  ]
 "81 ECUAL/DC_Motor/../../MCAL/GPIO/HAL_GPIO.h
 [; ;ECUAL/DC_Motor/../../MCAL/GPIO/HAL_GPIO.h: 81: Std_ReturnType GPIO_PIN_WRITE_LOGIC (const PIN_CONFIG_T *_PIN_CONFIG,LOGIC_T LOGIC);
-[v _GPIO_PIN_WRITE_LOGIC `(E3063 ~T0 @X0 0 ef2`*CS305`E3067 ]
+[v _GPIO_PIN_WRITE_LOGIC `(E3654 ~T0 @X0 0 ef2`*CS306`E3658 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -464,29 +464,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "15 ECUAL/DC_Motor/ECU_DC_MOTOR.c
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 15: Std_ReturnType DC_MOTOR_INITIALIZE(const DC_MOTOR_T *motor){
-[v _DC_MOTOR_INITIALIZE `(E3063 ~T0 @X0 1 ef1`*CS306 ]
+[v _DC_MOTOR_INITIALIZE `(E3654 ~T0 @X0 1 ef1`*CS307 ]
 {
 [e :U _DC_MOTOR_INITIALIZE ]
-[v _motor `*CS306 ~T0 @X0 1 r1 ]
+[v _motor `*CS307 ~T0 @X0 1 r1 ]
 [f ]
 "16
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 16:     Std_ReturnType Retval = E_OK;
-[v _Retval `E3063 ~T0 @X0 1 a ]
-[e = _Retval . `E3063 1 ]
+[v _Retval `E3654 ~T0 @X0 1 a ]
+[e = _Retval . `E3654 1 ]
 "17
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 17:     if(((void*)0) == motor){
-[e $ ! == -> -> -> 0 `i `*v `*CS306 _motor 308  ]
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _motor 309  ]
 {
 "18
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 18:         Retval = E_NOT_OK;
-[e = _Retval . `E3063 0 ]
+[e = _Retval . `E3654 0 ]
 "19
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 19:     }
 }
-[e $U 309  ]
+[e $U 310  ]
 "20
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 20:     else{
-[e :U 308 ]
+[e :U 309 ]
 {
 "21
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 21:         Retval = GPIO_PIN_INITIALIZE(&(motor->dc_motor_pin[0]));
@@ -497,49 +497,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 23:     }
 }
-[e :U 309 ]
+[e :U 310 ]
 "24
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 24:     return Retval;
 [e ) _Retval ]
-[e $UE 307  ]
+[e $UE 308  ]
 "25
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 25: }
-[e :UE 307 ]
+[e :UE 308 ]
 }
 "31
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 31: Std_ReturnType DC_MOTOR_ROTATE_CW(const DC_MOTOR_T *motor){
-[v _DC_MOTOR_ROTATE_CW `(E3063 ~T0 @X0 1 ef1`*CS306 ]
+[v _DC_MOTOR_ROTATE_CW `(E3654 ~T0 @X0 1 ef1`*CS307 ]
 {
 [e :U _DC_MOTOR_ROTATE_CW ]
-[v _motor `*CS306 ~T0 @X0 1 r1 ]
+[v _motor `*CS307 ~T0 @X0 1 r1 ]
 [f ]
 "32
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 32:     Std_ReturnType Retval = E_OK;
-[v _Retval `E3063 ~T0 @X0 1 a ]
-[e = _Retval . `E3063 1 ]
+[v _Retval `E3654 ~T0 @X0 1 a ]
+[e = _Retval . `E3654 1 ]
 "33
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 33:     if(((void*)0) == motor){
-[e $ ! == -> -> -> 0 `i `*v `*CS306 _motor 311  ]
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _motor 312  ]
 {
 "34
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 34:         Retval = E_NOT_OK;
-[e = _Retval . `E3063 0 ]
+[e = _Retval . `E3654 0 ]
 "35
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 35:     }
 }
-[e $U 312  ]
+[e $U 313  ]
 "36
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 36:     else{
-[e :U 311 ]
+[e :U 312 ]
 {
 "37
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 37:         LOGIC_T IN1 = (LOGIC_T)0x01;
-[v _IN1 `E3067 ~T0 @X0 1 a ]
-[e = _IN1 -> -> 1 `i `E3067 ]
+[v _IN1 `E3658 ~T0 @X0 1 a ]
+[e = _IN1 -> -> 1 `i `E3658 ]
 "38
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 38:         LOGIC_T IN2 = (LOGIC_T)0x00;
-[v _IN2 `E3067 ~T0 @X0 1 a ]
-[e = _IN2 -> -> 0 `i `E3067 ]
+[v _IN2 `E3658 ~T0 @X0 1 a ]
+[e = _IN2 -> -> 0 `i `E3658 ]
 "39
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 39:         Retval = GPIO_PIN_WRITE_LOGIC(&(motor->dc_motor_pin[0]) , IN1);
 [e = _Retval ( _GPIO_PIN_WRITE_LOGIC (2 , &U *U + &U . *U _motor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux _IN1 ]
@@ -549,49 +549,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 "41
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 41:     }
 }
-[e :U 312 ]
+[e :U 313 ]
 "42
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 42:     return Retval;
 [e ) _Retval ]
-[e $UE 310  ]
+[e $UE 311  ]
 "43
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 43: }
-[e :UE 310 ]
+[e :UE 311 ]
 }
 "49
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 49: Std_ReturnType DC_MOTOR_ROTATE_CCW(const DC_MOTOR_T *motor){
-[v _DC_MOTOR_ROTATE_CCW `(E3063 ~T0 @X0 1 ef1`*CS306 ]
+[v _DC_MOTOR_ROTATE_CCW `(E3654 ~T0 @X0 1 ef1`*CS307 ]
 {
 [e :U _DC_MOTOR_ROTATE_CCW ]
-[v _motor `*CS306 ~T0 @X0 1 r1 ]
+[v _motor `*CS307 ~T0 @X0 1 r1 ]
 [f ]
 "50
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 50:     Std_ReturnType Retval = E_OK;
-[v _Retval `E3063 ~T0 @X0 1 a ]
-[e = _Retval . `E3063 1 ]
+[v _Retval `E3654 ~T0 @X0 1 a ]
+[e = _Retval . `E3654 1 ]
 "51
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 51:     if(((void*)0) == motor){
-[e $ ! == -> -> -> 0 `i `*v `*CS306 _motor 314  ]
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _motor 315  ]
 {
 "52
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 52:         Retval = E_NOT_OK;
-[e = _Retval . `E3063 0 ]
+[e = _Retval . `E3654 0 ]
 "53
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 53:     }
 }
-[e $U 315  ]
+[e $U 316  ]
 "54
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 54:     else{
-[e :U 314 ]
+[e :U 315 ]
 {
 "55
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 55:         LOGIC_T IN1 = (LOGIC_T)0x00;
-[v _IN1 `E3067 ~T0 @X0 1 a ]
-[e = _IN1 -> -> 0 `i `E3067 ]
+[v _IN1 `E3658 ~T0 @X0 1 a ]
+[e = _IN1 -> -> 0 `i `E3658 ]
 "56
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 56:         LOGIC_T IN2 = (LOGIC_T)0x01;
-[v _IN2 `E3067 ~T0 @X0 1 a ]
-[e = _IN2 -> -> 1 `i `E3067 ]
+[v _IN2 `E3658 ~T0 @X0 1 a ]
+[e = _IN2 -> -> 1 `i `E3658 ]
 "57
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 57:         Retval = GPIO_PIN_WRITE_LOGIC(&(motor->dc_motor_pin[0]) , IN1);
 [e = _Retval ( _GPIO_PIN_WRITE_LOGIC (2 , &U *U + &U . *U _motor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux _IN1 ]
@@ -601,49 +601,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 "59
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 59:     }
 }
-[e :U 315 ]
+[e :U 316 ]
 "60
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 60:     return Retval;
 [e ) _Retval ]
-[e $UE 313  ]
+[e $UE 314  ]
 "61
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 61: }
-[e :UE 313 ]
+[e :UE 314 ]
 }
 "67
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 67: Std_ReturnType DC_MOTOR_STOP(const DC_MOTOR_T *motor){
-[v _DC_MOTOR_STOP `(E3063 ~T0 @X0 1 ef1`*CS306 ]
+[v _DC_MOTOR_STOP `(E3654 ~T0 @X0 1 ef1`*CS307 ]
 {
 [e :U _DC_MOTOR_STOP ]
-[v _motor `*CS306 ~T0 @X0 1 r1 ]
+[v _motor `*CS307 ~T0 @X0 1 r1 ]
 [f ]
 "68
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 68:     Std_ReturnType Retval = E_OK;
-[v _Retval `E3063 ~T0 @X0 1 a ]
-[e = _Retval . `E3063 1 ]
+[v _Retval `E3654 ~T0 @X0 1 a ]
+[e = _Retval . `E3654 1 ]
 "69
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 69:     if(((void*)0) == motor){
-[e $ ! == -> -> -> 0 `i `*v `*CS306 _motor 317  ]
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _motor 318  ]
 {
 "70
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 70:         Retval = E_NOT_OK;
-[e = _Retval . `E3063 0 ]
+[e = _Retval . `E3654 0 ]
 "71
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 71:     }
 }
-[e $U 318  ]
+[e $U 319  ]
 "72
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 72:     else{
-[e :U 317 ]
+[e :U 318 ]
 {
 "73
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 73:         LOGIC_T IN1 = (LOGIC_T)0x00;
-[v _IN1 `E3067 ~T0 @X0 1 a ]
-[e = _IN1 -> -> 0 `i `E3067 ]
+[v _IN1 `E3658 ~T0 @X0 1 a ]
+[e = _IN1 -> -> 0 `i `E3658 ]
 "74
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 74:         LOGIC_T IN2 = (LOGIC_T)0x00;
-[v _IN2 `E3067 ~T0 @X0 1 a ]
-[e = _IN2 -> -> 0 `i `E3067 ]
+[v _IN2 `E3658 ~T0 @X0 1 a ]
+[e = _IN2 -> -> 0 `i `E3658 ]
 "75
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 75:         Retval = GPIO_PIN_WRITE_LOGIC(&(motor->dc_motor_pin[0]) , IN1);
 [e = _Retval ( _GPIO_PIN_WRITE_LOGIC (2 , &U *U + &U . *U _motor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _motor 0 `ui `ux _IN1 ]
@@ -653,12 +653,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "77
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 77:     }
 }
-[e :U 318 ]
+[e :U 319 ]
 "78
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 78:     return Retval;
 [e ) _Retval ]
-[e $UE 316  ]
+[e $UE 317  ]
 "79
 [; ;ECUAL/DC_Motor/ECU_DC_MOTOR.c: 79: }
-[e :UE 316 ]
+[e :UE 317 ]
 }

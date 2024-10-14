@@ -4,128 +4,100 @@
 [d chip 18F46K20 ]
 [d frameptr 4065 ]
 "15 D:\Interfacing Drivers\ECUAL/7_Segments/ECU_7_Segments.c
-[e E3127 . `uc
+[e E3718 . `uc
 SEGMENT_COMMON_ANODE 0
 SEGMENT_COMMON_CATHODE 1
 ]
-[e E3063 . `uc
+[e E3654 . `uc
 E_NOT_OK 0
 E_OK 1
 ]
 "40
-[e E3067 . `uc
+[e E3658 . `uc
 GPIO_LOW 0
 GPIO_HIGH 1
 ]
 "17 D:\Interfacing Drivers\ECUAL/Button/ECU_Button.c
-[e E3127 . `uc
+[e E3718 . `uc
 BUTTON_PRESSED 0
 BUTTON_RELEASED 1
 ]
-[e E3131 . `uc
+[e E3722 . `uc
 BUTTON_ACTIVE_HIGH 0
 BUTTON_ACTIVE_LOW 1
 ]
-[e E3063 . `uc
+[e E3654 . `uc
 E_NOT_OK 0
 E_OK 1
 ]
 "42
-[e E3067 . `uc
+[e E3658 . `uc
 GPIO_LOW 0
 GPIO_HIGH 1
 ]
 "15 D:\Interfacing Drivers\ECUAL/DC_Motor/ECU_DC_MOTOR.c
-[e E3063 . `uc
+[e E3654 . `uc
 E_NOT_OK 0
 E_OK 1
 ]
 "37
-[e E3067 . `uc
+[e E3658 . `uc
 GPIO_LOW 0
 GPIO_HIGH 1
-]
-"18 D:\Interfacing Drivers\ECUAL/LED/ECU_LED.c
-[e E3063 . `uc
-E_NOT_OK 0
-E_OK 1
-]
-"24
-[e E3071 . `uc
-GPIO_DIRECTION_OUTPUT 0
-GPIO_DIRECTION_INPUT 1
-]
-"57
-[e E3067 . `uc
-GPIO_LOW 0
-GPIO_HIGH 1
-]
-"19 D:\Interfacing Drivers\ECUAL/Relay/ECU_RELAY.c
-[e E3063 . `uc
-E_NOT_OK 0
-E_OK 1
-]
-"25
-[e E3071 . `uc
-GPIO_DIRECTION_OUTPUT 0
-GPIO_DIRECTION_INPUT 1
-]
-"47
-[e E3067 . `uc
-GPIO_LOW 0
-GPIO_HIGH 1
-]
-[e E3127 . `uc
-RELAY_OFF 0
-RELAY_ON 1
-]
-"29 D:\Interfacing Drivers\MCAL/GPIO/HAL_GPIO.c
-[e E3063 . `uc
-E_NOT_OK 0
-E_OK 1
-]
-"47
-[e E3071 . `uc
-GPIO_DIRECTION_OUTPUT 0
-GPIO_DIRECTION_INPUT 1
-]
-"84
-[e E3067 . `uc
-GPIO_LOW 0
-GPIO_HIGH 1
-]
-"182
-[e E3085 . `uc
-PORTA_INDEX 0
-PORTB_INDEX 1
-PORTC_INDEX 2
-PORTD_INDEX 3
-PORTE_INDEX 4
-]
-"10 D:\Interfacing Drivers\Drivers_Main.c
-[e E3063 . `uc
-E_NOT_OK 0
-E_OK 1
 ]
 "22 D:\Interfacing Drivers\ECUAL/Keypad/ECU_KEYPAD.c
-[e E3063 . `uc
+[e E3654 . `uc
 E_NOT_OK 0
 E_OK 1
 ]
 "49
-[e E3067 . `uc
+[e E3658 . `uc
 GPIO_LOW 0
 GPIO_HIGH 1
 ]
+"18 D:\Interfacing Drivers\ECUAL/LED/ECU_LED.c
+[e E3654 . `uc
+E_NOT_OK 0
+E_OK 1
+]
+"24
+[e E3662 . `uc
+GPIO_DIRECTION_OUTPUT 0
+GPIO_DIRECTION_INPUT 1
+]
+"57
+[e E3658 . `uc
+GPIO_LOW 0
+GPIO_HIGH 1
+]
+"19 D:\Interfacing Drivers\ECUAL/Relay/ECU_RELAY.c
+[e E3654 . `uc
+E_NOT_OK 0
+E_OK 1
+]
+"25
+[e E3662 . `uc
+GPIO_DIRECTION_OUTPUT 0
+GPIO_DIRECTION_INPUT 1
+]
+"47
+[e E3658 . `uc
+GPIO_LOW 0
+GPIO_HIGH 1
+]
+[e E3718 . `uc
+RELAY_OFF 0
+RELAY_ON 1
+]
 "12 D:\Interfacing Drivers\ECUAL/ECU_INIT.c
-[e E3085 . `uc
+[e E3676 . `uc
 PORTA_INDEX 0
 PORTB_INDEX 1
 PORTC_INDEX 2
 PORTD_INDEX 3
 PORTE_INDEX 4
 ]
-[e E3075 . `uc
+[e E3666 . `uc
 GPIO_PIN0 0
 GPIO_PIN1 1
 GPIO_PIN2 2
@@ -135,18 +107,63 @@ GPIO_PIN5 5
 GPIO_PIN6 6
 GPIO_PIN7 7
 ]
-[e E3071 . `uc
+[e E3662 . `uc
 GPIO_DIRECTION_OUTPUT 0
 GPIO_DIRECTION_INPUT 1
 ]
-[e E3067 . `uc
+[e E3658 . `uc
 GPIO_LOW 0
 GPIO_HIGH 1
 ]
-"58
-[e E3063 . `uc
+"97
+[e E3654 . `uc
 E_NOT_OK 0
 E_OK 1
+]
+"29 D:\Interfacing Drivers\MCAL/GPIO/HAL_GPIO.c
+[e E3654 . `uc
+E_NOT_OK 0
+E_OK 1
+]
+"47
+[e E3662 . `uc
+GPIO_DIRECTION_OUTPUT 0
+GPIO_DIRECTION_INPUT 1
+]
+"84
+[e E3658 . `uc
+GPIO_LOW 0
+GPIO_HIGH 1
+]
+"182
+[e E3676 . `uc
+PORTA_INDEX 0
+PORTB_INDEX 1
+PORTC_INDEX 2
+PORTD_INDEX 3
+PORTE_INDEX 4
+]
+"14 D:\Interfacing Drivers\Drivers_Main.c
+[e E3654 . `uc
+E_NOT_OK 0
+E_OK 1
+]
+"14 D:\Interfacing Drivers\ECUAL/CHR_LCD/ECU_CHR_LCD.c
+[e E3654 . `uc
+E_NOT_OK 0
+E_OK 1
+]
+"21
+[e E3658 . `uc
+GPIO_LOW 0
+GPIO_HIGH 1
+]
+"74
+[e E3718 . `uc
+ROW1 1
+ROW2 2
+ROW3 3
+ROW4 4
 ]
 "4 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -160,6 +177,10 @@ E_OK 1
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
+"3 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\memset.c
+[v _memset memset `(*.2v  1 e 2 0 ]
+"9 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -172,30 +193,62 @@ E_OK 1
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"13 D:\Interfacing Drivers\Drivers_Main.c
+"27 D:\Interfacing Drivers\Drivers_Main.c
 [v _main main `(i  1 e 2 0 ]
-"25
+"54
 [v _Application_intialize Application_intialize `(v  1 e 1 0 ]
-"57 D:\Interfacing Drivers\ECUAL/ECU_INIT.c
+"14 D:\Interfacing Drivers\ECUAL/CHR_LCD/ECU_CHR_LCD.c
+[v _lcd_send_4bits lcd_send_4bits `(E3654  1 s 1 lcd_send_4bits ]
+"26
+[v _lcd_4bit_send_enable_signal lcd_4bit_send_enable_signal `(E3654  1 s 1 lcd_4bit_send_enable_signal ]
+"38
+[v _lcd_8bit_send_enable_signal lcd_8bit_send_enable_signal `(E3654  1 s 1 lcd_8bit_send_enable_signal ]
+"50
+[v _lcd_4bit_set_cursor lcd_4bit_set_cursor `(E3654  1 s 1 lcd_4bit_set_cursor ]
+"78
+[v _lcd_8bit_set_cursor lcd_8bit_set_cursor `(E3654  1 s 1 lcd_8bit_set_cursor ]
+"111
+[v _LCD_4BIT_INITIALIZE LCD_4BIT_INITIALIZE `(E3654  1 e 1 0 ]
+"139
+[v _LCD_4BIT_SEND_COMMAND LCD_4BIT_SEND_COMMAND `(E3654  1 e 1 0 ]
+"154
+[v _LCD_4BIT_SEND_CHARACTER_DATA LCD_4BIT_SEND_CHARACTER_DATA `(E3654  1 e 1 0 ]
+"169
+[v _LCD_4BIT_SEND_CHARACTER_DATA_POS LCD_4BIT_SEND_CHARACTER_DATA_POS `(E3654  1 e 1 0 ]
+"194
+[v _LCD_4BIT_SEND_STRING_POS LCD_4BIT_SEND_STRING_POS `(E3654  1 e 1 0 ]
+"227
+[v _LCD_8BIT_INITIALIZE LCD_8BIT_INITIALIZE `(E3654  1 e 1 0 ]
+"256
+[v _LCD_8BIT_SEND_COMMAND LCD_8BIT_SEND_COMMAND `(E3654  1 e 1 0 ]
+"271
+[v _LCD_8BIT_SEND_CHARACTER_DATA LCD_8BIT_SEND_CHARACTER_DATA `(E3654  1 e 1 0 ]
+"286
+[v _LCD_8BIT_SEND_CHARACTER_DATA_POS LCD_8BIT_SEND_CHARACTER_DATA_POS `(E3654  1 e 1 0 ]
+"311
+[v _LCD_8BIT_SEND_STRING_POS LCD_8BIT_SEND_STRING_POS `(E3654  1 e 1 0 ]
+"326
+[v _LCD_8BIT_SEND_CUSTOM_CHARACTER LCD_8BIT_SEND_CUSTOM_CHARACTER `(E3654  1 e 1 0 ]
+"96 D:\Interfacing Drivers\ECUAL/ECU_INIT.c
 [v _ECU_LAYER_INITIALIZE ECU_LAYER_INITIALIZE `(v  1 e 1 0 ]
-"22 D:\Interfacing Drivers\ECUAL/Keypad/ECU_KEYPAD.c
-[v _KEYPAD_INITIALIZE KEYPAD_INITIALIZE `(E3063  1 e 1 0 ]
-"43
-[v _KEYPAD_GET_VALUE KEYPAD_GET_VALUE `(E3063  1 e 1 0 ]
-"18 D:\Interfacing Drivers\ECUAL/LED/ECU_LED.c
-[v _LED_INITIALIZE LED_INITIALIZE `(E3063  1 e 1 0 ]
-"44
-[v _LED_Turn_ON LED_Turn_ON `(E3063  1 e 1 0 ]
 "29 D:\Interfacing Drivers\MCAL/GPIO/HAL_GPIO.c
-[v _GPIO_PIN_DIRECTION_INITIALIZE GPIO_PIN_DIRECTION_INITIALIZE `(E3063  1 e 1 0 ]
+[v _GPIO_PIN_DIRECTION_INITIALIZE GPIO_PIN_DIRECTION_INITIALIZE `(E3654  1 e 1 0 ]
 "84
-[v _GPIO_PIN_WRITE_LOGIC GPIO_PIN_WRITE_LOGIC `(E3063  1 e 1 0 ]
+[v _GPIO_PIN_WRITE_LOGIC GPIO_PIN_WRITE_LOGIC `(E3654  1 e 1 0 ]
 "116
-[v _GPIO_PIN_READ_LOGIC GPIO_PIN_READ_LOGIC `(E3063  1 e 1 0 ]
+[v _GPIO_PIN_READ_LOGIC GPIO_PIN_READ_LOGIC `(E3654  1 e 1 0 ]
 "136
-[v _GPIO_PIN_TOGGLE_LOGIC GPIO_PIN_TOGGLE_LOGIC `(E3063  1 e 1 0 ]
+[v _GPIO_PIN_TOGGLE_LOGIC GPIO_PIN_TOGGLE_LOGIC `(E3654  1 e 1 0 ]
 "156
-[v _GPIO_PIN_INITIALIZE GPIO_PIN_INITIALIZE `(E3063  1 e 1 0 ]
+[v _GPIO_PIN_INITIALIZE GPIO_PIN_INITIALIZE `(E3654  1 e 1 0 ]
+[s S24 . 1 `uc 1 PORT 1 0 :3:0 
+`uc 1 PIN 1 0 :3:3 
+`uc 1 DIRECTION 1 0 :1:6 
+`uc 1 LOGIC 1 0 :1:7 
+]
+"28 D:\Interfacing Drivers/Drivers_Main.h
+[s S370 . 6 `S24 1 RS_PIN 1 0 `S24 1 EN_PIN 1 1 `[4]S24 1 DATA_PINS 4 2 ]
+[v _lcd1 lcd1 `S370  1 e 6 0 ]
 "552 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
 "788
@@ -226,25 +279,23 @@ E_OK 1
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "2920
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
-"10 D:\Interfacing Drivers\Drivers_Main.c
-[v _Ret Ret `E3063  1 e 1 0 ]
-"11
-[v _val val `uc  1 e 1 0 ]
-[s S24 . 1 `uc 1 PORT 1 0 :3:0 
-`uc 1 PIN 1 0 :3:3 
-`uc 1 DIRECTION 1 0 :1:6 
-`uc 1 LOGIC 1 0 :1:7 
-]
-"12 D:\Interfacing Drivers\ECUAL/ECU_INIT.c
-[s S435 . 8 `[4]S24 1 KEYPAD_ROWS_PINS 4 0 `[4]S24 1 KEYPAD_COLUMNS_PINS 4 4 ]
-[v _keypad1 keypad1 `S435  1 e 8 0 ]
-[s S157 . 1 `uc 1 PORT 1 0 :3:0 
-`uc 1 PIN 1 0 :3:3 
-`uc 1 LOGIC 1 0 :1:6 
-`uc 1 reserved 1 0 :1:7 
-]
-"51
-[v _led1 led1 `S157  1 e 1 0 ]
+"14 D:\Interfacing Drivers\Drivers_Main.c
+[v _Ret Ret `E3654  1 e 1 0 ]
+"20
+[v _low_battery_00 low_battery_00 `[8]uc  1 e 8 0 ]
+"21
+[v _low_battery_20 low_battery_20 `[8]uc  1 e 8 0 ]
+"22
+[v _low_battery_40 low_battery_40 `[8]uc  1 e 8 0 ]
+"23
+[v _low_battery_60 low_battery_60 `[8]uc  1 e 8 0 ]
+"24
+[v _low_battery_80 low_battery_80 `[8]uc  1 e 8 0 ]
+"25
+[v _low_battery_100 low_battery_100 `[8]uc  1 e 8 0 ]
+"44 D:\Interfacing Drivers\ECUAL/ECU_INIT.c
+[s S395 . 10 `S24 1 RS_PIN 1 0 `S24 1 EN_PIN 1 1 `[8]S24 1 DATA_PINS 8 2 ]
+[v _lcd2 lcd2 `S395  1 e 10 0 ]
 "10 D:\Interfacing Drivers\ECUAL/Keypad/ECU_KEYPAD.c
 [v _KEYPAD_VALUES KEYPAD_VALUES `C[4][4]uc  1 s 16 KEYPAD_VALUES ]
 "10 D:\Interfacing Drivers\MCAL/GPIO/HAL_GPIO.c
@@ -253,130 +304,216 @@ E_OK 1
 [v _PORT_REG PORT_REG `[5]*.39VEuc  1 e 10 0 ]
 "14
 [v _LAT_REG LAT_REG `[5]*.39VEuc  1 e 10 0 ]
-"13 D:\Interfacing Drivers\Drivers_Main.c
+"27 D:\Interfacing Drivers\Drivers_Main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"23
-} 0
-"44 D:\Interfacing Drivers\ECUAL/LED/ECU_LED.c
-[v _LED_Turn_ON LED_Turn_ON `(E3063  1 e 1 0 ]
-{
-[s S24 . 1 `uc 1 PORT 1 0 :3:0 
-`uc 1 PIN 1 0 :3:3 
-`uc 1 DIRECTION 1 0 :1:6 
-`uc 1 LOGIC 1 0 :1:7 
-]
-"50
-[v LED_Turn_ON@PIN_OBJ PIN_OBJ `S24  1 a 1 11 ]
-"45
-[v LED_Turn_ON@Retval Retval `E3063  1 a 1 10 ]
-[s S157 . 1 `uc 1 PORT 1 0 :3:0 
-`uc 1 PIN 1 0 :3:3 
-`uc 1 LOGIC 1 0 :1:6 
-`uc 1 reserved 1 0 :1:7 
-]
-"44
-[v LED_Turn_ON@led led `*.30CS157  1 p 1 8 ]
-"49
-[v LED_Turn_ON@F3153 F3153 `S24  1 s 1 F3153 ]
-"60
-} 0
-"43 D:\Interfacing Drivers\ECUAL/Keypad/ECU_KEYPAD.c
-[v _KEYPAD_GET_VALUE KEYPAD_GET_VALUE `(E3063  1 e 1 0 ]
-{
-"56
-[v KEYPAD_GET_VALUE@c1 c1 `i  1 a 2 17 ]
 "52
-[v KEYPAD_GET_VALUE@r2 r2 `i  1 a 2 13 ]
-"51
-[v KEYPAD_GET_VALUE@r1 r1 `i  1 a 2 15 ]
-"49
-[v KEYPAD_GET_VALUE@COLUMN_STATE COLUMN_STATE `E3067  1 a 1 12 ]
-"44
-[v KEYPAD_GET_VALUE@Retval Retval `E3063  1 a 1 11 ]
-[s S24 . 1 `uc 1 PORT 1 0 :3:0 
-`uc 1 PIN 1 0 :3:3 
-`uc 1 DIRECTION 1 0 :1:6 
-`uc 1 LOGIC 1 0 :1:7 
-]
-"43
-[s S435 . 8 `[4]S24 1 KEYPAD_ROWS_PINS 4 0 `[4]S24 1 KEYPAD_COLUMNS_PINS 4 4 ]
-[v KEYPAD_GET_VALUE@keypad keypad `*.30CS435  1 p 1 8 ]
-[v KEYPAD_GET_VALUE@value value `*.30uc  1 p 1 9 ]
-"66
 } 0
-"116 D:\Interfacing Drivers\MCAL/GPIO/HAL_GPIO.c
-[v _GPIO_PIN_READ_LOGIC GPIO_PIN_READ_LOGIC `(E3063  1 e 1 0 ]
+"326 D:\Interfacing Drivers\ECUAL/CHR_LCD/ECU_CHR_LCD.c
+[v _LCD_8BIT_SEND_CUSTOM_CHARACTER LCD_8BIT_SEND_CUSTOM_CHARACTER `(E3654  1 e 1 0 ]
 {
-"117
-[v GPIO_PIN_READ_LOGIC@Retval Retval `E3063  1 a 1 6 ]
+"333
+[v LCD_8BIT_SEND_CUSTOM_CHARACTER@i i `uc  1 a 1 32 ]
+"327
+[v LCD_8BIT_SEND_CUSTOM_CHARACTER@Retval Retval `E3654  1 a 1 31 ]
 [s S24 . 1 `uc 1 PORT 1 0 :3:0 
 `uc 1 PIN 1 0 :3:3 
 `uc 1 DIRECTION 1 0 :1:6 
 `uc 1 LOGIC 1 0 :1:7 
 ]
-"116
-[v GPIO_PIN_READ_LOGIC@_PIN_CONFIG _PIN_CONFIG `*.30CS24  1 p 1 0 ]
-[v GPIO_PIN_READ_LOGIC@LOGIC LOGIC `*.30E3067  1 p 1 1 ]
-"126
+"326
+[s S395 . 10 `S24 1 RS_PIN 1 0 `S24 1 EN_PIN 1 1 `[8]S24 1 DATA_PINS 8 2 ]
+[v LCD_8BIT_SEND_CUSTOM_CHARACTER@lcd lcd `*.30CS395  1 p 1 26 ]
+[v LCD_8BIT_SEND_CUSTOM_CHARACTER@row row `uc  1 p 1 27 ]
+[v LCD_8BIT_SEND_CUSTOM_CHARACTER@column column `uc  1 p 1 28 ]
+[v LCD_8BIT_SEND_CUSTOM_CHARACTER@chr chr `*.30uc  1 p 1 29 ]
+[v LCD_8BIT_SEND_CUSTOM_CHARACTER@mem_pos mem_pos `uc  1 p 1 30 ]
+"339
 } 0
-"25 D:\Interfacing Drivers\Drivers_Main.c
+"286
+[v _LCD_8BIT_SEND_CHARACTER_DATA_POS LCD_8BIT_SEND_CHARACTER_DATA_POS `(E3654  1 e 1 0 ]
+{
+"287
+[v LCD_8BIT_SEND_CHARACTER_DATA_POS@Retval Retval `E3654  1 a 1 25 ]
+[s S24 . 1 `uc 1 PORT 1 0 :3:0 
+`uc 1 PIN 1 0 :3:3 
+`uc 1 DIRECTION 1 0 :1:6 
+`uc 1 LOGIC 1 0 :1:7 
+]
+"286
+[s S395 . 10 `S24 1 RS_PIN 1 0 `S24 1 EN_PIN 1 1 `[8]S24 1 DATA_PINS 8 2 ]
+[v LCD_8BIT_SEND_CHARACTER_DATA_POS@lcd lcd `*.30CS395  1 p 1 21 ]
+[v LCD_8BIT_SEND_CHARACTER_DATA_POS@row row `uc  1 p 1 22 ]
+[v LCD_8BIT_SEND_CHARACTER_DATA_POS@column column `uc  1 p 1 23 ]
+[v LCD_8BIT_SEND_CHARACTER_DATA_POS@data data `uc  1 p 1 24 ]
+"296
+} 0
+"78
+[v _lcd_8bit_set_cursor lcd_8bit_set_cursor `(E3654  1 s 1 lcd_8bit_set_cursor ]
+{
+"79
+[v lcd_8bit_set_cursor@Retval Retval `E3654  1 a 1 20 ]
+[s S24 . 1 `uc 1 PORT 1 0 :3:0 
+`uc 1 PIN 1 0 :3:3 
+`uc 1 DIRECTION 1 0 :1:6 
+`uc 1 LOGIC 1 0 :1:7 
+]
+"78
+[s S395 . 10 `S24 1 RS_PIN 1 0 `S24 1 EN_PIN 1 1 `[8]S24 1 DATA_PINS 8 2 ]
+[v lcd_8bit_set_cursor@lcd lcd `*.30CS395  1 p 1 17 ]
+[v lcd_8bit_set_cursor@row row `uc  1 p 1 18 ]
+[v lcd_8bit_set_cursor@column column `uc  1 p 1 19 ]
+"105
+} 0
+"271
+[v _LCD_8BIT_SEND_CHARACTER_DATA LCD_8BIT_SEND_CHARACTER_DATA `(E3654  1 e 1 0 ]
+{
+"278
+[v LCD_8BIT_SEND_CHARACTER_DATA@i i `i  1 a 2 15 ]
+"272
+[v LCD_8BIT_SEND_CHARACTER_DATA@Retval Retval `E3654  1 a 1 14 ]
+[s S24 . 1 `uc 1 PORT 1 0 :3:0 
+`uc 1 PIN 1 0 :3:3 
+`uc 1 DIRECTION 1 0 :1:6 
+`uc 1 LOGIC 1 0 :1:7 
+]
+"271
+[s S395 . 10 `S24 1 RS_PIN 1 0 `S24 1 EN_PIN 1 1 `[8]S24 1 DATA_PINS 8 2 ]
+[v LCD_8BIT_SEND_CHARACTER_DATA@lcd lcd `*.30CS395  1 p 1 10 ]
+[v LCD_8BIT_SEND_CHARACTER_DATA@data data `uc  1 p 1 11 ]
+"284
+} 0
+"54 D:\Interfacing Drivers\Drivers_Main.c
 [v _Application_intialize Application_intialize `(v  1 e 1 0 ]
 {
-"27
+"56
 } 0
-"57 D:\Interfacing Drivers\ECUAL/ECU_INIT.c
+"96 D:\Interfacing Drivers\ECUAL/ECU_INIT.c
 [v _ECU_LAYER_INITIALIZE ECU_LAYER_INITIALIZE `(v  1 e 1 0 ]
 {
-"61
+"100
 } 0
-"18 D:\Interfacing Drivers\ECUAL/LED/ECU_LED.c
-[v _LED_INITIALIZE LED_INITIALIZE `(E3063  1 e 1 0 ]
+"227 D:\Interfacing Drivers\ECUAL/CHR_LCD/ECU_CHR_LCD.c
+[v _LCD_8BIT_INITIALIZE LCD_8BIT_INITIALIZE `(E3654  1 e 1 0 ]
 {
+"235
+[v LCD_8BIT_INITIALIZE@i i `i  1 a 2 19 ]
+"228
+[v LCD_8BIT_INITIALIZE@Retval Retval `E3654  1 a 1 21 ]
 [s S24 . 1 `uc 1 PORT 1 0 :3:0 
 `uc 1 PIN 1 0 :3:3 
 `uc 1 DIRECTION 1 0 :1:6 
 `uc 1 LOGIC 1 0 :1:7 
 ]
-"24
-[v LED_INITIALIZE@PIN_OBJ PIN_OBJ `S24  1 a 1 14 ]
-"19
-[v LED_INITIALIZE@Retval Retval `E3063  1 a 1 13 ]
-[s S157 . 1 `uc 1 PORT 1 0 :3:0 
-`uc 1 PIN 1 0 :3:3 
-`uc 1 LOGIC 1 0 :1:6 
-`uc 1 reserved 1 0 :1:7 
-]
-"18
-[v LED_INITIALIZE@led led `*.30CS157  1 p 1 11 ]
-"23
-[v LED_INITIALIZE@F3148 F3148 `S24  1 s 1 F3148 ]
-"34
+"227
+[s S395 . 10 `S24 1 RS_PIN 1 0 `S24 1 EN_PIN 1 1 `[8]S24 1 DATA_PINS 8 2 ]
+[v LCD_8BIT_INITIALIZE@lcd lcd `*.30CS395  1 p 1 17 ]
+"254
 } 0
-"22 D:\Interfacing Drivers\ECUAL/Keypad/ECU_KEYPAD.c
-[v _KEYPAD_INITIALIZE KEYPAD_INITIALIZE `(E3063  1 e 1 0 ]
+"256
+[v _LCD_8BIT_SEND_COMMAND LCD_8BIT_SEND_COMMAND `(E3654  1 e 1 0 ]
 {
-"31
-[v KEYPAD_INITIALIZE@c c `i  1 a 2 15 ]
-"28
-[v KEYPAD_INITIALIZE@r r `i  1 a 2 13 ]
-"23
-[v KEYPAD_INITIALIZE@Retval Retval `E3063  1 a 1 12 ]
+"263
+[v LCD_8BIT_SEND_COMMAND@i i `i  1 a 2 15 ]
+"257
+[v LCD_8BIT_SEND_COMMAND@Retval Retval `E3654  1 a 1 14 ]
 [s S24 . 1 `uc 1 PORT 1 0 :3:0 
 `uc 1 PIN 1 0 :3:3 
 `uc 1 DIRECTION 1 0 :1:6 
 `uc 1 LOGIC 1 0 :1:7 
 ]
-"22
-[s S435 . 8 `[4]S24 1 KEYPAD_ROWS_PINS 4 0 `[4]S24 1 KEYPAD_COLUMNS_PINS 4 4 ]
-[v KEYPAD_INITIALIZE@keypad keypad `*.30CS435  1 p 1 11 ]
-"36
+"256
+[s S395 . 10 `S24 1 RS_PIN 1 0 `S24 1 EN_PIN 1 1 `[8]S24 1 DATA_PINS 8 2 ]
+[v LCD_8BIT_SEND_COMMAND@lcd lcd `*.30CS395  1 p 1 10 ]
+[v LCD_8BIT_SEND_COMMAND@command command `uc  1 p 1 11 ]
+"269
+} 0
+"38
+[v _lcd_8bit_send_enable_signal lcd_8bit_send_enable_signal `(E3654  1 s 1 lcd_8bit_send_enable_signal ]
+{
+"39
+[v lcd_8bit_send_enable_signal@Retval Retval `E3654  1 a 1 9 ]
+[s S24 . 1 `uc 1 PORT 1 0 :3:0 
+`uc 1 PIN 1 0 :3:3 
+`uc 1 DIRECTION 1 0 :1:6 
+`uc 1 LOGIC 1 0 :1:7 
+]
+"38
+[s S395 . 10 `S24 1 RS_PIN 1 0 `S24 1 EN_PIN 1 1 `[8]S24 1 DATA_PINS 8 2 ]
+[v lcd_8bit_send_enable_signal@lcd lcd `*.30CS395  1 p 1 8 ]
+"49
+} 0
+"111
+[v _LCD_4BIT_INITIALIZE LCD_4BIT_INITIALIZE `(E3654  1 e 1 0 ]
+{
+"119
+[v LCD_4BIT_INITIALIZE@i i `i  1 a 2 20 ]
+"112
+[v LCD_4BIT_INITIALIZE@Retval Retval `E3654  1 a 1 22 ]
+[s S24 . 1 `uc 1 PORT 1 0 :3:0 
+`uc 1 PIN 1 0 :3:3 
+`uc 1 DIRECTION 1 0 :1:6 
+`uc 1 LOGIC 1 0 :1:7 
+]
+"111
+[s S370 . 6 `S24 1 RS_PIN 1 0 `S24 1 EN_PIN 1 1 `[4]S24 1 DATA_PINS 4 2 ]
+[v LCD_4BIT_INITIALIZE@lcd lcd `*.30CS370  1 p 1 18 ]
+"137
+} 0
+"139
+[v _LCD_4BIT_SEND_COMMAND LCD_4BIT_SEND_COMMAND `(E3654  1 e 1 0 ]
+{
+"140
+[v LCD_4BIT_SEND_COMMAND@Retval Retval `E3654  1 a 1 17 ]
+[s S24 . 1 `uc 1 PORT 1 0 :3:0 
+`uc 1 PIN 1 0 :3:3 
+`uc 1 DIRECTION 1 0 :1:6 
+`uc 1 LOGIC 1 0 :1:7 
+]
+"139
+[s S370 . 6 `S24 1 RS_PIN 1 0 `S24 1 EN_PIN 1 1 `[4]S24 1 DATA_PINS 4 2 ]
+[v LCD_4BIT_SEND_COMMAND@lcd lcd `*.30CS370  1 p 1 15 ]
+[v LCD_4BIT_SEND_COMMAND@command command `uc  1 p 1 16 ]
+"152
+} 0
+"14
+[v _lcd_send_4bits lcd_send_4bits `(E3654  1 s 1 lcd_send_4bits ]
+{
+"20
+[v lcd_send_4bits@i i `i  1 a 2 13 ]
+"15
+[v lcd_send_4bits@Retval Retval `E3654  1 a 1 12 ]
+[s S24 . 1 `uc 1 PORT 1 0 :3:0 
+`uc 1 PIN 1 0 :3:3 
+`uc 1 DIRECTION 1 0 :1:6 
+`uc 1 LOGIC 1 0 :1:7 
+]
+"14
+[s S370 . 6 `S24 1 RS_PIN 1 0 `S24 1 EN_PIN 1 1 `[4]S24 1 DATA_PINS 4 2 ]
+[v lcd_send_4bits@lcd lcd `*.30CS370  1 p 1 8 ]
+[v lcd_send_4bits@_data_command _data_command `uc  1 p 1 9 ]
+"25
+} 0
+"26
+[v _lcd_4bit_send_enable_signal lcd_4bit_send_enable_signal `(E3654  1 s 1 lcd_4bit_send_enable_signal ]
+{
+"27
+[v lcd_4bit_send_enable_signal@Retval Retval `E3654  1 a 1 9 ]
+[s S24 . 1 `uc 1 PORT 1 0 :3:0 
+`uc 1 PIN 1 0 :3:3 
+`uc 1 DIRECTION 1 0 :1:6 
+`uc 1 LOGIC 1 0 :1:7 
+]
+"26
+[s S370 . 6 `S24 1 RS_PIN 1 0 `S24 1 EN_PIN 1 1 `[4]S24 1 DATA_PINS 4 2 ]
+[v lcd_4bit_send_enable_signal@lcd lcd `*.30CS370  1 p 1 8 ]
+"37
 } 0
 "156 D:\Interfacing Drivers\MCAL/GPIO/HAL_GPIO.c
-[v _GPIO_PIN_INITIALIZE GPIO_PIN_INITIALIZE `(E3063  1 e 1 0 ]
+[v _GPIO_PIN_INITIALIZE GPIO_PIN_INITIALIZE `(E3654  1 e 1 0 ]
 {
 "157
-[v GPIO_PIN_INITIALIZE@Retval Retval `E3063  1 a 1 10 ]
+[v GPIO_PIN_INITIALIZE@Retval Retval `E3654  1 a 1 10 ]
 [s S24 . 1 `uc 1 PORT 1 0 :3:0 
 `uc 1 PIN 1 0 :3:3 
 `uc 1 DIRECTION 1 0 :1:6 
@@ -387,10 +524,10 @@ E_OK 1
 "167
 } 0
 "84
-[v _GPIO_PIN_WRITE_LOGIC GPIO_PIN_WRITE_LOGIC `(E3063  1 e 1 0 ]
+[v _GPIO_PIN_WRITE_LOGIC GPIO_PIN_WRITE_LOGIC `(E3654  1 e 1 0 ]
 {
 "85
-[v GPIO_PIN_WRITE_LOGIC@Retval Retval `E3063  1 a 1 7 ]
+[v GPIO_PIN_WRITE_LOGIC@Retval Retval `E3654  1 a 1 7 ]
 [s S24 . 1 `uc 1 PORT 1 0 :3:0 
 `uc 1 PIN 1 0 :3:3 
 `uc 1 DIRECTION 1 0 :1:6 
@@ -398,14 +535,14 @@ E_OK 1
 ]
 "84
 [v GPIO_PIN_WRITE_LOGIC@_PIN_CONFIG _PIN_CONFIG `*.30CS24  1 p 1 0 ]
-[v GPIO_PIN_WRITE_LOGIC@LOGIC LOGIC `E3067  1 p 1 1 ]
+[v GPIO_PIN_WRITE_LOGIC@LOGIC LOGIC `E3658  1 p 1 1 ]
 "105
 } 0
 "29
-[v _GPIO_PIN_DIRECTION_INITIALIZE GPIO_PIN_DIRECTION_INITIALIZE `(E3063  1 e 1 0 ]
+[v _GPIO_PIN_DIRECTION_INITIALIZE GPIO_PIN_DIRECTION_INITIALIZE `(E3654  1 e 1 0 ]
 {
 "30
-[v GPIO_PIN_DIRECTION_INITIALIZE@Retval Retval `E3063  1 a 1 6 ]
+[v GPIO_PIN_DIRECTION_INITIALIZE@Retval Retval `E3654  1 a 1 6 ]
 [s S24 . 1 `uc 1 PORT 1 0 :3:0 
 `uc 1 PIN 1 0 :3:3 
 `uc 1 DIRECTION 1 0 :1:6 

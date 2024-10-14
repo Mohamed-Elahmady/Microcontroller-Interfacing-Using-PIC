@@ -14,8 +14,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-
+#include <string.h>
+#include <math.h>
 
 
 /* Section 2 : Macros Declarations */

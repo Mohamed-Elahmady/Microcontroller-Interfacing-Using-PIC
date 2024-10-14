@@ -24,8 +24,9 @@
 
 /* Section 4 : User Defined Data Types Declarations */
 
-KEYPAD_T keypad1; // variable was defined in ECU_INIT.c
-LED_T led1;
+// variable was defined in ECU_INIT.c
+CHR_LCD_4BIT_T lcd1;
+extern CHR_LCD_8BIT_T lcd2;
 
 /* Section 5 : Functions Declarations */
 

@@ -3,16 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Interfacing%20Drivers/Drivers_Main.h</file>
-            <file>file:/D:/Interfacing%20Drivers/MCAL/GPIO/HAL_GPIO.h</file>
-            <file>file:/D:/Interfacing%20Drivers/ECUAL/ECU_INIT.h</file>
-            <file>file:/D:/Interfacing%20Drivers/ECUAL/LED/ECU_LED.h</file>
             <file>file:/D:/Interfacing%20Drivers/Drivers_Main.c</file>
-            <file>file:/D:/Interfacing%20Drivers/ECUAL/LED/ECU_LED.c</file>
-            <file>file:/D:/Interfacing%20Drivers/ECUAL/ECU_INIT.c</file>
-            <file>file:/D:/Interfacing%20Drivers/ECUAL/LED/ECU_LED_CFG.h</file>
-            <file>file:/D:/Interfacing%20Drivers/MCAL/GPIO/HAL_GPIO.c</file>
-            <file>file:/D:/Interfacing%20Drivers/MCAL/MCAL_STD_Types.h</file>
         </group>
     </open-files>
 </project-private>

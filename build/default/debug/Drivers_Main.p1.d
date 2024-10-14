@@ -19,4 +19,6 @@ ECUAL/DC_Motor/ECU_DC_MOTOR_CFG.h  \
 ECUAL/7_Segments/ECU_7_Segments.h  \
 ECUAL/7_Segments/ECU_7_Segments_CFG.h  \
 ECUAL/Keypad/ECU_KEYPAD.h  \
-ECUAL/Keypad/ECU_KEYPAD_CFG.h 
+ECUAL/Keypad/ECU_KEYPAD_CFG.h  \
+ECUAL/CHR_LCD/ECU_CHR_LCD.h  \
+ECUAL/CHR_LCD/ECU_CHR_LCD_CFG.h 

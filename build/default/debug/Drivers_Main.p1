@@ -1,32 +1,51 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"69 ./ECUAL/Keypad/../../MCAL/GPIO/HAL_GPIO.h
-[s S305 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S305 . PORT PIN DIRECTION LOGIC ]
-"29 ./ECUAL/Keypad/ECU_KEYPAD.h
-[; ;./ECUAL/Keypad/ECU_KEYPAD.h: 29: typedef struct{
-[s S311 `S305 -> 4 `i `S305 -> 4 `i ]
-[n S311 . KEYPAD_ROWS_PINS KEYPAD_COLUMNS_PINS ]
-"30 ./ECUAL/LED/ECU_LED.h
-[; ;./ECUAL/LED/ECU_LED.h: 30: typedef struct{
+"69 ./ECUAL/CHR_LCD/../../MCAL/GPIO/HAL_GPIO.h
 [s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S306 . PORT PIN LOGIC reserved ]
-"10 Drivers_Main.c
-[; ;Drivers_Main.c: 10: Std_ReturnType Ret = E_NOT_OK;
-[c E3063 0 1 .. ]
-[n E3063 . E_NOT_OK E_OK  ]
+[n S306 . PORT PIN DIRECTION LOGIC ]
+"75 ./ECUAL/CHR_LCD/ECU_CHR_LCD.h
+[; ;./ECUAL/CHR_LCD/ECU_CHR_LCD.h: 75: typedef struct {
+[s S313 `S306 1 `S306 1 `S306 -> 4 `i ]
+[n S313 . RS_PIN EN_PIN DATA_PINS ]
+"14 Drivers_Main.c
+[; ;Drivers_Main.c: 14: Std_ReturnType Ret = E_NOT_OK;
+[c E3654 0 1 .. ]
+[n E3654 . E_NOT_OK E_OK  ]
 [p mainexit ]
-"32 ./Drivers_Main.h
-[; ;./Drivers_Main.h: 32: void Application_intialize(void);
+"33 ./Drivers_Main.h
+[; ;./Drivers_Main.h: 33: void Application_intialize(void);
 [v _Application_intialize `(v ~T0 @X0 0 ef ]
-"37 ./ECUAL/Keypad/ECU_KEYPAD.h
-[; ;./ECUAL/Keypad/ECU_KEYPAD.h: 37: Std_ReturnType KEYPAD_GET_VALUE(const KEYPAD_T *keypad , uint8 *value);
-[v _KEYPAD_GET_VALUE `(E3063 ~T0 @X0 0 ef2`*CS311`*uc ]
-"39 ./ECUAL/LED/ECU_LED.h
-[; ;./ECUAL/LED/ECU_LED.h: 39: Std_ReturnType LED_Turn_ON(const LED_T *led);
-[v _LED_Turn_ON `(E3063 ~T0 @X0 0 ef1`*CS306 ]
-"36 ./ECUAL/ECU_INIT.h
-[; ;./ECUAL/ECU_INIT.h: 36: void ECU_LAYER_INITIALIZE(void);
+"81 ./ECUAL/CHR_LCD/ECU_CHR_LCD.h
+[; ;./ECUAL/CHR_LCD/ECU_CHR_LCD.h: 81: typedef struct {
+[s S314 `S306 1 `S306 1 `S306 -> 8 `i ]
+[n S314 . RS_PIN EN_PIN DATA_PINS ]
+"103
+[; ;./ECUAL/CHR_LCD/ECU_CHR_LCD.h: 103: Std_ReturnType LCD_8BIT_SEND_CUSTOM_CHARACTER(const CHR_LCD_8BIT_T *lcd , uint8 row , uint8 column , uint8 chr[] , uint8 mem_pos);
+[v _LCD_8BIT_SEND_CUSTOM_CHARACTER `(E3654 ~T0 @X0 0 ef5`*CS314`uc`uc`*uc`uc ]
+"29 ./Drivers_Main.h
+[; ;./Drivers_Main.h: 29: extern CHR_LCD_8BIT_T lcd2;
+[v _lcd2 `S314 ~T0 @X0 0 e ]
+[v F3624 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
+[v __delay `JF3624 ~T0 @X0 0 e ]
+[p i __delay ]
+"37 ./ECUAL/ECU_INIT.h
+[; ;./ECUAL/ECU_INIT.h: 37: void ECU_LAYER_INITIALIZE(void);
 [v _ECU_LAYER_INITIALIZE `(v ~T0 @X0 0 ef ]
+"94 ./ECUAL/CHR_LCD/ECU_CHR_LCD.h
+[; ;./ECUAL/CHR_LCD/ECU_CHR_LCD.h: 94: Std_ReturnType LCD_4BIT_SEND_STRING_POS(const CHR_LCD_4BIT_T *lcd , uint8 row , uint8 column , uint8 *str);
+[v _LCD_4BIT_SEND_STRING_POS `(E3654 ~T0 @X0 0 ef4`*CS313`uc`uc`*uc ]
+"92
+[; ;./ECUAL/CHR_LCD/ECU_CHR_LCD.h: 92: Std_ReturnType LCD_4BIT_SEND_CHARACTER_DATA_POS(const CHR_LCD_4BIT_T *lcd , uint8 row , uint8 column , uint8 data);
+[v _LCD_4BIT_SEND_CHARACTER_DATA_POS `(E3654 ~T0 @X0 0 ef4`*CS313`uc`uc`uc ]
+"90
+[; ;./ECUAL/CHR_LCD/ECU_CHR_LCD.h: 90: Std_ReturnType LCD_4BIT_SEND_COMMAND(const CHR_LCD_4BIT_T *lcd , uint8 command);
+[v _LCD_4BIT_SEND_COMMAND `(E3654 ~T0 @X0 0 ef2`*CS313`uc ]
+"102
+[; ;./ECUAL/CHR_LCD/ECU_CHR_LCD.h: 102: Std_ReturnType LCD_8BIT_SEND_STRING_POS(const CHR_LCD_8BIT_T *lcd , uint8 row , uint8 column , uint8 *str);
+[v _LCD_8BIT_SEND_STRING_POS `(E3654 ~T0 @X0 0 ef4`*CS314`uc`uc`*uc ]
+"100
+[; ;./ECUAL/CHR_LCD/ECU_CHR_LCD.h: 100: Std_ReturnType LCD_8BIT_SEND_CHARACTER_DATA_POS(const CHR_LCD_8BIT_T *lcd , uint8 row , uint8 column , uint8 data);
+[v _LCD_8BIT_SEND_CHARACTER_DATA_POS `(E3654 ~T0 @X0 0 ef4`*CS314`uc`uc`uc ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -468,76 +487,381 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7352
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"27 ./Drivers_Main.h
-[; ;./Drivers_Main.h: 27: KEYPAD_T keypad1;
-[v _keypad1 `S311 ~T0 @X0 1 e ]
-"28
-[; ;./Drivers_Main.h: 28: LED_T led1;
-[v _led1 `S306 ~T0 @X0 1 e ]
-"10 Drivers_Main.c
-[; ;Drivers_Main.c: 10: Std_ReturnType Ret = E_NOT_OK;
-[v _Ret `E3063 ~T0 @X0 1 e ]
+"28 ./Drivers_Main.h
+[; ;./Drivers_Main.h: 28: CHR_LCD_4BIT_T lcd1;
+[v _lcd1 `S313 ~T0 @X0 1 e ]
+"14 Drivers_Main.c
+[; ;Drivers_Main.c: 14: Std_ReturnType Ret = E_NOT_OK;
+[v _Ret `E3654 ~T0 @X0 1 e ]
 [i _Ret
-. `E3063 0
+. `E3654 0
 ]
-"11
-[; ;Drivers_Main.c: 11: uint8 val = 0;
-[v _val `uc ~T0 @X0 1 e ]
-[i _val
+"16
+[; ;Drivers_Main.c: 16: uint8 left_half[8] = { 0x00, 0x00, 0x02, 0x07, 0x03, 0x01, 0x00, 0x00 };
+[v _left_half `uc ~T0 @X0 -> 8 `i e ]
+[i _left_half
+:U ..
 -> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 2 `i `uc
+-> -> 7 `i `uc
+-> -> 3 `i `uc
+-> -> 1 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+]
+"17
+[; ;Drivers_Main.c: 17: uint8 right_half[8] = { 0x00, 0x00, 0x08, 0x1C, 0x18, 0x10, 0x00, 0x00 };
+[v _right_half `uc ~T0 @X0 -> 8 `i e ]
+[i _right_half
+:U ..
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 8 `i `uc
+-> -> 28 `i `uc
+-> -> 24 `i `uc
+-> -> 16 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+]
+"18
+[; ;Drivers_Main.c: 18: uint8 completed_heart[8] = { 0x00, 0x00, 0x0A, 0x1F, 0x0E, 0x04, 0x00, 0x00 };
+[v _completed_heart `uc ~T0 @X0 -> 8 `i e ]
+[i _completed_heart
+:U ..
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 10 `i `uc
+-> -> 31 `i `uc
+-> -> 14 `i `uc
+-> -> 4 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+]
+"20
+[; ;Drivers_Main.c: 20: uint8 low_battery_00[8] = { 0x0E, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x1F, 0x1F };
+[v _low_battery_00 `uc ~T0 @X0 -> 8 `i e ]
+[i _low_battery_00
+:U ..
+-> -> 14 `i `uc
+-> -> 31 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+..
+]
+"21
+[; ;Drivers_Main.c: 21: uint8 low_battery_20[8] = { 0x0E, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x1F, 0x1F };
+[v _low_battery_20 `uc ~T0 @X0 -> 8 `i e ]
+[i _low_battery_20
+:U ..
+-> -> 14 `i `uc
+-> -> 31 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+..
+]
+"22
+[; ;Drivers_Main.c: 22: uint8 low_battery_40[8] = { 0x0E, 0x1F, 0x11, 0x11, 0x11, 0x1F, 0x1F, 0x1F };
+[v _low_battery_40 `uc ~T0 @X0 -> 8 `i e ]
+[i _low_battery_40
+:U ..
+-> -> 14 `i `uc
+-> -> 31 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+..
+]
+"23
+[; ;Drivers_Main.c: 23: uint8 low_battery_60[8] = { 0x0E, 0x1F, 0x11, 0x11, 0x1F, 0x1F, 0x1F, 0x1F };
+[v _low_battery_60 `uc ~T0 @X0 -> 8 `i e ]
+[i _low_battery_60
+:U ..
+-> -> 14 `i `uc
+-> -> 31 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+..
+]
+"24
+[; ;Drivers_Main.c: 24: uint8 low_battery_80[8] = { 0x0E, 0x1F, 0x11, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F };
+[v _low_battery_80 `uc ~T0 @X0 -> 8 `i e ]
+[i _low_battery_80
+:U ..
+-> -> 14 `i `uc
+-> -> 31 `i `uc
+-> -> 17 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+..
+]
+"25
+[; ;Drivers_Main.c: 25: uint8 low_battery_100[8] = { 0x0E, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F };
+[v _low_battery_100 `uc ~T0 @X0 -> 8 `i e ]
+[i _low_battery_100
+:U ..
+-> -> 14 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+..
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"13
-[; ;Drivers_Main.c: 13: int main() {
+"27
+[; ;Drivers_Main.c: 27: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"14
-[; ;Drivers_Main.c: 14:     Application_intialize();
+"28
+[; ;Drivers_Main.c: 28:     Application_intialize();
 [e ( _Application_intialize ..  ]
-"15
-[; ;Drivers_Main.c: 15:     while(1){
-[e :U 314 ]
+"29
+[; ;Drivers_Main.c: 29:     while(1){
+[e :U 317 ]
 {
-"16
-[; ;Drivers_Main.c: 16:         Ret = KEYPAD_GET_VALUE(&keypad1 , &val);
-[e = _Ret ( _KEYPAD_GET_VALUE (2 , -> &U _keypad1 `*CS311 &U _val ]
-"18
-[; ;Drivers_Main.c: 18:         if(val == 5){
-[e $ ! == -> _val `i -> 5 `i 316  ]
-{
-"19
-[; ;Drivers_Main.c: 19:             Ret = LED_Turn_ON(&led1);
-[e = _Ret ( _LED_Turn_ON (1 -> &U _led1 `*CS306 ]
-"20
-[; ;Drivers_Main.c: 20:         }
+"38
+[; ;Drivers_Main.c: 38:         Ret = LCD_8BIT_SEND_CUSTOM_CHARACTER(&lcd2 , 1 , 1 , low_battery_00 , 0x00 );
+[e = _Ret ( _LCD_8BIT_SEND_CUSTOM_CHARACTER (4 , , , , -> &U _lcd2 `*CS314 -> -> 1 `i `uc -> -> 1 `i `uc &U _low_battery_00 -> -> 0 `i `uc ]
+"39
+[; ;Drivers_Main.c: 39:         _delay((unsigned long)((500)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"40
+[; ;Drivers_Main.c: 40:         Ret = LCD_8BIT_SEND_CUSTOM_CHARACTER(&lcd2 , 1 , 1 , low_battery_20 , 0x01 );
+[e = _Ret ( _LCD_8BIT_SEND_CUSTOM_CHARACTER (4 , , , , -> &U _lcd2 `*CS314 -> -> 1 `i `uc -> -> 1 `i `uc &U _low_battery_20 -> -> 1 `i `uc ]
+"41
+[; ;Drivers_Main.c: 41:         _delay((unsigned long)((500)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"42
+[; ;Drivers_Main.c: 42:         Ret = LCD_8BIT_SEND_CUSTOM_CHARACTER(&lcd2 , 1 , 1 , low_battery_40 , 0x02 );
+[e = _Ret ( _LCD_8BIT_SEND_CUSTOM_CHARACTER (4 , , , , -> &U _lcd2 `*CS314 -> -> 1 `i `uc -> -> 1 `i `uc &U _low_battery_40 -> -> 2 `i `uc ]
+"43
+[; ;Drivers_Main.c: 43:         _delay((unsigned long)((500)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"44
+[; ;Drivers_Main.c: 44:         Ret = LCD_8BIT_SEND_CUSTOM_CHARACTER(&lcd2 , 1 , 1 , low_battery_60 , 0x03 );
+[e = _Ret ( _LCD_8BIT_SEND_CUSTOM_CHARACTER (4 , , , , -> &U _lcd2 `*CS314 -> -> 1 `i `uc -> -> 1 `i `uc &U _low_battery_60 -> -> 3 `i `uc ]
+"45
+[; ;Drivers_Main.c: 45:         _delay((unsigned long)((500)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"46
+[; ;Drivers_Main.c: 46:         Ret = LCD_8BIT_SEND_CUSTOM_CHARACTER(&lcd2 , 1 , 1 , low_battery_80 , 0x04 );
+[e = _Ret ( _LCD_8BIT_SEND_CUSTOM_CHARACTER (4 , , , , -> &U _lcd2 `*CS314 -> -> 1 `i `uc -> -> 1 `i `uc &U _low_battery_80 -> -> 4 `i `uc ]
+"47
+[; ;Drivers_Main.c: 47:         _delay((unsigned long)((500)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"48
+[; ;Drivers_Main.c: 48:         Ret = LCD_8BIT_SEND_CUSTOM_CHARACTER(&lcd2 , 1 , 1 , low_battery_100 , 0x05 );
+[e = _Ret ( _LCD_8BIT_SEND_CUSTOM_CHARACTER (4 , , , , -> &U _lcd2 `*CS314 -> -> 1 `i `uc -> -> 1 `i `uc &U _low_battery_100 -> -> 5 `i `uc ]
+"49
+[; ;Drivers_Main.c: 49:         _delay((unsigned long)((500)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"50
+[; ;Drivers_Main.c: 50:     }
 }
 [e :U 316 ]
-"21
-[; ;Drivers_Main.c: 21:     }
-}
-[e :U 313 ]
-[e $U 314  ]
-[e :U 315 ]
-"22
-[; ;Drivers_Main.c: 22:     return (0);
+[e $U 317  ]
+[e :U 318 ]
+"51
+[; ;Drivers_Main.c: 51:     return (0);
 [e ) -> 0 `i ]
-[e $UE 312  ]
-"23
-[; ;Drivers_Main.c: 23: }
-[e :UE 312 ]
+[e $UE 315  ]
+"52
+[; ;Drivers_Main.c: 52: }
+[e :UE 315 ]
 }
-"25
-[; ;Drivers_Main.c: 25: void Application_intialize(void){
+"54
+[; ;Drivers_Main.c: 54: void Application_intialize(void){
 [v _Application_intialize `(v ~T0 @X0 1 ef ]
 {
 [e :U _Application_intialize ]
 [f ]
-"26
-[; ;Drivers_Main.c: 26:     ECU_LAYER_INITIALIZE();
+"55
+[; ;Drivers_Main.c: 55:     ECU_LAYER_INITIALIZE();
 [e ( _ECU_LAYER_INITIALIZE ..  ]
-"27
-[; ;Drivers_Main.c: 27: }
-[e :UE 317 ]
+"56
+[; ;Drivers_Main.c: 56: }
+[e :UE 319 ]
 }
+"58
+[; ;Drivers_Main.c: 58: void one_line_welcome_shift(void){
+[v _one_line_welcome_shift `(v ~T0 @X0 1 ef ]
+{
+[e :U _one_line_welcome_shift ]
+[f ]
+"59
+[; ;Drivers_Main.c: 59:     for(uint8 i = 1 ; i < 12 ; i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 12 `i 321  ]
+[e $U 322  ]
+[e :U 321 ]
+{
+"60
+[; ;Drivers_Main.c: 60:         Ret = LCD_4BIT_SEND_STRING_POS(&lcd1 , 1 , i , "HELLO_ALL");
+[e = _Ret ( _LCD_4BIT_SEND_STRING_POS (4 , , , -> &U _lcd1 `*CS313 -> -> 1 `i `uc _i :s 1C ]
+"61
+[; ;Drivers_Main.c: 61:         _delay((unsigned long)((250)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"62
+[; ;Drivers_Main.c: 62:         Ret = LCD_4BIT_SEND_CHARACTER_DATA_POS(&lcd1 , 1 , i , ' ');
+[e = _Ret ( _LCD_4BIT_SEND_CHARACTER_DATA_POS (4 , , , -> &U _lcd1 `*CS313 -> -> 1 `i `uc _i -> -> 32 `ui `uc ]
+"63
+[; ;Drivers_Main.c: 63:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 12 `i 321  ]
+[e :U 322 ]
+}
+"64
+[; ;Drivers_Main.c: 64:     Ret = LCD_4BIT_SEND_STRING_POS(&lcd1 , 1 , 1 , "                    ");
+[e = _Ret ( _LCD_4BIT_SEND_STRING_POS (4 , , , -> &U _lcd1 `*CS313 -> -> 1 `i `uc -> -> 1 `i `uc :s 2C ]
+"65
+[; ;Drivers_Main.c: 65:     for(uint8 i = 12 ; i > 0 ; i--){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 12 `i `uc ]
+[e $ > -> _i `i -> 0 `i 324  ]
+[e $U 325  ]
+[e :U 324 ]
+{
+"66
+[; ;Drivers_Main.c: 66:         Ret = LCD_4BIT_SEND_STRING_POS(&lcd1 , 1 , i , "HELLO_ALL");
+[e = _Ret ( _LCD_4BIT_SEND_STRING_POS (4 , , , -> &U _lcd1 `*CS313 -> -> 1 `i `uc _i :s 3C ]
+"67
+[; ;Drivers_Main.c: 67:         _delay((unsigned long)((250)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"68
+[; ;Drivers_Main.c: 68:         if(i > 1){
+[e $ ! > -> _i `i -> 1 `i 327  ]
+{
+"69
+[; ;Drivers_Main.c: 69:         Ret = LCD_4BIT_SEND_CHARACTER_DATA_POS(&lcd1 , 1 , i+8 , ' ');
+[e = _Ret ( _LCD_4BIT_SEND_CHARACTER_DATA_POS (4 , , , -> &U _lcd1 `*CS313 -> -> 1 `i `uc -> + -> _i `i -> 8 `i `uc -> -> 32 `ui `uc ]
+"70
+[; ;Drivers_Main.c: 70:         }
+}
+[e :U 327 ]
+"71
+[; ;Drivers_Main.c: 71:     }
+}
+[e -- _i -> -> 1 `i `uc ]
+[e $ > -> _i `i -> 0 `i 324  ]
+[e :U 325 ]
+}
+"72
+[; ;Drivers_Main.c: 72: }
+[e :UE 320 ]
+}
+"74
+[; ;Drivers_Main.c: 74: void welcome_message(void){
+[v _welcome_message `(v ~T0 @X0 1 ef ]
+{
+[e :U _welcome_message ]
+[f ]
+"75
+[; ;Drivers_Main.c: 75:     for(uint8 i = 1 ; i <= 5 ; i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 1 `i `uc ]
+[e $ <= -> _i `i -> 5 `i 329  ]
+[e $U 330  ]
+[e :U 329 ]
+{
+"76
+[; ;Drivers_Main.c: 76:         Ret = LCD_4BIT_SEND_STRING_POS(&lcd1 , 1 , 7 , "HELLO_ALL");
+[e = _Ret ( _LCD_4BIT_SEND_STRING_POS (4 , , , -> &U _lcd1 `*CS313 -> -> 1 `i `uc -> -> 7 `i `uc :s 4C ]
+"77
+[; ;Drivers_Main.c: 77:         Ret = LCD_4BIT_SEND_STRING_POS(&lcd1 , 2 , 3 , "Embedded_Diploma");
+[e = _Ret ( _LCD_4BIT_SEND_STRING_POS (4 , , , -> &U _lcd1 `*CS313 -> -> 2 `i `uc -> -> 3 `i `uc :s 5C ]
+"78
+[; ;Drivers_Main.c: 78:         _delay((unsigned long)((500)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"79
+[; ;Drivers_Main.c: 79:         Ret = LCD_4BIT_SEND_COMMAND(&lcd1 , 0x01);
+[e = _Ret ( _LCD_4BIT_SEND_COMMAND (2 , -> &U _lcd1 `*CS313 -> -> 1 `i `uc ]
+"80
+[; ;Drivers_Main.c: 80:         _delay((unsigned long)((100)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"81
+[; ;Drivers_Main.c: 81:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ <= -> _i `i -> 5 `i 329  ]
+[e :U 330 ]
+}
+"82
+[; ;Drivers_Main.c: 82: }
+[e :UE 328 ]
+}
+"84
+[; ;Drivers_Main.c: 84: void Loading_Screen(void){
+[v _Loading_Screen `(v ~T0 @X0 1 ef ]
+{
+[e :U _Loading_Screen ]
+[f ]
+"85
+[; ;Drivers_Main.c: 85:     Ret = LCD_8BIT_SEND_STRING_POS(&lcd2 , 1 , 1 , "Loading");
+[e = _Ret ( _LCD_8BIT_SEND_STRING_POS (4 , , , -> &U _lcd2 `*CS314 -> -> 1 `i `uc -> -> 1 `i `uc :s 6C ]
+"86
+[; ;Drivers_Main.c: 86:     for(uint8 i = 8 ; i < 11 ; i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 8 `i `uc ]
+[e $ < -> _i `i -> 11 `i 333  ]
+[e $U 334  ]
+[e :U 333 ]
+{
+"87
+[; ;Drivers_Main.c: 87:         Ret = LCD_8BIT_SEND_CHARACTER_DATA_POS(&lcd2 , 1 , i , '.');
+[e = _Ret ( _LCD_8BIT_SEND_CHARACTER_DATA_POS (4 , , , -> &U _lcd2 `*CS314 -> -> 1 `i `uc _i -> -> 46 `ui `uc ]
+"88
+[; ;Drivers_Main.c: 88:         _delay((unsigned long)((250)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"89
+[; ;Drivers_Main.c: 89:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 11 `i 333  ]
+[e :U 334 ]
+}
+"91
+[; ;Drivers_Main.c: 91:     Ret = LCD_8BIT_SEND_STRING_POS(&lcd2 , 1 , 8 , "        ");
+[e = _Ret ( _LCD_8BIT_SEND_STRING_POS (4 , , , -> &U _lcd2 `*CS314 -> -> 1 `i `uc -> -> 8 `i `uc :s 7C ]
+"92
+[; ;Drivers_Main.c: 92: }
+[e :UE 332 ]
+}
+[a 6C 76 111 97 100 105 110 103 0 ]
+[a 5C 69 109 98 101 100 100 101 100 95 68 105 112 108 111 109 97 0 ]
+[a 1C 72 69 76 76 79 95 65 76 76 0 ]
+[a 3C 72 69 76 76 79 95 65 76 76 0 ]
+[a 4C 72 69 76 76 79 95 65 76 76 0 ]
+[a 2C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 7C 32 32 32 32 32 32 32 32 0 ]
