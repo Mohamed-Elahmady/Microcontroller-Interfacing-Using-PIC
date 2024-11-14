@@ -7,4 +7,8 @@ ECUAL/CHR_LCD/../../MCAL/GPIO/../STD_Libraries.h  \
 ECUAL/CHR_LCD/../../MCAL/GPIO/../Compiler.h  \
 ECUAL/CHR_LCD/../../MCAL/GPIO/../Device_Config.h  \
 ECUAL/CHR_LCD/../../MCAL/GPIO/HAL_GPIO_CFG.h  \
+ECUAL/CHR_LCD/../../MCAL/Interrupt/MCAL_internal_interrupt.h  \
+ECUAL/CHR_LCD/../../MCAL/Interrupt/MCAL_Interrupt_CFG.h  \
+ECUAL/CHR_LCD/../../MCAL/Interrupt/MCAL_interrupt_Generate_CFG.h  \
+ECUAL/CHR_LCD/../../MCAL/Interrupt/MCAL_external_interrupt.h  \
 ECUAL/CHR_LCD/ECU_CHR_LCD_CFG.h 

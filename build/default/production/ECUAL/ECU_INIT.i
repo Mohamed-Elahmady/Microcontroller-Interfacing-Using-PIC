@@ -5621,9 +5621,60 @@ Std_ReturnType GPIO_PORT_READ_LOGIC (PORT_INDEX_T PORT,uint8 *LOGIC);
 Std_ReturnType GPIO_PORT_TOGGLE_LOGIC (PORT_INDEX_T PORT);
 # 15 "ECUAL/LED/ECU_LED.h" 2
 
-# 1 "ECUAL/LED/ECU_LED_CFG.h" 1
+# 1 "ECUAL/LED/../../MCAL/Interrupt/MCAL_internal_interrupt.h" 1
+# 15 "ECUAL/LED/../../MCAL/Interrupt/MCAL_internal_interrupt.h"
+# 1 "ECUAL/LED/../../MCAL/Interrupt/MCAL_Interrupt_CFG.h" 1
+# 15 "ECUAL/LED/../../MCAL/Interrupt/MCAL_Interrupt_CFG.h"
+# 1 "ECUAL/LED/../../MCAL/Interrupt/MCAL_interrupt_Generate_CFG.h" 1
+# 15 "ECUAL/LED/../../MCAL/Interrupt/MCAL_Interrupt_CFG.h" 2
+# 60 "ECUAL/LED/../../MCAL/Interrupt/MCAL_Interrupt_CFG.h"
+typedef enum{
+    INTERRUPT_LOW_PRIORITY = 0,
+    INTERRUPT_HIGH_PRIORITY
+}INTERRUPT_PRIORITY_CFG;
+# 15 "ECUAL/LED/../../MCAL/Interrupt/MCAL_internal_interrupt.h" 2
 # 16 "ECUAL/LED/ECU_LED.h" 2
-# 25 "ECUAL/LED/ECU_LED.h"
+
+# 1 "ECUAL/LED/../../MCAL/Interrupt/MCAL_external_interrupt.h" 1
+# 129 "ECUAL/LED/../../MCAL/Interrupt/MCAL_external_interrupt.h"
+typedef enum{
+    EXT_INT0 = 0,
+    EXT_INT1,
+    EXT_INT2
+}INTX_SRC;
+
+typedef enum{
+    INTERRUPT_FALLING_EDGE = 0,
+    INTERRUPT_RISING_EDGE
+}INTX_EDGE;
+
+typedef struct{
+    void (* ext_interrupt_handler)(void);
+    PIN_CONFIG_T mcu_pin;
+    INTX_EDGE edge;
+    INTX_SRC source;
+    INTERRUPT_PRIORITY_CFG priority;
+}EXT_INTX_T;
+
+typedef struct{
+    void (* ext_interrupt_handler_low)(void);
+    void (* ext_interrupt_handler_high)(void);
+    PIN_CONFIG_T mcu_pin;
+    INTERRUPT_PRIORITY_CFG priority;
+}EXT_RBX_T;
+
+
+
+Std_ReturnType EXTERNAL_INTERRUPT_INTX_INIT(const EXT_INTX_T *INTX);
+Std_ReturnType EXTERNAL_INTERRUPT_INTX_DEINIT(const EXT_INTX_T *INTX);
+
+Std_ReturnType EXTERNAL_INTERRUPT_RBX_INIT(const EXT_RBX_T *RBX);
+Std_ReturnType EXTERNAL_INTERRUPT_RBX_DEINIT(const EXT_RBX_T *RBX);
+# 17 "ECUAL/LED/ECU_LED.h" 2
+
+# 1 "ECUAL/LED/ECU_LED_CFG.h" 1
+# 18 "ECUAL/LED/ECU_LED.h" 2
+# 27 "ECUAL/LED/ECU_LED.h"
 typedef enum {
     LED_OFF = 0,
     LED_ON
@@ -5644,10 +5695,10 @@ Std_ReturnType LED_TOGGLE(const LED_T *led);
 # 15 "ECUAL/ECU_INIT.h" 2
 
 # 1 "ECUAL/Button/ECU_Button.h" 1
-# 16 "ECUAL/Button/ECU_Button.h"
+# 18 "ECUAL/Button/ECU_Button.h"
 # 1 "ECUAL/Button/ECU_Button_CFG.h" 1
-# 16 "ECUAL/Button/ECU_Button.h" 2
-# 28 "ECUAL/Button/ECU_Button.h"
+# 18 "ECUAL/Button/ECU_Button.h" 2
+# 30 "ECUAL/Button/ECU_Button.h"
 typedef enum {
     BUTTON_PRESSED = 0,
     BUTTON_RELEASED
@@ -5671,10 +5722,10 @@ Std_ReturnType BUTTON_READ_STATUS (const BUTTON_T *btn,BUTTON_STATE *btn_st);
 # 16 "ECUAL/ECU_INIT.h" 2
 
 # 1 "ECUAL/Relay/ECU_RELAY.h" 1
-# 16 "ECUAL/Relay/ECU_RELAY.h"
+# 18 "ECUAL/Relay/ECU_RELAY.h"
 # 1 "ECUAL/Relay/ECU_RELAY_CFG.h" 1
-# 16 "ECUAL/Relay/ECU_RELAY.h" 2
-# 28 "ECUAL/Relay/ECU_RELAY.h"
+# 18 "ECUAL/Relay/ECU_RELAY.h" 2
+# 30 "ECUAL/Relay/ECU_RELAY.h"
 typedef enum {
     RELAY_OFF = 0,
     RELAY_ON
@@ -5695,10 +5746,10 @@ Std_ReturnType RELAY_TURN_OFF(const RELAY_T *relay);
 # 17 "ECUAL/ECU_INIT.h" 2
 
 # 1 "ECUAL/DC_Motor/ECU_DC_MOTOR.h" 1
-# 16 "ECUAL/DC_Motor/ECU_DC_MOTOR.h"
+# 18 "ECUAL/DC_Motor/ECU_DC_MOTOR.h"
 # 1 "ECUAL/DC_Motor/ECU_DC_MOTOR_CFG.h" 1
-# 16 "ECUAL/DC_Motor/ECU_DC_MOTOR.h" 2
-# 29 "ECUAL/DC_Motor/ECU_DC_MOTOR.h"
+# 18 "ECUAL/DC_Motor/ECU_DC_MOTOR.h" 2
+# 31 "ECUAL/DC_Motor/ECU_DC_MOTOR.h"
 typedef struct{
     PIN_CONFIG_T dc_motor_pin[2];
 }DC_MOTOR_T;
@@ -5712,10 +5763,10 @@ Std_ReturnType DC_MOTOR_STOP(const DC_MOTOR_T *motor);
 # 18 "ECUAL/ECU_INIT.h" 2
 
 # 1 "ECUAL/7_Segments/ECU_7_Segments.h" 1
-# 16 "ECUAL/7_Segments/ECU_7_Segments.h"
+# 18 "ECUAL/7_Segments/ECU_7_Segments.h"
 # 1 "ECUAL/7_Segments/ECU_7_Segments_CFG.h" 1
-# 16 "ECUAL/7_Segments/ECU_7_Segments.h" 2
-# 34 "ECUAL/7_Segments/ECU_7_Segments.h"
+# 18 "ECUAL/7_Segments/ECU_7_Segments.h" 2
+# 36 "ECUAL/7_Segments/ECU_7_Segments.h"
 typedef enum {
     SEGMENT_COMMON_ANODE = 0,
     SEGMENT_COMMON_CATHODE
@@ -5733,10 +5784,10 @@ Std_ReturnType SEGMENT_WRITE_NUMBER (const SEGMENT_T *seg , const uint8 number);
 # 19 "ECUAL/ECU_INIT.h" 2
 
 # 1 "ECUAL/Keypad/ECU_KEYPAD.h" 1
-# 16 "ECUAL/Keypad/ECU_KEYPAD.h"
+# 18 "ECUAL/Keypad/ECU_KEYPAD.h"
 # 1 "ECUAL/Keypad/ECU_KEYPAD_CFG.h" 1
-# 16 "ECUAL/Keypad/ECU_KEYPAD.h" 2
-# 29 "ECUAL/Keypad/ECU_KEYPAD.h"
+# 18 "ECUAL/Keypad/ECU_KEYPAD.h" 2
+# 31 "ECUAL/Keypad/ECU_KEYPAD.h"
 typedef struct{
     PIN_CONFIG_T KEYPAD_ROWS_PINS[0x04];
     PIN_CONFIG_T KEYPAD_COLUMNS_PINS[0x04];
@@ -5749,10 +5800,10 @@ Std_ReturnType KEYPAD_GET_VALUE(const KEYPAD_T *keypad , uint8 *value);
 # 20 "ECUAL/ECU_INIT.h" 2
 
 # 1 "ECUAL/CHR_LCD/ECU_CHR_LCD.h" 1
-# 16 "ECUAL/CHR_LCD/ECU_CHR_LCD.h"
+# 18 "ECUAL/CHR_LCD/ECU_CHR_LCD.h"
 # 1 "ECUAL/CHR_LCD/ECU_CHR_LCD_CFG.h" 1
-# 16 "ECUAL/CHR_LCD/ECU_CHR_LCD.h" 2
-# 68 "ECUAL/CHR_LCD/ECU_CHR_LCD.h"
+# 18 "ECUAL/CHR_LCD/ECU_CHR_LCD.h" 2
+# 70 "ECUAL/CHR_LCD/ECU_CHR_LCD.h"
 typedef enum{
     ROW1 = 1,
     ROW2,

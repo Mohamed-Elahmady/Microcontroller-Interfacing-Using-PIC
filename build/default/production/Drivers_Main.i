@@ -5623,9 +5623,60 @@ Std_ReturnType GPIO_PORT_READ_LOGIC (PORT_INDEX_T PORT,uint8 *LOGIC);
 Std_ReturnType GPIO_PORT_TOGGLE_LOGIC (PORT_INDEX_T PORT);
 # 15 "./ECUAL/LED/ECU_LED.h" 2
 
-# 1 "./ECUAL/LED/ECU_LED_CFG.h" 1
+# 1 "./ECUAL/LED/../../MCAL/Interrupt/MCAL_internal_interrupt.h" 1
+# 15 "./ECUAL/LED/../../MCAL/Interrupt/MCAL_internal_interrupt.h"
+# 1 "./ECUAL/LED/../../MCAL/Interrupt/MCAL_Interrupt_CFG.h" 1
+# 15 "./ECUAL/LED/../../MCAL/Interrupt/MCAL_Interrupt_CFG.h"
+# 1 "./ECUAL/LED/../../MCAL/Interrupt/MCAL_interrupt_Generate_CFG.h" 1
+# 15 "./ECUAL/LED/../../MCAL/Interrupt/MCAL_Interrupt_CFG.h" 2
+# 60 "./ECUAL/LED/../../MCAL/Interrupt/MCAL_Interrupt_CFG.h"
+typedef enum{
+    INTERRUPT_LOW_PRIORITY = 0,
+    INTERRUPT_HIGH_PRIORITY
+}INTERRUPT_PRIORITY_CFG;
+# 15 "./ECUAL/LED/../../MCAL/Interrupt/MCAL_internal_interrupt.h" 2
 # 16 "./ECUAL/LED/ECU_LED.h" 2
-# 25 "./ECUAL/LED/ECU_LED.h"
+
+# 1 "./ECUAL/LED/../../MCAL/Interrupt/MCAL_external_interrupt.h" 1
+# 129 "./ECUAL/LED/../../MCAL/Interrupt/MCAL_external_interrupt.h"
+typedef enum{
+    EXT_INT0 = 0,
+    EXT_INT1,
+    EXT_INT2
+}INTX_SRC;
+
+typedef enum{
+    INTERRUPT_FALLING_EDGE = 0,
+    INTERRUPT_RISING_EDGE
+}INTX_EDGE;
+
+typedef struct{
+    void (* ext_interrupt_handler)(void);
+    PIN_CONFIG_T mcu_pin;
+    INTX_EDGE edge;
+    INTX_SRC source;
+    INTERRUPT_PRIORITY_CFG priority;
+}EXT_INTX_T;
+
+typedef struct{
+    void (* ext_interrupt_handler_low)(void);
+    void (* ext_interrupt_handler_high)(void);
+    PIN_CONFIG_T mcu_pin;
+    INTERRUPT_PRIORITY_CFG priority;
+}EXT_RBX_T;
+
+
+
+Std_ReturnType EXTERNAL_INTERRUPT_INTX_INIT(const EXT_INTX_T *INTX);
+Std_ReturnType EXTERNAL_INTERRUPT_INTX_DEINIT(const EXT_INTX_T *INTX);
+
+Std_ReturnType EXTERNAL_INTERRUPT_RBX_INIT(const EXT_RBX_T *RBX);
+Std_ReturnType EXTERNAL_INTERRUPT_RBX_DEINIT(const EXT_RBX_T *RBX);
+# 17 "./ECUAL/LED/ECU_LED.h" 2
+
+# 1 "./ECUAL/LED/ECU_LED_CFG.h" 1
+# 18 "./ECUAL/LED/ECU_LED.h" 2
+# 27 "./ECUAL/LED/ECU_LED.h"
 typedef enum {
     LED_OFF = 0,
     LED_ON
@@ -5646,10 +5697,10 @@ Std_ReturnType LED_TOGGLE(const LED_T *led);
 # 15 "./ECUAL/ECU_INIT.h" 2
 
 # 1 "./ECUAL/Button/ECU_Button.h" 1
-# 16 "./ECUAL/Button/ECU_Button.h"
+# 18 "./ECUAL/Button/ECU_Button.h"
 # 1 "./ECUAL/Button/ECU_Button_CFG.h" 1
-# 16 "./ECUAL/Button/ECU_Button.h" 2
-# 28 "./ECUAL/Button/ECU_Button.h"
+# 18 "./ECUAL/Button/ECU_Button.h" 2
+# 30 "./ECUAL/Button/ECU_Button.h"
 typedef enum {
     BUTTON_PRESSED = 0,
     BUTTON_RELEASED
@@ -5673,10 +5724,10 @@ Std_ReturnType BUTTON_READ_STATUS (const BUTTON_T *btn,BUTTON_STATE *btn_st);
 # 16 "./ECUAL/ECU_INIT.h" 2
 
 # 1 "./ECUAL/Relay/ECU_RELAY.h" 1
-# 16 "./ECUAL/Relay/ECU_RELAY.h"
+# 18 "./ECUAL/Relay/ECU_RELAY.h"
 # 1 "./ECUAL/Relay/ECU_RELAY_CFG.h" 1
-# 16 "./ECUAL/Relay/ECU_RELAY.h" 2
-# 28 "./ECUAL/Relay/ECU_RELAY.h"
+# 18 "./ECUAL/Relay/ECU_RELAY.h" 2
+# 30 "./ECUAL/Relay/ECU_RELAY.h"
 typedef enum {
     RELAY_OFF = 0,
     RELAY_ON
@@ -5697,10 +5748,10 @@ Std_ReturnType RELAY_TURN_OFF(const RELAY_T *relay);
 # 17 "./ECUAL/ECU_INIT.h" 2
 
 # 1 "./ECUAL/DC_Motor/ECU_DC_MOTOR.h" 1
-# 16 "./ECUAL/DC_Motor/ECU_DC_MOTOR.h"
+# 18 "./ECUAL/DC_Motor/ECU_DC_MOTOR.h"
 # 1 "./ECUAL/DC_Motor/ECU_DC_MOTOR_CFG.h" 1
-# 16 "./ECUAL/DC_Motor/ECU_DC_MOTOR.h" 2
-# 29 "./ECUAL/DC_Motor/ECU_DC_MOTOR.h"
+# 18 "./ECUAL/DC_Motor/ECU_DC_MOTOR.h" 2
+# 31 "./ECUAL/DC_Motor/ECU_DC_MOTOR.h"
 typedef struct{
     PIN_CONFIG_T dc_motor_pin[2];
 }DC_MOTOR_T;
@@ -5714,10 +5765,10 @@ Std_ReturnType DC_MOTOR_STOP(const DC_MOTOR_T *motor);
 # 18 "./ECUAL/ECU_INIT.h" 2
 
 # 1 "./ECUAL/7_Segments/ECU_7_Segments.h" 1
-# 16 "./ECUAL/7_Segments/ECU_7_Segments.h"
+# 18 "./ECUAL/7_Segments/ECU_7_Segments.h"
 # 1 "./ECUAL/7_Segments/ECU_7_Segments_CFG.h" 1
-# 16 "./ECUAL/7_Segments/ECU_7_Segments.h" 2
-# 34 "./ECUAL/7_Segments/ECU_7_Segments.h"
+# 18 "./ECUAL/7_Segments/ECU_7_Segments.h" 2
+# 36 "./ECUAL/7_Segments/ECU_7_Segments.h"
 typedef enum {
     SEGMENT_COMMON_ANODE = 0,
     SEGMENT_COMMON_CATHODE
@@ -5735,10 +5786,10 @@ Std_ReturnType SEGMENT_WRITE_NUMBER (const SEGMENT_T *seg , const uint8 number);
 # 19 "./ECUAL/ECU_INIT.h" 2
 
 # 1 "./ECUAL/Keypad/ECU_KEYPAD.h" 1
-# 16 "./ECUAL/Keypad/ECU_KEYPAD.h"
+# 18 "./ECUAL/Keypad/ECU_KEYPAD.h"
 # 1 "./ECUAL/Keypad/ECU_KEYPAD_CFG.h" 1
-# 16 "./ECUAL/Keypad/ECU_KEYPAD.h" 2
-# 29 "./ECUAL/Keypad/ECU_KEYPAD.h"
+# 18 "./ECUAL/Keypad/ECU_KEYPAD.h" 2
+# 31 "./ECUAL/Keypad/ECU_KEYPAD.h"
 typedef struct{
     PIN_CONFIG_T KEYPAD_ROWS_PINS[0x04];
     PIN_CONFIG_T KEYPAD_COLUMNS_PINS[0x04];
@@ -5751,10 +5802,10 @@ Std_ReturnType KEYPAD_GET_VALUE(const KEYPAD_T *keypad , uint8 *value);
 # 20 "./ECUAL/ECU_INIT.h" 2
 
 # 1 "./ECUAL/CHR_LCD/ECU_CHR_LCD.h" 1
-# 16 "./ECUAL/CHR_LCD/ECU_CHR_LCD.h"
+# 18 "./ECUAL/CHR_LCD/ECU_CHR_LCD.h"
 # 1 "./ECUAL/CHR_LCD/ECU_CHR_LCD_CFG.h" 1
-# 16 "./ECUAL/CHR_LCD/ECU_CHR_LCD.h" 2
-# 68 "./ECUAL/CHR_LCD/ECU_CHR_LCD.h"
+# 18 "./ECUAL/CHR_LCD/ECU_CHR_LCD.h" 2
+# 70 "./ECUAL/CHR_LCD/ECU_CHR_LCD.h"
 typedef enum{
     ROW1 = 1,
     ROW2,
@@ -5799,7 +5850,7 @@ Std_ReturnType CONVERT_INT_TO_STRING(uint32 data , uint8 *str);
 # 37 "./ECUAL/ECU_INIT.h"
 void ECU_LAYER_INITIALIZE(void);
 # 15 "./Drivers_Main.h" 2
-# 28 "./Drivers_Main.h"
+# 29 "./Drivers_Main.h"
 CHR_LCD_4BIT_T lcd1;
 extern CHR_LCD_8BIT_T lcd2;
 
@@ -5809,41 +5860,76 @@ void Application_intialize(void);
 # 8 "Drivers_Main.c" 2
 
 
-void one_line_welcome_shift(void);
-void welcome_message(void);
-void Loading_Screen(void);
-
 Std_ReturnType Ret = E_NOT_OK;
 
-uint8 left_half[8] = { 0x00, 0x00, 0x02, 0x07, 0x03, 0x01, 0x00, 0x00 };
-uint8 right_half[8] = { 0x00, 0x00, 0x08, 0x1C, 0x18, 0x10, 0x00, 0x00 };
-uint8 completed_heart[8] = { 0x00, 0x00, 0x0A, 0x1F, 0x0E, 0x04, 0x00, 0x00 };
+void int0_ISR_TT(void);
+void RB4_ISR_LOW_TT(void);
+void RB4_ISR_HIGH_TT(void);
+void RB5_ISR_LOW_TT(void);
+void RB5_ISR_HIGH_TT(void);
+void RB6_ISR_LOW_TT(void);
+void RB6_ISR_HIGH_TT(void);
+void RB7_ISR_LOW_TT(void);
+void RB7_ISR_HIGH_TT(void);
 
-uint8 charge_battery_00[8] = { 0x0E, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x1F, 0x1F };
-uint8 charge_battery_25[8] = { 0x0E, 0x1F, 0x11, 0x11, 0x11, 0x1F, 0x1F, 0x1F };
-uint8 charge_battery_50[8] = { 0x0E, 0x1F, 0x11, 0x11, 0x1F, 0x1F, 0x1F, 0x1F };
-uint8 charge_battery_75[8] = { 0x0E, 0x1F, 0x11, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F };
-uint8 charge_battery_100[8] = { 0x0E, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F };
 
+LED_T led1 = {.PORT = PORTC_INDEX,.PIN = GPIO_PIN0,.LOGIC = GPIO_LOW};
+
+LED_T led2 = {.PORT = PORTC_INDEX,.PIN = GPIO_PIN1,.LOGIC = GPIO_LOW};
+
+LED_T led3 = {.PORT = PORTC_INDEX,.PIN = GPIO_PIN2,.LOGIC = GPIO_LOW};
+
+LED_T led4 = {.PORT = PORTC_INDEX,.PIN = GPIO_PIN3,.LOGIC = GPIO_LOW};
+# 41 "Drivers_Main.c"
+EXT_RBX_T RB4__ = {
+    .ext_interrupt_handler_high = RB4_ISR_HIGH_TT,
+    .ext_interrupt_handler_low = RB4_ISR_LOW_TT,
+    .priority = INTERRUPT_HIGH_PRIORITY,
+    .mcu_pin.PORT = PORTB_INDEX,
+    .mcu_pin.PIN = GPIO_PIN4,
+    .mcu_pin.DIRECTION = GPIO_DIRECTION_INPUT
+};
+
+EXT_RBX_T RB5__ = {
+    .ext_interrupt_handler_high = RB5_ISR_HIGH_TT,
+    .ext_interrupt_handler_low = RB5_ISR_LOW_TT,
+    .priority = INTERRUPT_LOW_PRIORITY,
+    .mcu_pin.PORT = PORTB_INDEX,
+    .mcu_pin.PIN = GPIO_PIN5,
+    .mcu_pin.DIRECTION = GPIO_DIRECTION_INPUT
+};
+
+EXT_RBX_T RB6__ = {
+    .ext_interrupt_handler_high = RB6_ISR_HIGH_TT,
+    .ext_interrupt_handler_low = RB6_ISR_LOW_TT,
+    .priority = INTERRUPT_HIGH_PRIORITY,
+    .mcu_pin.PORT = PORTB_INDEX,
+    .mcu_pin.PIN = GPIO_PIN6,
+    .mcu_pin.DIRECTION = GPIO_DIRECTION_INPUT
+};
+
+EXT_RBX_T RB7__ = {
+    .ext_interrupt_handler_high = RB7_ISR_HIGH_TT,
+    .ext_interrupt_handler_low = RB7_ISR_LOW_TT,
+    .priority = INTERRUPT_LOW_PRIORITY,
+    .mcu_pin.PORT = PORTB_INDEX,
+    .mcu_pin.PIN = GPIO_PIN7,
+    .mcu_pin.DIRECTION = GPIO_DIRECTION_INPUT
+};
 int main() {
     Application_intialize();
+
+    Ret = LED_INITIALIZE(&led1);
+    Ret = LED_INITIALIZE(&led2);
+    Ret = LED_INITIALIZE(&led3);
+    Ret = LED_INITIALIZE(&led4);
+
+    Ret = EXTERNAL_INTERRUPT_RBX_INIT(&RB4__);
+    Ret = EXTERNAL_INTERRUPT_RBX_INIT(&RB5__);
+    Ret = EXTERNAL_INTERRUPT_RBX_INIT(&RB6__);
+    Ret = EXTERNAL_INTERRUPT_RBX_INIT(&RB7__);
+
     while(1){
-# 37 "Drivers_Main.c"
-        Ret = LCD_4BIT_SEND_CUSTOM_CHARACTER(&lcd1 , 1 , 20 , charge_battery_00 , 0x00 );
-        Ret = LCD_8BIT_SEND_CUSTOM_CHARACTER(&lcd2 , 1 , 20 , charge_battery_00 , 0x00 );
-        _delay((unsigned long)((500)*(8000000UL/4000.0)));
-        Ret = LCD_4BIT_SEND_CUSTOM_CHARACTER(&lcd1 , 1 , 20 , charge_battery_25 , 0x01 );
-        Ret = LCD_8BIT_SEND_CUSTOM_CHARACTER(&lcd2 , 1 , 20 , charge_battery_25 , 0x01 );
-        _delay((unsigned long)((500)*(8000000UL/4000.0)));
-        Ret = LCD_4BIT_SEND_CUSTOM_CHARACTER(&lcd1 , 1 , 20 , charge_battery_50 , 0x02 );
-        Ret = LCD_8BIT_SEND_CUSTOM_CHARACTER(&lcd2 , 1 , 20 , charge_battery_50 , 0x02 );
-        _delay((unsigned long)((500)*(8000000UL/4000.0)));
-        Ret = LCD_4BIT_SEND_CUSTOM_CHARACTER(&lcd1 , 1 , 20 , charge_battery_75 , 0x03 );
-        Ret = LCD_8BIT_SEND_CUSTOM_CHARACTER(&lcd2 , 1 , 20 , charge_battery_75 , 0x03 );
-        _delay((unsigned long)((500)*(8000000UL/4000.0)));
-        Ret = LCD_4BIT_SEND_CUSTOM_CHARACTER(&lcd1 , 1 , 20 , charge_battery_100 , 0x04 );
-        Ret = LCD_8BIT_SEND_CUSTOM_CHARACTER(&lcd2 , 1 , 20 , charge_battery_100 , 0x04 );
-        _delay((unsigned long)((500)*(8000000UL/4000.0)));
 
     }
     return (0);
@@ -5853,38 +5939,32 @@ void Application_intialize(void){
     ECU_LAYER_INITIALIZE();
 }
 
-void one_line_welcome_shift(void){
-    for(uint8 i = 1 ; i < 12 ; i++){
-        Ret = LCD_4BIT_SEND_STRING_POS(&lcd1 , 1 , i , "HELLO_ALL");
-        _delay((unsigned long)((250)*(8000000UL/4000.0)));
-        Ret = LCD_4BIT_SEND_CHARACTER_DATA_POS(&lcd1 , 1 , i , ' ');
-    }
-    Ret = LCD_4BIT_SEND_STRING_POS(&lcd1 , 1 , 1 , "                    ");
-    for(uint8 i = 12 ; i > 0 ; i--){
-        Ret = LCD_4BIT_SEND_STRING_POS(&lcd1 , 1 , i , "HELLO_ALL");
-        _delay((unsigned long)((250)*(8000000UL/4000.0)));
-        if(i > 1){
-        Ret = LCD_4BIT_SEND_CHARACTER_DATA_POS(&lcd1 , 1 , i+8 , ' ');
-        }
-    }
+void int0_ISR_TT(void){
+    Ret = LED_TOGGLE(&led1);
+
 }
 
-void welcome_message(void){
-    for(uint8 i = 1 ; i <= 5 ; i++){
-        Ret = LCD_4BIT_SEND_STRING_POS(&lcd1 , 1 , 7 , "HELLO_ALL");
-        Ret = LCD_4BIT_SEND_STRING_POS(&lcd1 , 2 , 3 , "Embedded_Diploma");
-        _delay((unsigned long)((500)*(8000000UL/4000.0)));
-        Ret = LCD_4BIT_SEND_COMMAND(&lcd1 , 0x01);
-        _delay((unsigned long)((100)*(8000000UL/4000.0)));
-    }
+void RB4_ISR_HIGH_TT(void){
+    Ret = LED_Turn_ON(&led1);
 }
-
-void Loading_Screen(void){
-    Ret = LCD_8BIT_SEND_STRING_POS(&lcd2 , 1 , 1 , "Loading");
-    for(uint8 i = 8 ; i < 11 ; i++){
-        Ret = LCD_8BIT_SEND_CHARACTER_DATA_POS(&lcd2 , 1 , i , '.');
-        _delay((unsigned long)((250)*(8000000UL/4000.0)));
-    }
-
-    Ret = LCD_8BIT_SEND_STRING_POS(&lcd2 , 1 , 8 , "        ");
+void RB4_ISR_LOW_TT(void){
+    Ret = LED_Turn_ON(&led2);
+}
+void RB5_ISR_HIGH_TT(void){
+    Ret = LED_Turn_OFF(&led1);
+}
+void RB5_ISR_LOW_TT(void){
+    Ret = LED_Turn_OFF(&led2);
+}
+void RB6_ISR_HIGH_TT(void){
+    Ret = LED_Turn_ON(&led3);
+}
+void RB6_ISR_LOW_TT(void){
+    Ret = LED_Turn_ON(&led4);
+}
+void RB7_ISR_HIGH_TT(void){
+    Ret = LED_Turn_OFF(&led3);
+}
+void RB7_ISR_LOW_TT(void){
+    Ret = LED_Turn_OFF(&led4);
 }

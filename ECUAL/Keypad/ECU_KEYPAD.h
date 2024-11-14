@@ -13,6 +13,8 @@
 /* Section 1 : Includes */
 
 #include "../../MCAL/GPIO/HAL_GPIO.h"
+#include "../../MCAL/Interrupt/MCAL_internal_interrupt.h"
+#include "../../MCAL/Interrupt/MCAL_external_interrupt.h"
 #include "ECU_KEYPAD_CFG.h"
 
 /* Section 2 : Macros Declarations */

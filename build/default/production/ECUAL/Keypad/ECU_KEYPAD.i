@@ -5619,9 +5619,60 @@ Std_ReturnType GPIO_PORT_READ_LOGIC (PORT_INDEX_T PORT,uint8 *LOGIC);
 Std_ReturnType GPIO_PORT_TOGGLE_LOGIC (PORT_INDEX_T PORT);
 # 15 "ECUAL/Keypad/ECU_KEYPAD.h" 2
 
-# 1 "ECUAL/Keypad/ECU_KEYPAD_CFG.h" 1
+# 1 "ECUAL/Keypad/../../MCAL/Interrupt/MCAL_internal_interrupt.h" 1
+# 15 "ECUAL/Keypad/../../MCAL/Interrupt/MCAL_internal_interrupt.h"
+# 1 "ECUAL/Keypad/../../MCAL/Interrupt/MCAL_Interrupt_CFG.h" 1
+# 15 "ECUAL/Keypad/../../MCAL/Interrupt/MCAL_Interrupt_CFG.h"
+# 1 "ECUAL/Keypad/../../MCAL/Interrupt/MCAL_interrupt_Generate_CFG.h" 1
+# 15 "ECUAL/Keypad/../../MCAL/Interrupt/MCAL_Interrupt_CFG.h" 2
+# 60 "ECUAL/Keypad/../../MCAL/Interrupt/MCAL_Interrupt_CFG.h"
+typedef enum{
+    INTERRUPT_LOW_PRIORITY = 0,
+    INTERRUPT_HIGH_PRIORITY
+}INTERRUPT_PRIORITY_CFG;
+# 15 "ECUAL/Keypad/../../MCAL/Interrupt/MCAL_internal_interrupt.h" 2
 # 16 "ECUAL/Keypad/ECU_KEYPAD.h" 2
-# 29 "ECUAL/Keypad/ECU_KEYPAD.h"
+
+# 1 "ECUAL/Keypad/../../MCAL/Interrupt/MCAL_external_interrupt.h" 1
+# 129 "ECUAL/Keypad/../../MCAL/Interrupt/MCAL_external_interrupt.h"
+typedef enum{
+    EXT_INT0 = 0,
+    EXT_INT1,
+    EXT_INT2
+}INTX_SRC;
+
+typedef enum{
+    INTERRUPT_FALLING_EDGE = 0,
+    INTERRUPT_RISING_EDGE
+}INTX_EDGE;
+
+typedef struct{
+    void (* ext_interrupt_handler)(void);
+    PIN_CONFIG_T mcu_pin;
+    INTX_EDGE edge;
+    INTX_SRC source;
+    INTERRUPT_PRIORITY_CFG priority;
+}EXT_INTX_T;
+
+typedef struct{
+    void (* ext_interrupt_handler_low)(void);
+    void (* ext_interrupt_handler_high)(void);
+    PIN_CONFIG_T mcu_pin;
+    INTERRUPT_PRIORITY_CFG priority;
+}EXT_RBX_T;
+
+
+
+Std_ReturnType EXTERNAL_INTERRUPT_INTX_INIT(const EXT_INTX_T *INTX);
+Std_ReturnType EXTERNAL_INTERRUPT_INTX_DEINIT(const EXT_INTX_T *INTX);
+
+Std_ReturnType EXTERNAL_INTERRUPT_RBX_INIT(const EXT_RBX_T *RBX);
+Std_ReturnType EXTERNAL_INTERRUPT_RBX_DEINIT(const EXT_RBX_T *RBX);
+# 17 "ECUAL/Keypad/ECU_KEYPAD.h" 2
+
+# 1 "ECUAL/Keypad/ECU_KEYPAD_CFG.h" 1
+# 18 "ECUAL/Keypad/ECU_KEYPAD.h" 2
+# 31 "ECUAL/Keypad/ECU_KEYPAD.h"
 typedef struct{
     PIN_CONFIG_T KEYPAD_ROWS_PINS[0x04];
     PIN_CONFIG_T KEYPAD_COLUMNS_PINS[0x04];

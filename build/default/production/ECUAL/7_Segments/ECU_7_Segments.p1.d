@@ -7,4 +7,8 @@ ECUAL/7_Segments/../../MCAL/GPIO/../STD_Libraries.h  \
 ECUAL/7_Segments/../../MCAL/GPIO/../Compiler.h  \
 ECUAL/7_Segments/../../MCAL/GPIO/../Device_Config.h  \
 ECUAL/7_Segments/../../MCAL/GPIO/HAL_GPIO_CFG.h  \
+ECUAL/7_Segments/../../MCAL/Interrupt/MCAL_internal_interrupt.h  \
+ECUAL/7_Segments/../../MCAL/Interrupt/MCAL_Interrupt_CFG.h  \
+ECUAL/7_Segments/../../MCAL/Interrupt/MCAL_interrupt_Generate_CFG.h  \
+ECUAL/7_Segments/../../MCAL/Interrupt/MCAL_external_interrupt.h  \
 ECUAL/7_Segments/ECU_7_Segments_CFG.h 
