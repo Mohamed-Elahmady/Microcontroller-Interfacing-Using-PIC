@@ -8,10 +8,6 @@ ECUAL/LED/../../MCAL/GPIO/../STD_Libraries.h  \
 ECUAL/LED/../../MCAL/GPIO/../Compiler.h  \
 ECUAL/LED/../../MCAL/GPIO/../Device_Config.h  \
 ECUAL/LED/../../MCAL/GPIO/HAL_GPIO_CFG.h  \
-ECUAL/LED/../../MCAL/Interrupt/MCAL_internal_interrupt.h  \
-ECUAL/LED/../../MCAL/Interrupt/MCAL_Interrupt_CFG.h  \
-ECUAL/LED/../../MCAL/Interrupt/MCAL_interrupt_Generate_CFG.h  \
-ECUAL/LED/../../MCAL/Interrupt/MCAL_external_interrupt.h  \
 ECUAL/LED/ECU_LED_CFG.h  \
 ECUAL/Button/ECU_Button.h  \
 ECUAL/Button/ECU_Button_CFG.h  \
@@ -24,4 +20,10 @@ ECUAL/7_Segments/ECU_7_Segments_CFG.h  \
 ECUAL/Keypad/ECU_KEYPAD.h  \
 ECUAL/Keypad/ECU_KEYPAD_CFG.h  \
 ECUAL/CHR_LCD/ECU_CHR_LCD.h  \
-ECUAL/CHR_LCD/ECU_CHR_LCD_CFG.h 
+ECUAL/CHR_LCD/ECU_CHR_LCD_CFG.h  \
+ECUAL/../MCAL/Interrupt/MCAL_internal_interrupt.h  \
+ECUAL/../MCAL/Interrupt/MCAL_Interrupt_CFG.h  \
+ECUAL/../MCAL/Interrupt/MCAL_interrupt_Generate_CFG.h  \
+ECUAL/../MCAL/Interrupt/MCAL_external_interrupt.h  \
+ECUAL/../MCAL/EEPROM/HAL_EEPROM.h  \
+ECUAL/../MCAL/EEPROM/HAL_EEPROM_CFG.h 

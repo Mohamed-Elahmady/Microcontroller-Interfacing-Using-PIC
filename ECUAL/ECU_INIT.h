@@ -20,6 +20,10 @@
 #include "Keypad/ECU_KEYPAD.h"
 #include "CHR_LCD/ECU_CHR_LCD.h"
 
+#include "../MCAL/Interrupt/MCAL_internal_interrupt.h"
+#include "../MCAL/Interrupt/MCAL_external_interrupt.h"
+#include "../MCAL/EEPROM/HAL_EEPROM.h"
+
 /* Section 2 : Macros Declarations */
 
 

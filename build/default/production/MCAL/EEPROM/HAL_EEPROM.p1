@@ -1,32 +1,57 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"69 ECUAL/Button/../../MCAL/GPIO/HAL_GPIO.h
-[; ;ECUAL/Button/../../MCAL/GPIO/HAL_GPIO.h: 69: typedef struct{
-[s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S306 . PORT PIN DIRECTION LOGIC ]
-"17 ECUAL/Button/ECU_Button.c
-[; ;ECUAL/Button/ECU_Button.c: 17: Std_ReturnType BUTTON_INITIALIZE (const BUTTON_T *btn){
-[c E3718 0 1 .. ]
-[n E3718 . BUTTON_PRESSED BUTTON_RELEASED  ]
-[c E3722 0 1 .. ]
-[n E3722 . BUTTON_ACTIVE_HIGH BUTTON_ACTIVE_LOW  ]
-"38 ECUAL/Button/ECU_Button.h
-[; ;ECUAL/Button/ECU_Button.h: 38: typedef struct {
-[s S307 `S306 1 `E3718 1 `E3722 1 ]
-[n S307 . BUTTON_PIN Button_st Button_connection ]
-"17 ECUAL/Button/ECU_Button.c
-[; ;ECUAL/Button/ECU_Button.c: 17: Std_ReturnType BUTTON_INITIALIZE (const BUTTON_T *btn){
+"11 MCAL/EEPROM/HAL_EEPROM.c
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 11: Std_ReturnType DATA_EEPROM_WRITE_BYTE(uint16 ADD , uint8 Data){
 [c E3654 0 1 .. ]
 [n E3654 . E_NOT_OK E_OK  ]
-"79 ECUAL/Button/../../MCAL/GPIO/HAL_GPIO.h
-[; ;ECUAL/Button/../../MCAL/GPIO/HAL_GPIO.h: 79: Std_ReturnType GPIO_PIN_DIRECTION_INITIALIZE (const PIN_CONFIG_T *_PIN_CONFIG);
-[v _GPIO_PIN_DIRECTION_INITIALIZE `(E3654 ~T0 @X0 0 ef1`*CS306 ]
-"42 ECUAL/Button/ECU_Button.c
-[; ;ECUAL/Button/ECU_Button.c: 42:         LOGIC_T Btn_Log = GPIO_LOW;
-[c E3658 0 1 .. ]
-[n E3658 . GPIO_LOW GPIO_HIGH  ]
-"82 ECUAL/Button/../../MCAL/GPIO/HAL_GPIO.h
-[; ;ECUAL/Button/../../MCAL/GPIO/HAL_GPIO.h: 82: Std_ReturnType GPIO_PIN_READ_LOGIC (const PIN_CONFIG_T *_PIN_CONFIG,LOGIC_T *LOGIC);
-[v _GPIO_PIN_READ_LOGIC `(E3654 ~T0 @X0 0 ef2`*CS306`*E3658 ]
+"7049 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7049:     struct {
+[s S292 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S292 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"7059
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7059:     struct {
+[s S293 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S293 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"7069
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7069:     struct {
+[s S294 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S294 . . GIEL GIEH ]
+"7048
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7048: typedef union {
+[u S291 `S292 1 `S293 1 `S294 1 ]
+[n S291 . . . . ]
+"7075
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7075: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
+[v _INTCONbits `VS291 ~T0 @X0 0 e@4082 ]
+"3755
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 3755: extern volatile unsigned char EEADRH __attribute__((address(0xFAA)));
+[v _EEADRH `Vuc ~T0 @X0 0 e@4010 ]
+"3693
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 3693: extern volatile unsigned char EEADR __attribute__((address(0xFA9)));
+[v _EEADR `Vuc ~T0 @X0 0 e@4009 ]
+"3686
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 3686: extern volatile unsigned char EEDATA __attribute__((address(0xFA8)));
+[v _EEDATA `Vuc ~T0 @X0 0 e@4008 ]
+"3619
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 3619:     struct {
+[s S133 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S133 . RD WR WREN WRERR FREE . CFGS EEPGD ]
+"3629
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 3629:     struct {
+[s S134 :6 `uc 1 :1 `uc 1 ]
+[n S134 . . EEFS ]
+"3618
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 3618: typedef union {
+[u S132 `S133 1 `S134 1 ]
+[n S132 . . . ]
+"3634
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 3634: extern volatile EECON1bits_t EECON1bits __attribute__((address(0xFA6)));
+[v _EECON1bits `VS132 ~T0 @X0 0 e@4006 ]
+"3679
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 3679: extern volatile unsigned char EECON2 __attribute__((address(0xFA7)));
+[v _EECON2 `Vuc ~T0 @X0 0 e@4007 ]
+"8 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -468,163 +493,152 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7352
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"17 ECUAL/Button/ECU_Button.c
-[; ;ECUAL/Button/ECU_Button.c: 17: Std_ReturnType BUTTON_INITIALIZE (const BUTTON_T *btn){
-[v _BUTTON_INITIALIZE `(E3654 ~T0 @X0 1 ef1`*CS307 ]
+"11 MCAL/EEPROM/HAL_EEPROM.c
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 11: Std_ReturnType DATA_EEPROM_WRITE_BYTE(uint16 ADD , uint8 Data){
+[v _DATA_EEPROM_WRITE_BYTE `(E3654 ~T0 @X0 1 ef2`us`uc ]
 {
-[e :U _BUTTON_INITIALIZE ]
-[v _btn `*CS307 ~T0 @X0 1 r1 ]
+[e :U _DATA_EEPROM_WRITE_BYTE ]
+[v _ADD `us ~T0 @X0 1 r1 ]
+[v _Data `uc ~T0 @X0 1 r2 ]
 [f ]
+"12
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 12:     Std_ReturnType Retval = E_OK;
+[v _Retval `E3654 ~T0 @X0 1 a ]
+[e = _Retval . `E3654 1 ]
+"13
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 13:     if(ADD > 0x3FF){
+[e $ ! > -> _ADD `ui -> -> 1023 `i `ui 308  ]
+{
+"14
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 14:         Retval = E_NOT_OK;
+[e = _Retval . `E3654 0 ]
+"15
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 15:     }
+}
+[e $U 309  ]
+"16
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 16:     else{
+[e :U 308 ]
+{
 "18
-[; ;ECUAL/Button/ECU_Button.c: 18:     Std_ReturnType Retval = E_OK;
-[v _Retval `E3654 ~T0 @X0 1 a ]
-[e = _Retval . `E3654 1 ]
-"19
-[; ;ECUAL/Button/ECU_Button.c: 19:     if(((void*)0) == btn){
-[e $ ! == -> -> -> 0 `i `*v `*CS307 _btn 309  ]
-{
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 18:         uint8 GIE_STATUS = INTCONbits.GIE;
+[v _GIE_STATUS `uc ~T0 @X0 1 a ]
+[e = _GIE_STATUS . . _INTCONbits 1 7 ]
 "20
-[; ;ECUAL/Button/ECU_Button.c: 20:         Retval = E_NOT_OK;
-[e = _Retval . `E3654 0 ]
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 20:         EEADRH = (uint8)((ADD >> 8) & 0x03);
+[e = _EEADRH -> & >> -> _ADD `ui -> 8 `i -> -> 3 `i `ui `uc ]
 "21
-[; ;ECUAL/Button/ECU_Button.c: 21:     }
-}
-[e $U 310  ]
-"22
-[; ;ECUAL/Button/ECU_Button.c: 22:     else{
-[e :U 309 ]
-{
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 21:         EEADR = (uint8)((ADD) & 0xFF);
+[e = _EEADR -> & -> _ADD `ui -> -> 255 `i `ui `uc ]
 "23
-[; ;ECUAL/Button/ECU_Button.c: 23:         Retval = GPIO_PIN_DIRECTION_INITIALIZE(&(btn->BUTTON_PIN));
-[e = _Retval ( _GPIO_PIN_DIRECTION_INITIALIZE (1 &U . *U _btn 0 ]
-"24
-[; ;ECUAL/Button/ECU_Button.c: 24:     }
-}
-[e :U 310 ]
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 23:         EEDATA = Data;
+[e = _EEDATA _Data ]
 "25
-[; ;ECUAL/Button/ECU_Button.c: 25:     return Retval;
-[e ) _Retval ]
-[e $UE 308  ]
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 25:         (EECON1bits.EEPGD = 0);
+[e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
 "26
-[; ;ECUAL/Button/ECU_Button.c: 26: }
-[e :UE 308 ]
-}
-"36
-[; ;ECUAL/Button/ECU_Button.c: 36: Std_ReturnType BUTTON_READ_STATUS (const BUTTON_T *btn,BUTTON_STATE *btn_st){
-[v _BUTTON_READ_STATUS `(E3654 ~T0 @X0 1 ef2`*CS307`*E3718 ]
-{
-[e :U _BUTTON_READ_STATUS ]
-[v _btn `*CS307 ~T0 @X0 1 r1 ]
-[v _btn_st `*E3718 ~T0 @X0 1 r2 ]
-[f ]
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 26:         (EECON1bits.CFGS = 0);
+[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
+"28
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 28:         (EECON1bits.WREN = 1);
+[e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
+"30
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 30:         (INTCONbits.GIE = 0);
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+"32
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 32:         EECON2 = 0x55;
+[e = _EECON2 -> -> 85 `i `uc ]
+"33
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 33:         EECON2 = 0xAA;
+[e = _EECON2 -> -> 170 `i `uc ]
+"35
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 35:         (EECON1bits.WR = 1);
+[e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
 "37
-[; ;ECUAL/Button/ECU_Button.c: 37:     Std_ReturnType Retval = E_OK;
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 37:         while(EECON1bits.WR);
+[e $U 310  ]
+[e :U 311 ]
+[e :U 310 ]
+[e $ != -> . . _EECON1bits 0 1 `i -> 0 `i 311  ]
+[e :U 312 ]
+"39
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 39:         (EECON1bits.WREN = 0);
+[e = . . _EECON1bits 0 2 -> -> 0 `i `uc ]
+"41
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 41:         INTCONbits.GIE = GIE_STATUS;
+[e = . . _INTCONbits 1 7 _GIE_STATUS ]
+"42
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 42:     }
+}
+[e :U 309 ]
+"43
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 43:     return Retval;
+[e ) _Retval ]
+[e $UE 307  ]
+"44
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 44: }
+[e :UE 307 ]
+}
+"45
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 45: Std_ReturnType DATA_EEPROM_READ_BYTE(uint16 ADD , uint8 *Data){
+[v _DATA_EEPROM_READ_BYTE `(E3654 ~T0 @X0 1 ef2`us`*uc ]
+{
+[e :U _DATA_EEPROM_READ_BYTE ]
+[v _ADD `us ~T0 @X0 1 r1 ]
+[v _Data `*uc ~T0 @X0 1 r2 ]
+[f ]
+"46
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 46:     Std_ReturnType Retval = E_OK;
 [v _Retval `E3654 ~T0 @X0 1 a ]
 [e = _Retval . `E3654 1 ]
-"38
-[; ;ECUAL/Button/ECU_Button.c: 38:     if((((void*)0) == btn) || (((void*)0) == btn_st)){
-[e $ ! || == -> -> -> 0 `i `*v `*CS307 _btn == -> -> -> 0 `i `*v `*E3718 _btn_st 312  ]
-{
-"39
-[; ;ECUAL/Button/ECU_Button.c: 39:         Retval = E_NOT_OK;
-[e = _Retval . `E3654 0 ]
-"40
-[; ;ECUAL/Button/ECU_Button.c: 40:     }
-}
-[e $U 313  ]
-"41
-[; ;ECUAL/Button/ECU_Button.c: 41:     else{
-[e :U 312 ]
-{
-"42
-[; ;ECUAL/Button/ECU_Button.c: 42:         LOGIC_T Btn_Log = GPIO_LOW;
-[v _Btn_Log `E3658 ~T0 @X0 1 a ]
-[e = _Btn_Log . `E3658 0 ]
-"43
-[; ;ECUAL/Button/ECU_Button.c: 43:         Retval = GPIO_PIN_READ_LOGIC(&(btn->BUTTON_PIN),&Btn_Log);
-[e = _Retval ( _GPIO_PIN_READ_LOGIC (2 , &U . *U _btn 0 &U _Btn_Log ]
-"44
-[; ;ECUAL/Button/ECU_Button.c: 44:         if(BUTTON_ACTIVE_HIGH == btn->Button_connection){
-[e $ ! == -> . `E3722 0 `ui -> . *U _btn 2 `ui 314  ]
-{
-"45
-[; ;ECUAL/Button/ECU_Button.c: 45:             if(GPIO_HIGH == Btn_Log){
-[e $ ! == -> . `E3658 1 `ui -> _Btn_Log `ui 315  ]
-{
-"46
-[; ;ECUAL/Button/ECU_Button.c: 46:                 *btn_st = BUTTON_PRESSED;
-[e = *U _btn_st . `E3718 0 ]
 "47
-[; ;ECUAL/Button/ECU_Button.c: 47:             }
-}
-[e $U 316  ]
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 47:     if(((void*)0) == Data || ADD > 0x3FF){
+[e $ ! || == -> -> -> 0 `i `*v `*uc _Data > -> _ADD `ui -> -> 1023 `i `ui 314  ]
+{
 "48
-[; ;ECUAL/Button/ECU_Button.c: 48:             else{
-[e :U 315 ]
-{
-"49
-[; ;ECUAL/Button/ECU_Button.c: 49:                 *btn_st = BUTTON_RELEASED;
-[e = *U _btn_st . `E3718 1 ]
-"50
-[; ;ECUAL/Button/ECU_Button.c: 50:             }
-}
-[e :U 316 ]
-"51
-[; ;ECUAL/Button/ECU_Button.c: 51:         }
-}
-[e $U 317  ]
-"52
-[; ;ECUAL/Button/ECU_Button.c: 52:         else if(BUTTON_ACTIVE_LOW == btn->Button_connection){
-[e :U 314 ]
-[e $ ! == -> . `E3722 1 `ui -> . *U _btn 2 `ui 318  ]
-{
-"53
-[; ;ECUAL/Button/ECU_Button.c: 53:             if(GPIO_HIGH == Btn_Log){
-[e $ ! == -> . `E3658 1 `ui -> _Btn_Log `ui 319  ]
-{
-"54
-[; ;ECUAL/Button/ECU_Button.c: 54:                 *btn_st = BUTTON_RELEASED;
-[e = *U _btn_st . `E3718 1 ]
-"55
-[; ;ECUAL/Button/ECU_Button.c: 55:             }
-}
-[e $U 320  ]
-"56
-[; ;ECUAL/Button/ECU_Button.c: 56:             else{
-[e :U 319 ]
-{
-"57
-[; ;ECUAL/Button/ECU_Button.c: 57:                 *btn_st = BUTTON_PRESSED;
-[e = *U _btn_st . `E3718 0 ]
-"58
-[; ;ECUAL/Button/ECU_Button.c: 58:             }
-}
-[e :U 320 ]
-"59
-[; ;ECUAL/Button/ECU_Button.c: 59:         }
-}
-[e $U 321  ]
-"60
-[; ;ECUAL/Button/ECU_Button.c: 60:         else{
-[e :U 318 ]
-{
-"61
-[; ;ECUAL/Button/ECU_Button.c: 61:             Retval = E_NOT_OK;
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 48:         Retval = E_NOT_OK;
 [e = _Retval . `E3654 0 ]
-"62
-[; ;ECUAL/Button/ECU_Button.c: 62:         }
+"49
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 49:     }
 }
-[e :U 321 ]
-[e :U 317 ]
+[e $U 315  ]
+"50
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 50:     else{
+[e :U 314 ]
+{
+"52
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 52:         EEADRH = (uint8)((ADD >> 8) & 0x03);
+[e = _EEADRH -> & >> -> _ADD `ui -> 8 `i -> -> 3 `i `ui `uc ]
+"53
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 53:         EEADR = (uint8)((ADD) & 0xFF);
+[e = _EEADR -> & -> _ADD `ui -> -> 255 `i `ui `uc ]
+"55
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 55:         (EECON1bits.EEPGD = 0);
+[e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
+"56
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 56:         (EECON1bits.CFGS = 0);
+[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
+"58
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 58:         (EECON1bits.RD = 1);
+[e = . . _EECON1bits 0 0 -> -> 1 `i `uc ]
+"60
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 60:         __nop();
+[e ( ___nop ..  ]
+"61
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 61:         __nop();
+[e ( ___nop ..  ]
 "63
-[; ;ECUAL/Button/ECU_Button.c: 63:     }
-}
-[e :U 313 ]
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 63:         *Data = EEDATA;
+[e = *U _Data _EEDATA ]
 "64
-[; ;ECUAL/Button/ECU_Button.c: 64:     return Retval;
-[e ) _Retval ]
-[e $UE 311  ]
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 64:     }
+}
+[e :U 315 ]
 "65
-[; ;ECUAL/Button/ECU_Button.c: 65: }
-[e :UE 311 ]
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 65:     return Retval;
+[e ) _Retval ]
+[e $UE 313  ]
+"66
+[; ;MCAL/EEPROM/HAL_EEPROM.c: 66: }
+[e :UE 313 ]
 }

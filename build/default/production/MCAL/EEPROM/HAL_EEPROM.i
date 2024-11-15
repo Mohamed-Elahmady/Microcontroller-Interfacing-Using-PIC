@@ -1,4 +1,4 @@
-# 1 "ECUAL/Button/ECU_Button.c"
+# 1 "MCAL/EEPROM/HAL_EEPROM.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "ECUAL/Button/ECU_Button.c" 2
+# 1 "MCAL/EEPROM/HAL_EEPROM.c" 2
 
 
 
@@ -14,10 +14,8 @@
 
 
 
-# 1 "ECUAL/Button/ECU_Button.h" 1
-# 15 "ECUAL/Button/ECU_Button.h"
-# 1 "ECUAL/Button/../../MCAL/GPIO/HAL_GPIO.h" 1
-# 15 "ECUAL/Button/../../MCAL/GPIO/HAL_GPIO.h"
+# 1 "MCAL/EEPROM/HAL_EEPROM.h" 1
+# 15 "MCAL/EEPROM/HAL_EEPROM.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\proc\\pic18f46k20.h" 1 3
 # 44 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\proc\\pic18f46k20.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\__at.h" 1 3
@@ -4679,12 +4677,22 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 15 "ECUAL/Button/../../MCAL/GPIO/HAL_GPIO.h" 2
+# 15 "MCAL/EEPROM/HAL_EEPROM.h" 2
 
-# 1 "ECUAL/Button/../../MCAL/GPIO/../MCAL_STD_Types.h" 1
-# 15 "ECUAL/Button/../../MCAL/GPIO/../MCAL_STD_Types.h"
-# 1 "ECUAL/Button/../../MCAL/GPIO/../STD_Libraries.h" 1
-# 15 "ECUAL/Button/../../MCAL/GPIO/../STD_Libraries.h"
+# 1 "MCAL/EEPROM/../Interrupt/MCAL_internal_interrupt.h" 1
+# 15 "MCAL/EEPROM/../Interrupt/MCAL_internal_interrupt.h"
+# 1 "MCAL/EEPROM/../Interrupt/MCAL_Interrupt_CFG.h" 1
+# 15 "MCAL/EEPROM/../Interrupt/MCAL_Interrupt_CFG.h"
+# 1 "MCAL/EEPROM/../Interrupt/MCAL_interrupt_Generate_CFG.h" 1
+# 15 "MCAL/EEPROM/../Interrupt/MCAL_Interrupt_CFG.h" 2
+
+
+# 1 "MCAL/EEPROM/../Interrupt/../GPIO/HAL_GPIO.h" 1
+# 16 "MCAL/EEPROM/../Interrupt/../GPIO/HAL_GPIO.h"
+# 1 "MCAL/EEPROM/../Interrupt/../GPIO/../MCAL_STD_Types.h" 1
+# 15 "MCAL/EEPROM/../Interrupt/../GPIO/../MCAL_STD_Types.h"
+# 1 "MCAL/EEPROM/../Interrupt/../GPIO/../STD_Libraries.h" 1
+# 15 "MCAL/EEPROM/../Interrupt/../GPIO/../STD_Libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 1 3
 
 
@@ -4855,7 +4863,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 15 "ECUAL/Button/../../MCAL/GPIO/../STD_Libraries.h" 2
+# 15 "MCAL/EEPROM/../Interrupt/../GPIO/../STD_Libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 3
@@ -4934,7 +4942,7 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 16 "ECUAL/Button/../../MCAL/GPIO/../STD_Libraries.h" 2
+# 16 "MCAL/EEPROM/../Interrupt/../GPIO/../STD_Libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 3
@@ -4993,7 +5001,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 17 "ECUAL/Button/../../MCAL/GPIO/../STD_Libraries.h" 2
+# 17 "MCAL/EEPROM/../Interrupt/../GPIO/../STD_Libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 1 3
 # 10 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 3
@@ -5456,11 +5464,11 @@ double jn(int, double);
 double y0(double);
 double y1(double);
 double yn(int, double);
-# 18 "ECUAL/Button/../../MCAL/GPIO/../STD_Libraries.h" 2
-# 15 "ECUAL/Button/../../MCAL/GPIO/../MCAL_STD_Types.h" 2
+# 18 "MCAL/EEPROM/../Interrupt/../GPIO/../STD_Libraries.h" 2
+# 15 "MCAL/EEPROM/../Interrupt/../GPIO/../MCAL_STD_Types.h" 2
 
-# 1 "ECUAL/Button/../../MCAL/GPIO/../Compiler.h" 1
-# 15 "ECUAL/Button/../../MCAL/GPIO/../Compiler.h"
+# 1 "MCAL/EEPROM/../Interrupt/../GPIO/../Compiler.h" 1
+# 15 "MCAL/EEPROM/../Interrupt/../GPIO/../Compiler.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5539,9 +5547,9 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 15 "ECUAL/Button/../../MCAL/GPIO/../Compiler.h" 2
-# 16 "ECUAL/Button/../../MCAL/GPIO/../MCAL_STD_Types.h" 2
-# 48 "ECUAL/Button/../../MCAL/GPIO/../MCAL_STD_Types.h"
+# 15 "MCAL/EEPROM/../Interrupt/../GPIO/../Compiler.h" 2
+# 16 "MCAL/EEPROM/../Interrupt/../GPIO/../MCAL_STD_Types.h" 2
+# 48 "MCAL/EEPROM/../Interrupt/../GPIO/../MCAL_STD_Types.h"
 typedef unsigned char uint8;
 typedef unsigned short uint16;
 typedef unsigned long uint32;
@@ -5551,19 +5559,19 @@ typedef signed short sint16;
 typedef signed long sint32;
 
 typedef float float32;
-# 118 "ECUAL/Button/../../MCAL/GPIO/../MCAL_STD_Types.h"
+# 118 "MCAL/EEPROM/../Interrupt/../GPIO/../MCAL_STD_Types.h"
 typedef enum {
     E_NOT_OK = 0x00,
     E_OK = 0x01
 }Std_ReturnType;
-# 16 "ECUAL/Button/../../MCAL/GPIO/HAL_GPIO.h" 2
+# 16 "MCAL/EEPROM/../Interrupt/../GPIO/HAL_GPIO.h" 2
 
-# 1 "ECUAL/Button/../../MCAL/GPIO/../Device_Config.h" 1
-# 17 "ECUAL/Button/../../MCAL/GPIO/HAL_GPIO.h" 2
+# 1 "MCAL/EEPROM/../Interrupt/../GPIO/../Device_Config.h" 1
+# 17 "MCAL/EEPROM/../Interrupt/../GPIO/HAL_GPIO.h" 2
 
-# 1 "ECUAL/Button/../../MCAL/GPIO/HAL_GPIO_CFG.h" 1
-# 18 "ECUAL/Button/../../MCAL/GPIO/HAL_GPIO.h" 2
-# 39 "ECUAL/Button/../../MCAL/GPIO/HAL_GPIO.h"
+# 1 "MCAL/EEPROM/../Interrupt/../GPIO/HAL_GPIO_CFG.h" 1
+# 18 "MCAL/EEPROM/../Interrupt/../GPIO/HAL_GPIO.h" 2
+# 39 "MCAL/EEPROM/../Interrupt/../GPIO/HAL_GPIO.h"
 typedef enum {
     GPIO_LOW = 0,
     GPIO_HIGH
@@ -5617,71 +5625,78 @@ Std_ReturnType GPIO_PORT_GET_DIRECTION_STATUS (PORT_INDEX_T PORT,uint8 *DIRECTIO
 Std_ReturnType GPIO_PORT_WRITE_LOGIC (PORT_INDEX_T PORT,uint8 LOGIC);
 Std_ReturnType GPIO_PORT_READ_LOGIC (PORT_INDEX_T PORT,uint8 *LOGIC);
 Std_ReturnType GPIO_PORT_TOGGLE_LOGIC (PORT_INDEX_T PORT);
-# 15 "ECUAL/Button/ECU_Button.h" 2
+# 17 "MCAL/EEPROM/../Interrupt/MCAL_Interrupt_CFG.h" 2
+# 60 "MCAL/EEPROM/../Interrupt/MCAL_Interrupt_CFG.h"
+typedef enum{
+    INTERRUPT_LOW_PRIORITY = 0,
+    INTERRUPT_HIGH_PRIORITY
+}INTERRUPT_PRIORITY_CFG;
+# 15 "MCAL/EEPROM/../Interrupt/MCAL_internal_interrupt.h" 2
+# 16 "MCAL/EEPROM/HAL_EEPROM.h" 2
 
-# 1 "ECUAL/Button/ECU_Button_CFG.h" 1
-# 16 "ECUAL/Button/ECU_Button.h" 2
-# 28 "ECUAL/Button/ECU_Button.h"
-typedef enum {
-    BUTTON_PRESSED = 0,
-    BUTTON_RELEASED
-}BUTTON_STATE;
 
-typedef enum {
-    BUTTON_ACTIVE_HIGH = 0,
-    BUTTON_ACTIVE_LOW
-}BUTTON_ACTIVE_T;
-
-typedef struct {
-    PIN_CONFIG_T BUTTON_PIN;
-    BUTTON_STATE Button_st;
-    BUTTON_ACTIVE_T Button_connection;
-}BUTTON_T;
+# 1 "MCAL/EEPROM/HAL_EEPROM_CFG.h" 1
+# 18 "MCAL/EEPROM/HAL_EEPROM.h" 2
+# 45 "MCAL/EEPROM/HAL_EEPROM.h"
+Std_ReturnType DATA_EEPROM_WRITE_BYTE(uint16 ADD , uint8 Data);
+Std_ReturnType DATA_EEPROM_READ_BYTE(uint16 ADD , uint8 *Data);
+# 8 "MCAL/EEPROM/HAL_EEPROM.c" 2
 
 
 
-Std_ReturnType BUTTON_INITIALIZE (const BUTTON_T *btn);
-Std_ReturnType BUTTON_READ_STATUS (const BUTTON_T *btn,BUTTON_STATE *btn_st);
-# 8 "ECUAL/Button/ECU_Button.c" 2
-# 17 "ECUAL/Button/ECU_Button.c"
-Std_ReturnType BUTTON_INITIALIZE (const BUTTON_T *btn){
+Std_ReturnType DATA_EEPROM_WRITE_BYTE(uint16 ADD , uint8 Data){
     Std_ReturnType Retval = E_OK;
-    if(((void*)0) == btn){
+    if(ADD > 0x3FF){
         Retval = E_NOT_OK;
     }
     else{
-        Retval = GPIO_PIN_DIRECTION_INITIALIZE(&(btn->BUTTON_PIN));
+
+        uint8 GIE_STATUS = INTCONbits.GIE;
+
+        EEADRH = (uint8)((ADD >> 8) & 0x03);
+        EEADR = (uint8)((ADD) & 0xFF);
+
+        EEDATA = Data;
+
+        (EECON1bits.EEPGD = 0);
+        (EECON1bits.CFGS = 0);
+
+        (EECON1bits.WREN = 1);
+
+        (INTCONbits.GIE = 0);
+
+        EECON2 = 0x55;
+        EECON2 = 0xAA;
+
+        (EECON1bits.WR = 1);
+
+        while(EECON1bits.WR);
+
+        (EECON1bits.WREN = 0);
+
+        INTCONbits.GIE = GIE_STATUS;
     }
     return Retval;
 }
-# 36 "ECUAL/Button/ECU_Button.c"
-Std_ReturnType BUTTON_READ_STATUS (const BUTTON_T *btn,BUTTON_STATE *btn_st){
+Std_ReturnType DATA_EEPROM_READ_BYTE(uint16 ADD , uint8 *Data){
     Std_ReturnType Retval = E_OK;
-    if((((void*)0) == btn) || (((void*)0) == btn_st)){
+    if(((void*)0) == Data || ADD > 0x3FF){
         Retval = E_NOT_OK;
     }
     else{
-        LOGIC_T Btn_Log = GPIO_LOW;
-        Retval = GPIO_PIN_READ_LOGIC(&(btn->BUTTON_PIN),&Btn_Log);
-        if(BUTTON_ACTIVE_HIGH == btn->Button_connection){
-            if(GPIO_HIGH == Btn_Log){
-                *btn_st = BUTTON_PRESSED;
-            }
-            else{
-                *btn_st = BUTTON_RELEASED;
-            }
-        }
-        else if(BUTTON_ACTIVE_LOW == btn->Button_connection){
-            if(GPIO_HIGH == Btn_Log){
-                *btn_st = BUTTON_RELEASED;
-            }
-            else{
-                *btn_st = BUTTON_PRESSED;
-            }
-        }
-        else{
-            Retval = E_NOT_OK;
-        }
+
+        EEADRH = (uint8)((ADD >> 8) & 0x03);
+        EEADR = (uint8)((ADD) & 0xFF);
+
+        (EECON1bits.EEPGD = 0);
+        (EECON1bits.CFGS = 0);
+
+        (EECON1bits.RD = 1);
+
+        __nop();
+        __nop();
+
+        *Data = EEDATA;
     }
     return Retval;
 }

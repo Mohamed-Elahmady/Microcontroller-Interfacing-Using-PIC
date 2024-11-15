@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=ECUAL/7_Segments/ECU_7_Segments.c ECUAL/Button/ECU_Button.c ECUAL/CHR_LCD/ECU_CHR_LCD.c ECUAL/DC_Motor/ECU_DC_MOTOR.c ECUAL/Keypad/ECU_KEYPAD.c ECUAL/LED/ECU_LED.c ECUAL/Relay/ECU_RELAY.c ECUAL/ECU_INIT.c MCAL/GPIO/HAL_GPIO.c MCAL/Interrupt/MCAL_internal_interrupt.c MCAL/Interrupt/MCAL_external_interrupt.c MCAL/Interrupt/MCAL_interrupt_manager.c MCAL/Device_Config.c Drivers_Main.c
+SOURCEFILES_QUOTED_IF_SPACED=ECUAL/7_Segments/ECU_7_Segments.c ECUAL/Button/ECU_Button.c ECUAL/CHR_LCD/ECU_CHR_LCD.c ECUAL/DC_Motor/ECU_DC_MOTOR.c ECUAL/Keypad/ECU_KEYPAD.c ECUAL/LED/ECU_LED.c ECUAL/Relay/ECU_RELAY.c ECUAL/ECU_INIT.c MCAL/GPIO/HAL_GPIO.c MCAL/Interrupt/MCAL_internal_interrupt.c MCAL/Interrupt/MCAL_external_interrupt.c MCAL/Interrupt/MCAL_interrupt_manager.c MCAL/Device_Config.c Drivers_Main.c MCAL/EEPROM/HAL_EEPROM.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1 ${OBJECTDIR}/ECUAL/Button/ECU_Button.p1 ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1 ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.p1 ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1 ${OBJECTDIR}/ECUAL/LED/ECU_LED.p1 ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1 ${OBJECTDIR}/ECUAL/ECU_INIT.p1 ${OBJECTDIR}/MCAL/GPIO/HAL_GPIO.p1 ${OBJECTDIR}/MCAL/Interrupt/MCAL_internal_interrupt.p1 ${OBJECTDIR}/MCAL/Interrupt/MCAL_external_interrupt.p1 ${OBJECTDIR}/MCAL/Interrupt/MCAL_interrupt_manager.p1 ${OBJECTDIR}/MCAL/Device_Config.p1 ${OBJECTDIR}/Drivers_Main.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1.d ${OBJECTDIR}/ECUAL/Button/ECU_Button.p1.d ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1.d ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.p1.d ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1.d ${OBJECTDIR}/ECUAL/LED/ECU_LED.p1.d ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1.d ${OBJECTDIR}/ECUAL/ECU_INIT.p1.d ${OBJECTDIR}/MCAL/GPIO/HAL_GPIO.p1.d ${OBJECTDIR}/MCAL/Interrupt/MCAL_internal_interrupt.p1.d ${OBJECTDIR}/MCAL/Interrupt/MCAL_external_interrupt.p1.d ${OBJECTDIR}/MCAL/Interrupt/MCAL_interrupt_manager.p1.d ${OBJECTDIR}/MCAL/Device_Config.p1.d ${OBJECTDIR}/Drivers_Main.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1 ${OBJECTDIR}/ECUAL/Button/ECU_Button.p1 ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1 ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.p1 ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1 ${OBJECTDIR}/ECUAL/LED/ECU_LED.p1 ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1 ${OBJECTDIR}/ECUAL/ECU_INIT.p1 ${OBJECTDIR}/MCAL/GPIO/HAL_GPIO.p1 ${OBJECTDIR}/MCAL/Interrupt/MCAL_internal_interrupt.p1 ${OBJECTDIR}/MCAL/Interrupt/MCAL_external_interrupt.p1 ${OBJECTDIR}/MCAL/Interrupt/MCAL_interrupt_manager.p1 ${OBJECTDIR}/MCAL/Device_Config.p1 ${OBJECTDIR}/Drivers_Main.p1 ${OBJECTDIR}/MCAL/EEPROM/HAL_EEPROM.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1.d ${OBJECTDIR}/ECUAL/Button/ECU_Button.p1.d ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1.d ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.p1.d ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1.d ${OBJECTDIR}/ECUAL/LED/ECU_LED.p1.d ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1.d ${OBJECTDIR}/ECUAL/ECU_INIT.p1.d ${OBJECTDIR}/MCAL/GPIO/HAL_GPIO.p1.d ${OBJECTDIR}/MCAL/Interrupt/MCAL_internal_interrupt.p1.d ${OBJECTDIR}/MCAL/Interrupt/MCAL_external_interrupt.p1.d ${OBJECTDIR}/MCAL/Interrupt/MCAL_interrupt_manager.p1.d ${OBJECTDIR}/MCAL/Device_Config.p1.d ${OBJECTDIR}/Drivers_Main.p1.d ${OBJECTDIR}/MCAL/EEPROM/HAL_EEPROM.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1 ${OBJECTDIR}/ECUAL/Button/ECU_Button.p1 ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1 ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.p1 ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1 ${OBJECTDIR}/ECUAL/LED/ECU_LED.p1 ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1 ${OBJECTDIR}/ECUAL/ECU_INIT.p1 ${OBJECTDIR}/MCAL/GPIO/HAL_GPIO.p1 ${OBJECTDIR}/MCAL/Interrupt/MCAL_internal_interrupt.p1 ${OBJECTDIR}/MCAL/Interrupt/MCAL_external_interrupt.p1 ${OBJECTDIR}/MCAL/Interrupt/MCAL_interrupt_manager.p1 ${OBJECTDIR}/MCAL/Device_Config.p1 ${OBJECTDIR}/Drivers_Main.p1
+OBJECTFILES=${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1 ${OBJECTDIR}/ECUAL/Button/ECU_Button.p1 ${OBJECTDIR}/ECUAL/CHR_LCD/ECU_CHR_LCD.p1 ${OBJECTDIR}/ECUAL/DC_Motor/ECU_DC_MOTOR.p1 ${OBJECTDIR}/ECUAL/Keypad/ECU_KEYPAD.p1 ${OBJECTDIR}/ECUAL/LED/ECU_LED.p1 ${OBJECTDIR}/ECUAL/Relay/ECU_RELAY.p1 ${OBJECTDIR}/ECUAL/ECU_INIT.p1 ${OBJECTDIR}/MCAL/GPIO/HAL_GPIO.p1 ${OBJECTDIR}/MCAL/Interrupt/MCAL_internal_interrupt.p1 ${OBJECTDIR}/MCAL/Interrupt/MCAL_external_interrupt.p1 ${OBJECTDIR}/MCAL/Interrupt/MCAL_interrupt_manager.p1 ${OBJECTDIR}/MCAL/Device_Config.p1 ${OBJECTDIR}/Drivers_Main.p1 ${OBJECTDIR}/MCAL/EEPROM/HAL_EEPROM.p1
 
 # Source Files
-SOURCEFILES=ECUAL/7_Segments/ECU_7_Segments.c ECUAL/Button/ECU_Button.c ECUAL/CHR_LCD/ECU_CHR_LCD.c ECUAL/DC_Motor/ECU_DC_MOTOR.c ECUAL/Keypad/ECU_KEYPAD.c ECUAL/LED/ECU_LED.c ECUAL/Relay/ECU_RELAY.c ECUAL/ECU_INIT.c MCAL/GPIO/HAL_GPIO.c MCAL/Interrupt/MCAL_internal_interrupt.c MCAL/Interrupt/MCAL_external_interrupt.c MCAL/Interrupt/MCAL_interrupt_manager.c MCAL/Device_Config.c Drivers_Main.c
+SOURCEFILES=ECUAL/7_Segments/ECU_7_Segments.c ECUAL/Button/ECU_Button.c ECUAL/CHR_LCD/ECU_CHR_LCD.c ECUAL/DC_Motor/ECU_DC_MOTOR.c ECUAL/Keypad/ECU_KEYPAD.c ECUAL/LED/ECU_LED.c ECUAL/Relay/ECU_RELAY.c ECUAL/ECU_INIT.c MCAL/GPIO/HAL_GPIO.c MCAL/Interrupt/MCAL_internal_interrupt.c MCAL/Interrupt/MCAL_external_interrupt.c MCAL/Interrupt/MCAL_interrupt_manager.c MCAL/Device_Config.c Drivers_Main.c MCAL/EEPROM/HAL_EEPROM.c
 
 
 
@@ -200,6 +200,14 @@ ${OBJECTDIR}/Drivers_Main.p1: Drivers_Main.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/Drivers_Main.d ${OBJECTDIR}/Drivers_Main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Drivers_Main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/MCAL/EEPROM/HAL_EEPROM.p1: MCAL/EEPROM/HAL_EEPROM.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/MCAL/EEPROM" 
+	@${RM} ${OBJECTDIR}/MCAL/EEPROM/HAL_EEPROM.p1.d 
+	@${RM} ${OBJECTDIR}/MCAL/EEPROM/HAL_EEPROM.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCAL/EEPROM/HAL_EEPROM.p1 MCAL/EEPROM/HAL_EEPROM.c 
+	@-${MV} ${OBJECTDIR}/MCAL/EEPROM/HAL_EEPROM.d ${OBJECTDIR}/MCAL/EEPROM/HAL_EEPROM.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/MCAL/EEPROM/HAL_EEPROM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/ECUAL/7_Segments/ECU_7_Segments.p1: ECUAL/7_Segments/ECU_7_Segments.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/ECUAL/7_Segments" 
@@ -312,6 +320,14 @@ ${OBJECTDIR}/Drivers_Main.p1: Drivers_Main.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Drivers_Main.p1 Drivers_Main.c 
 	@-${MV} ${OBJECTDIR}/Drivers_Main.d ${OBJECTDIR}/Drivers_Main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Drivers_Main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/MCAL/EEPROM/HAL_EEPROM.p1: MCAL/EEPROM/HAL_EEPROM.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/MCAL/EEPROM" 
+	@${RM} ${OBJECTDIR}/MCAL/EEPROM/HAL_EEPROM.p1.d 
+	@${RM} ${OBJECTDIR}/MCAL/EEPROM/HAL_EEPROM.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mdownload -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCAL/EEPROM/HAL_EEPROM.p1 MCAL/EEPROM/HAL_EEPROM.c 
+	@-${MV} ${OBJECTDIR}/MCAL/EEPROM/HAL_EEPROM.d ${OBJECTDIR}/MCAL/EEPROM/HAL_EEPROM.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/MCAL/EEPROM/HAL_EEPROM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

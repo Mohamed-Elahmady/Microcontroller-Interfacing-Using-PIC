@@ -36,6 +36,10 @@
         <itemPath>ECUAL/ECU_INIT.h</itemPath>
       </logicalFolder>
       <logicalFolder name="MCAL" displayName="MCAL" projectFiles="true">
+        <logicalFolder name="EEPROM" displayName="EEPROM" projectFiles="true">
+          <itemPath>MCAL/EEPROM/HAL_EEPROM.h</itemPath>
+          <itemPath>MCAL/EEPROM/HAL_EEPROM_CFG.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="GPIO" displayName="GPIO" projectFiles="true">
           <itemPath>MCAL/GPIO/HAL_GPIO.h</itemPath>
           <itemPath>MCAL/GPIO/HAL_GPIO_CFG.h</itemPath>
@@ -91,6 +95,9 @@
         <itemPath>ECUAL/ECU_INIT.c</itemPath>
       </logicalFolder>
       <logicalFolder name="MCAL" displayName="MCAL" projectFiles="true">
+        <logicalFolder name="EEPROM" displayName="EEPROM" projectFiles="true">
+          <itemPath>MCAL/EEPROM/HAL_EEPROM.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="GPIO" displayName="GPIO" projectFiles="true">
           <itemPath>MCAL/GPIO/HAL_GPIO.c</itemPath>
         </logicalFolder>

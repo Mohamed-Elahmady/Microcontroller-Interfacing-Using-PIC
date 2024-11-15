@@ -13,7 +13,6 @@
 /* Section 1 : Includes */
 
 #include "ECUAL/ECU_INIT.h"
-#include "MCAL/Interrupt/MCAL_external_interrupt.h"
 
 /* Section 2 : Macros Declarations */
 
