@@ -138,9 +138,11 @@ Std_ReturnType EXTERNAL_INTERRUPT_RBX_INIT(const EXT_RBX_T *RBX){
         INTERRUPT_ENABLE_PRIORITY_LEVELS();
             if(INTERRUPT_LOW_PRIORITY == RBX->priority){
                 INTERRUPT_ENABLE_LOW_PRIORITY_GLOBAL_INTERRUPT();
+                INTERRUPT_ENABLE_HIGH_PRIORITY_GLOBAL_INTERRUPT();
                 EXT_RBx_LOW_PRIORITY();
             }
             else if (INTERRUPT_HIGH_PRIORITY == RBX->priority){
+                INTERRUPT_ENABLE_LOW_PRIORITY_GLOBAL_INTERRUPT();
                 INTERRUPT_ENABLE_HIGH_PRIORITY_GLOBAL_INTERRUPT();
                 EXT_RBx_HIGH_PRIORITY();
             }
@@ -286,8 +288,10 @@ static Std_ReturnType interrupt_intx_enable(const EXT_INTX_T *INTX){
                     INTERRUPT_ENABLE_PRIORITY_LEVELS();
                     if(INTERRUPT_LOW_PRIORITY == INTX->priority){
                         INTERRUPT_ENABLE_LOW_PRIORITY_GLOBAL_INTERRUPT();
+                        INTERRUPT_ENABLE_HIGH_PRIORITY_GLOBAL_INTERRUPT();
                     }
                     else if(INTERRUPT_HIGH_PRIORITY == INTX->priority){
+                        INTERRUPT_ENABLE_LOW_PRIORITY_GLOBAL_INTERRUPT();
                         INTERRUPT_ENABLE_HIGH_PRIORITY_GLOBAL_INTERRUPT();
                     }
                     else{/*Nothing*/}
@@ -302,8 +306,10 @@ static Std_ReturnType interrupt_intx_enable(const EXT_INTX_T *INTX){
                     INTERRUPT_ENABLE_PRIORITY_LEVELS();
                     if(INTERRUPT_LOW_PRIORITY == INTX->priority){
                         INTERRUPT_ENABLE_LOW_PRIORITY_GLOBAL_INTERRUPT();
+                        INTERRUPT_ENABLE_HIGH_PRIORITY_GLOBAL_INTERRUPT();
                     }
                     else if(INTERRUPT_HIGH_PRIORITY == INTX->priority){
+                        INTERRUPT_ENABLE_LOW_PRIORITY_GLOBAL_INTERRUPT();
                         INTERRUPT_ENABLE_HIGH_PRIORITY_GLOBAL_INTERRUPT();
                     }
                     else{/*Nothing*/}
